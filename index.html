@@ -7,739 +7,289 @@
   <title>동감행정사사무소</title>
   <link rel="stylesheet" href="assets/styles.css">
   <style>
-    /* =========================================================
-       HOME ONLY
-       메인페이지 전용 스타일 - 서브페이지 및 공통 CSS 미수정
-    ========================================================= */
-    .home-clean{overflow-x:hidden}
-    .home-clean main{background:#fff}
+    .home-v4{overflow-x:hidden;background:#fff}
+    .home-v4 .home-eyebrow{margin:0 0 14px;color:var(--wine);font-size:12px;font-weight:900;letter-spacing:.12em}
+    .home-v4 .home-title{margin:0;font-size:clamp(36px,4.7vw,66px);line-height:1.12;letter-spacing:-.055em}
+    .home-v4 .home-desc{margin:18px 0 0;color:var(--sub);font-size:17px;line-height:1.75}
 
-    /* HERO */
-    .home-clean .home-hero{
-      position:relative;
-      display:flex;
-      align-items:center;
-      min-height:calc(100vh - 82px);
-      overflow:hidden;
-      background:linear-gradient(180deg,#fbf8f9 0%,#fff 76%);
-    }
-    .home-clean .home-hero::before{
-      content:"DONGGAM";
-      position:absolute;
-      right:-.04em;
-      bottom:-.16em;
-      color:rgba(117,22,49,.035);
-      font-size:clamp(120px,20vw,330px);
-      font-weight:950;
-      line-height:.8;
-      letter-spacing:-.08em;
-      pointer-events:none;
-      user-select:none;
-    }
-    .home-clean .home-hero-inner{
-      position:relative;
-      z-index:1;
-      width:100%;
-      padding:108px 0 94px;
-    }
-    .home-clean .home-hero-grid{
-      display:grid;
-      grid-template-columns:minmax(0,1.18fr) minmax(300px,.52fr);
-      gap:92px;
-      align-items:end;
-    }
-    .home-clean .home-hero h1{
-      max-width:900px;
-      margin:0;
-      font-size:clamp(50px,6.5vw,90px);
-      line-height:1.07;
-      letter-spacing:-.055em;
-    }
-    .home-clean .home-hero .lead{
-      max-width:720px;
-      margin-top:30px;
-      color:var(--sub);
-      font-size:19px;
-    }
-    .home-clean .home-hero-actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:36px;
-    }
-    .home-clean .home-hero-side{
-      padding:0 0 8px 34px;
-      border-left:1px solid rgba(117,22,49,.18);
-    }
-    .home-clean .home-hero-side small{
-      display:block;
-      margin-bottom:18px;
-      color:var(--wine);
-      font-size:11px;
-      font-weight:900;
-      letter-spacing:.13em;
-    }
-    .home-clean .home-hero-side p{
-      margin:0;
-      color:var(--sub);
-      font-size:14px;
-    }
-    .home-clean .home-hero-side ul{
-      list-style:none;
-      padding:0;
-      margin:26px 0 0;
-      border-top:1px solid var(--line);
-    }
-    .home-clean .home-hero-side li{
-      display:flex;
-      justify-content:space-between;
-      gap:18px;
-      padding:13px 0;
-      border-bottom:1px solid var(--line);
-      color:var(--text2);
-      font-size:13px;
-    }
-    .home-clean .home-hero-side li span{
-      color:var(--sub2);
-      font-size:11px;
-      font-weight:900;
-    }
+    /* HERO - real image + clear actions */
+    .home-v4 .hero{padding:56px 0 72px;background:#fbf8f9}
+    .home-v4 .hero-grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(460px,1.08fr);gap:56px;align-items:center}
+    .home-v4 .hero-copy h1{max-width:760px;margin:0;font-size:clamp(46px,5.9vw,82px);line-height:1.08;letter-spacing:-.06em}
+    .home-v4 .hero-copy .lead{max-width:670px;margin-top:26px;color:var(--sub);font-size:18px;line-height:1.72}
+    .home-v4 .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}
+    .home-v4 .hero-contact{display:flex;gap:22px;flex-wrap:wrap;margin-top:36px;padding-top:20px;border-top:1px solid rgba(117,22,49,.15);font-size:13px;color:var(--sub)}
+    .home-v4 .hero-contact b{color:var(--text);font-size:15px}
+    .home-v4 .hero-image{position:relative;min-height:570px;overflow:hidden;border-radius:4px 4px 36px 4px;background:#ddd}
+    .home-v4 .hero-image img{display:block;width:100%;height:100%;min-height:570px;object-fit:cover;filter:saturate(.74) contrast(.97);transform:scale(1.01);transition:transform 8s ease}
+    .home-v4 .hero-image.is-visible img{transform:scale(1.045)}
+    .home-v4 .hero-image::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(28,12,18,.58) 100%)}
+    .home-v4 .hero-badge{position:absolute;right:26px;bottom:24px;left:26px;z-index:2;display:flex;justify-content:space-between;gap:24px;align-items:end;color:#fff}
+    .home-v4 .hero-badge strong{max-width:360px;font-size:23px;line-height:1.35}
+    .home-v4 .hero-badge span{font-size:11px;font-weight:900;letter-spacing:.1em;opacity:.78}
 
-    /* COMMON */
-    .home-clean .home-section{padding:112px 0}
-    .home-clean .home-heading{
-      display:grid;
-      grid-template-columns:minmax(0,.8fr) minmax(320px,.48fr);
-      gap:56px;
-      align-items:end;
-      margin-bottom:48px;
-    }
-    .home-clean .home-heading h2{margin-bottom:0}
-    .home-clean .home-heading .desc{
-      margin:0;
-      color:var(--sub);
-      font-size:17px;
-    }
+    /* SERVICES - 2x2 field map */
+    .home-v4 .services{padding:108px 0}
+    .home-v4 .section-head{display:grid;grid-template-columns:minmax(0,.8fr) minmax(320px,.5fr);gap:58px;align-items:end;margin-bottom:46px}
+    .home-v4 .section-head .home-desc{margin:0}
+    .home-v4 .service-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--text);border-left:1px solid var(--line)}
+    .home-v4 .service-block{position:relative;min-height:286px;padding:34px 38px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;transition:background .24s ease,color .24s ease}
+    .home-v4 .service-block:hover{background:#faf6f7;color:var(--wine)}
+    .home-v4 .service-block .no{color:var(--sub2);font-size:11px;font-weight:900}
+    .home-v4 .service-block h3{margin:52px 0 14px;font-size:clamp(25px,2.8vw,38px)}
+    .home-v4 .service-block p{max-width:520px;margin:0;color:var(--sub);line-height:1.7}
+    .home-v4 .service-block i{position:absolute;right:34px;bottom:28px;font-style:normal;font-size:20px;transition:transform .2s ease}
+    .home-v4 .service-block:hover i{transform:translateX(5px)}
 
-    /* SERVICES - list / editorial */
-    .home-clean .service-list{border-top:1px solid var(--text)}
-    .home-clean .service-line{
-      display:grid;
-      grid-template-columns:72px minmax(260px,.85fr) minmax(280px,1fr) 30px;
-      gap:28px;
-      align-items:center;
-      min-height:150px;
-      padding:26px 0;
-      border-bottom:1px solid var(--line);
-      transition:padding .24s ease,color .24s ease;
-    }
-    .home-clean .service-line:hover{
-      padding-left:10px;
-      color:var(--wine);
-    }
-    .home-clean .service-line .idx{
-      color:var(--sub2);
-      font-size:11px;
-      font-weight:900;
-      letter-spacing:.08em;
-    }
-    .home-clean .service-line h3{
-      margin:0;
-      font-size:clamp(24px,2.35vw,34px);
-    }
-    .home-clean .service-line p{
-      margin:0;
-      color:var(--sub);
-      font-size:15px;
-    }
-    .home-clean .service-line .arrow{
-      justify-self:end;
-      font-size:21px;
-      transition:transform .24s ease;
-    }
-    .home-clean .service-line:hover .arrow{transform:translateX(5px)}
+    /* PROCESS - timeline */
+    .home-v4 .process{padding:100px 0;background:var(--soft)}
+    .home-v4 .process-intro{max-width:720px;margin-bottom:54px}
+    .home-v4 .timeline{position:relative;display:grid;grid-template-columns:repeat(4,1fr)}
+    .home-v4 .timeline::before{content:"";position:absolute;top:25px;right:12.5%;left:12.5%;height:1px;background:#cdd3d8}
+    .home-v4 .step{position:relative;z-index:1;padding:0 22px;text-align:center}
+    .home-v4 .step-no{display:grid;place-items:center;width:52px;height:52px;margin:0 auto 22px;border:1px solid #c6ccd1;border-radius:50%;background:var(--soft);color:var(--wine);font-size:11px;font-weight:900;transition:.22s ease}
+    .home-v4 .step:hover .step-no{background:var(--wine);border-color:var(--wine);color:#fff;transform:translateY(-3px)}
+    .home-v4 .step h3{margin:0 0 8px;font-size:19px}
+    .home-v4 .step p{margin:0;color:var(--sub);font-size:14px;line-height:1.65}
 
-    /* PROCESS - continuous timeline */
-    .home-clean .process-section{background:var(--soft)}
-    .home-clean .process-wrap{
-      display:grid;
-      grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);
-      gap:76px;
-      align-items:start;
-    }
-    .home-clean .process-intro{
-      position:sticky;
-      top:118px;
-    }
-    .home-clean .process-intro p:last-child{
-      color:var(--sub);
-      font-size:17px;
-    }
-    .home-clean .process-list{border-top:1px solid var(--text)}
-    .home-clean .process-step{
-      display:grid;
-      grid-template-columns:70px 160px 1fr;
-      gap:20px;
-      align-items:start;
-      padding:27px 0;
-      border-bottom:1px solid var(--line);
-    }
-    .home-clean .process-step span{
-      color:var(--wine);
-      font-size:11px;
-      font-weight:900;
-    }
-    .home-clean .process-step b{font-size:18px}
-    .home-clean .process-step p{
-      margin:0;
-      color:var(--sub);
-      font-size:14px;
-    }
+    /* CASES - image-led archive + list */
+    .home-v4 .cases{padding:110px 0}
+    .home-v4 .cases-layout{display:grid;grid-template-columns:minmax(380px,.9fr) minmax(0,1.1fr);gap:58px;align-items:center}
+    .home-v4 .cases-image{position:relative;min-height:560px;overflow:hidden;background:#eee}
+    .home-v4 .cases-image img{display:block;width:100%;height:100%;min-height:560px;object-fit:cover;filter:saturate(.56) contrast(.97)}
+    .home-v4 .cases-image::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(49,7,17,.02),rgba(49,7,17,.58))}
+    .home-v4 .cases-image figcaption{position:absolute;right:26px;bottom:26px;left:26px;z-index:2;color:#fff}
+    .home-v4 .cases-image small{display:block;margin-bottom:9px;font-weight:900;letter-spacing:.09em;opacity:.8}
+    .home-v4 .cases-image strong{font-size:30px;line-height:1.35}
+    .home-v4 .case-list{margin-top:32px;border-top:1px solid var(--text)}
+    .home-v4 .case-link{display:grid;grid-template-columns:120px 1fr 24px;gap:18px;align-items:center;padding:22px 0;border-bottom:1px solid var(--line);transition:padding .2s ease,color .2s ease}
+    .home-v4 .case-link:hover{padding-left:8px;color:var(--wine)}
+    .home-v4 .case-link small{color:var(--sub2);font-weight:900}
+    .home-v4 .case-link strong{font-size:18px}
+    .home-v4 .case-link i{justify-self:end;font-style:normal}
+    .home-v4 .all-cases{display:inline-block;margin-top:26px;color:var(--wine);font-weight:850}
 
-    /* CASES - feature + list */
-    .home-clean .case-section{
-      background:var(--wine-deep);
-      color:#fff;
-    }
-    .home-clean .case-section .home-heading .desc{color:#cfbbc2}
-    .home-clean .case-layout{
-      display:grid;
-      grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);
-      gap:56px;
-      align-items:stretch;
-    }
-    .home-clean .case-feature{
-      position:relative;
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-end;
-      min-height:480px;
-      padding:0 0 28px;
-      overflow:hidden;
-      border-bottom:1px solid rgba(255,255,255,.25);
-    }
-    .home-clean .case-feature::before{
-      content:"01";
-      position:absolute;
-      top:-30px;
-      right:0;
-      color:rgba(255,255,255,.045);
-      font-size:clamp(130px,16vw,240px);
-      font-weight:950;
-      line-height:1;
-    }
-    .home-clean .case-feature small{
-      color:#dca8b8;
-      font-weight:900;
-      letter-spacing:.08em;
-    }
-    .home-clean .case-feature h3{
-      max-width:610px;
-      margin:16px 0 14px;
-      font-size:clamp(34px,4vw,54px);
-    }
-    .home-clean .case-feature p{
-      margin:0;
-      color:#d8c6cc;
-    }
-    .home-clean .case-feature .case-go{
-      display:inline-block;
-      margin-top:26px;
-      color:#fff;
-      font-weight:850;
-    }
-    .home-clean .case-list{border-top:1px solid rgba(255,255,255,.25)}
-    .home-clean .case-row{
-      display:grid;
-      grid-template-columns:120px 1fr 24px;
-      gap:18px;
-      align-items:center;
-      padding:25px 0;
-      border-bottom:1px solid rgba(255,255,255,.16);
-      transition:padding .24s ease;
-    }
-    .home-clean .case-row:hover{padding-left:8px}
-    .home-clean .case-row small{
-      color:#dca8b8;
-      font-weight:900;
-    }
-    .home-clean .case-row strong{
-      color:#fff;
-      font-size:18px;
-    }
-    .home-clean .case-row i{
-      justify-self:end;
-      color:#fff;
-      font-style:normal;
-    }
-    .home-clean .case-more{
-      display:inline-block;
-      margin-top:28px;
-      color:#fff;
-      font-weight:850;
-    }
+    /* OFFICE/TRUST - practical, not oversized copy */
+    .home-v4 .trust{padding:102px 0;background:#f8f4f5}
+    .home-v4 .trust-grid{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:70px;align-items:start}
+    .home-v4 .trust-copy{max-width:500px}
+    .home-v4 .trust-points{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(117,22,49,.25);border-left:1px solid rgba(117,22,49,.14)}
+    .home-v4 .trust-point{min-height:180px;padding:26px;border-right:1px solid rgba(117,22,49,.14);border-bottom:1px solid rgba(117,22,49,.14)}
+    .home-v4 .trust-point small{color:var(--wine);font-size:11px;font-weight:900;letter-spacing:.08em}
+    .home-v4 .trust-point strong{display:block;margin-top:34px;font-size:19px}
+    .home-v4 .trust-point p{margin:8px 0 0;color:var(--sub);font-size:14px;line-height:1.65}
+    .home-v4 .trust-link{display:inline-block;margin-top:26px;color:var(--wine);font-weight:850}
 
-    /* CONSULT */
-    .home-clean .consult-section{
-      padding:112px 0;
-      background:#fff;
-    }
-    .home-clean .consult-inner{
-      display:grid;
-      grid-template-columns:minmax(0,.82fr) minmax(360px,1fr);
-      gap:76px;
-      align-items:end;
-    }
-    .home-clean .consult-copy p:last-child{
-      max-width:650px;
-      color:var(--sub);
-      font-size:17px;
-    }
-    .home-clean .consult-links{border-top:1px solid var(--text)}
-    .home-clean .consult-link{
-      display:grid;
-      grid-template-columns:110px 1fr 30px;
-      gap:20px;
-      align-items:center;
-      padding:26px 0;
-      border-bottom:1px solid var(--line);
-      transition:padding .24s ease,color .24s ease;
-    }
-    .home-clean .consult-link:hover{
-      padding-left:8px;
-      color:var(--wine);
-    }
-    .home-clean .consult-link small{
-      color:var(--sub2);
-      font-weight:900;
-      letter-spacing:.08em;
-    }
-    .home-clean .consult-link strong{font-size:22px}
-    .home-clean .consult-link i{
-      justify-self:end;
-      font-style:normal;
-      font-size:20px;
-      transition:transform .24s ease;
-    }
-    .home-clean .consult-link:hover i{transform:translateX(5px)}
+    /* CONSULT - strong action zone */
+    .home-v4 .consult{padding:96px 0 100px;background:var(--wine);color:#fff}
+    .home-v4 .consult-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(360px,1.1fr);gap:68px;align-items:end}
+    .home-v4 .consult .home-eyebrow{color:#efcbd6}
+    .home-v4 .consult .home-title{color:#fff}
+    .home-v4 .consult .home-desc{max-width:620px;color:#ecdde2}
+    .home-v4 .phone{display:block;margin-top:26px;color:#fff;font-size:clamp(32px,3.5vw,48px);font-weight:900;letter-spacing:-.04em}
+    .home-v4 .consult-actions{border-top:1px solid rgba(255,255,255,.42)}
+    .home-v4 .consult-action{display:grid;grid-template-columns:100px 1fr 24px;gap:18px;align-items:center;padding:24px 0;border-bottom:1px solid rgba(255,255,255,.2);color:#fff;transition:padding .2s ease}
+    .home-v4 .consult-action:hover{padding-left:8px}
+    .home-v4 .consult-action small{color:#e9bdca;font-weight:900}
+    .home-v4 .consult-action strong{font-size:23px}
+    .home-v4 .consult-action i{justify-self:end;font-style:normal}
 
-    /* FOOTER - home only */
-    .home-clean .home-footer{
-      position:relative;
-      overflow:hidden;
-      background:#080808;
-      color:#888;
-      border-top:1px solid rgba(255,255,255,.08);
-    }
-    .home-clean .home-footer::before{
-      content:"DONGGAM";
-      position:absolute;
-      right:-.03em;
-      bottom:-.13em;
-      color:rgba(255,255,255,.035);
-      font-size:clamp(110px,18vw,290px);
-      font-weight:950;
-      line-height:.8;
-      letter-spacing:-.08em;
-      pointer-events:none;
-      user-select:none;
-    }
-    .home-clean .home-footer-top{
-      position:relative;
-      z-index:1;
-      display:grid;
-      grid-template-columns:minmax(0,1.15fr) minmax(240px,.6fr) minmax(180px,.4fr);
-      gap:64px;
-      padding:72px 0 58px;
-    }
-    .home-clean .home-footer-brand strong{
-      display:block;
-      margin-bottom:16px;
-      color:#fff;
-      font-size:26px;
-      letter-spacing:-.04em;
-    }
-    .home-clean .home-footer-brand p{
-      max-width:560px;
-      margin:0;
-      color:#777;
-      font-size:14px;
-    }
-    .home-clean .home-footer-title{
-      margin-bottom:16px;
-      color:#aaa;
-      font-size:11px;
-      font-weight:900;
-      letter-spacing:.12em;
-    }
-    .home-clean .home-footer-contact,
-    .home-clean .home-footer-nav{
-      display:grid;
-      gap:9px;
-      font-size:13px;
-    }
-    .home-clean .home-footer-contact a,
-    .home-clean .home-footer-nav a{
-      color:#999;
-      transition:color .2s ease;
-    }
-    .home-clean .home-footer-contact a:hover,
-    .home-clean .home-footer-nav a:hover{color:#fff}
-    .home-clean .home-footer-bottom{
-      position:relative;
-      z-index:1;
-      border-top:1px solid rgba(255,255,255,.08);
-    }
-    .home-clean .home-footer-bottom-inner{
-      display:flex;
-      justify-content:space-between;
-      gap:24px;
-      padding:20px 0;
-      color:#555;
-      font-size:11px;
-    }
+    /* FOOTER */
+    .home-v4 .home-footer{background:#080808;color:#777}
+    .home-v4 .footer-main{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(240px,.62fr) minmax(170px,.36fr);gap:64px;padding:68px 0 52px}
+    .home-v4 .footer-brand strong{display:block;margin-bottom:14px;color:#fff;font-size:25px}
+    .home-v4 .footer-brand p{max-width:530px;margin:0;font-size:14px;line-height:1.7}
+    .home-v4 .footer-title{margin-bottom:14px;color:#aaa;font-size:11px;font-weight:900;letter-spacing:.12em}
+    .home-v4 .footer-contact,.home-v4 .footer-nav{display:grid;gap:9px;font-size:13px}
+    .home-v4 .footer-contact a,.home-v4 .footer-nav a{color:#999;transition:color .2s ease}
+    .home-v4 .footer-contact a:hover,.home-v4 .footer-nav a:hover{color:#fff}
+    .home-v4 .footer-bottom{border-top:1px solid rgba(255,255,255,.08)}
+    .home-v4 .footer-bottom-inner{display:flex;justify-content:space-between;gap:20px;padding:20px 0;color:#555;font-size:11px}
 
-    /* restrained motion */
-    .home-clean .reveal{
-      opacity:0;
-      transform:translateY(18px);
-      transition:opacity .62s ease,transform .62s cubic-bezier(.2,.72,.25,1);
-    }
-    .home-clean .reveal.visible{
-      opacity:1;
-      transform:none;
-    }
-    .home-clean .line-reveal{
-      position:relative;
-      overflow:hidden;
-    }
-    .home-clean .line-reveal::after{
-      content:"";
-      position:absolute;
-      right:0;
-      bottom:0;
-      left:0;
-      height:1px;
-      background:var(--wine);
-      transform:scaleX(0);
-      transform-origin:left;
-      transition:transform .78s ease;
-    }
-    .home-clean .line-reveal.visible::after{transform:scaleX(1)}
+    /* motion */
+    .home-v4 .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.72,.25,1)}
+    .home-v4 .reveal.is-visible{opacity:1;transform:none}
 
-    @media(max-width:980px){
-      .home-clean .home-hero-grid,
-      .home-clean .home-heading,
-      .home-clean .process-wrap,
-      .home-clean .case-layout,
-      .home-clean .consult-inner,
-      .home-clean .home-footer-top{
-        grid-template-columns:1fr;
-        gap:38px;
-      }
-      .home-clean .home-hero{min-height:auto}
-      .home-clean .home-hero-side{max-width:620px}
-      .home-clean .process-intro{position:static}
-      .home-clean .case-feature{min-height:380px}
+    @media(max-width:1020px){
+      .home-v4 .hero-grid,.home-v4 .section-head,.home-v4 .cases-layout,.home-v4 .trust-grid,.home-v4 .consult-grid,.home-v4 .footer-main{grid-template-columns:1fr;gap:38px}
+      .home-v4 .hero-image,.home-v4 .hero-image img{min-height:440px}
+      .home-v4 .cases-image,.home-v4 .cases-image img{min-height:430px}
     }
-    @media(max-width:720px){
-      .home-clean .home-hero-inner{padding:70px 0 62px}
-      .home-clean .home-hero h1{font-size:clamp(40px,12vw,58px)}
-      .home-clean .home-hero-side{padding-left:20px}
-      .home-clean .home-section,
-      .home-clean .consult-section{padding:76px 0}
-      .home-clean .service-line{
-        grid-template-columns:44px 1fr 24px;
-        gap:14px;
-        min-height:0;
-        padding:24px 0;
-      }
-      .home-clean .service-line p{
-        grid-column:2/4;
-        margin-top:-4px;
-      }
-      .home-clean .service-line .arrow{
-        grid-column:3;
-        grid-row:1;
-      }
-      .home-clean .process-step{
-        grid-template-columns:46px 1fr;
-        gap:12px;
-      }
-      .home-clean .process-step p{grid-column:2}
-      .home-clean .case-feature{min-height:320px}
-      .home-clean .case-row{
-        grid-template-columns:1fr 24px;
-        gap:10px;
-      }
-      .home-clean .case-row small{
-        grid-column:1/3;
-      }
-      .home-clean .consult-link{
-        grid-template-columns:80px 1fr 24px;
-      }
-      .home-clean .home-footer-top{padding:58px 0 42px}
-      .home-clean .home-footer-bottom-inner{
-        display:grid;
-        gap:6px;
-      }
+    @media(max-width:760px){
+      .home-v4 .hero{padding:34px 0 56px}
+      .home-v4 .hero-copy h1{font-size:clamp(40px,12vw,58px)}
+      .home-v4 .hero-image,.home-v4 .hero-image img{min-height:340px}
+      .home-v4 .services,.home-v4 .process,.home-v4 .cases,.home-v4 .trust{padding:74px 0}
+      .home-v4 .service-grid{grid-template-columns:1fr}
+      .home-v4 .service-block{min-height:240px;padding:28px 24px}
+      .home-v4 .service-block h3{margin-top:36px}
+      .home-v4 .timeline{grid-template-columns:1fr}
+      .home-v4 .timeline::before{top:24px;bottom:24px;left:25px;width:1px;height:auto}
+      .home-v4 .step{display:grid;grid-template-columns:52px 1fr;gap:16px;padding:0 0 28px;text-align:left}
+      .home-v4 .step-no{grid-row:1/3;margin:0}
+      .home-v4 .step h3{align-self:end}
+      .home-v4 .cases-image,.home-v4 .cases-image img{min-height:330px}
+      .home-v4 .case-link{grid-template-columns:1fr 24px;gap:8px}
+      .home-v4 .case-link small{grid-column:1/3}
+      .home-v4 .trust-points{grid-template-columns:1fr}
+      .home-v4 .consult{padding:74px 0 80px}
+      .home-v4 .consult-action{grid-template-columns:76px 1fr 24px}
+      .home-v4 .footer-main{padding:52px 0 38px}
+      .home-v4 .footer-bottom-inner{display:grid;gap:6px}
     }
     @media(prefers-reduced-motion:reduce){
-      .home-clean .reveal{
-        opacity:1;
-        transform:none;
-        transition:none;
-      }
-      .home-clean .line-reveal::after{display:none}
-      .home-clean .service-line,
-      .home-clean .service-line .arrow,
-      .home-clean .case-row,
-      .home-clean .consult-link,
-      .home-clean .consult-link i{transition:none}
+      .home-v4 .reveal{opacity:1;transform:none;transition:none}
+      .home-v4 .hero-image img,.home-v4 .service-block,.home-v4 .service-block i,.home-v4 .step-no,.home-v4 .case-link,.home-v4 .consult-action{transition:none}
     }
   </style>
 </head>
-<body class="home-clean">
+<body class="home-v4">
 <a class="skip" href="#main">본문 바로가기</a>
 
 <header class="site-header">
   <div class="container head">
-    <a class="brand" href="index.html">
-      <span class="mark">同</span>
-      <span><b>동감행정사사무소</b><small>DONGGAM ADMINISTRATIVE OFFICE</small></span>
-    </a>
+    <a class="brand" href="index.html"><span class="mark">同</span><span><b>동감행정사사무소</b><small>DONGGAM ADMINISTRATIVE OFFICE</small></span></a>
     <button class="menu" aria-label="메뉴"><span></span><span></span><span></span></button>
-    <nav class="nav">
-      <a href="pages/services.html">서비스</a>
-      <a href="pages/cases.html">업무사례</a>
-      <a href="pages/consult.html">상담</a>
-      <a href="pages/about.html">동감 소개</a>
-    </nav>
+    <nav class="nav"><a href="pages/services.html">서비스</a><a href="pages/cases.html">업무사례</a><a href="pages/consult.html">상담</a><a href="pages/about.html">동감 소개</a></nav>
     <a class="call-top" href="tel:03180490828">전화 상담</a>
   </div>
 </header>
 
 <main id="main">
-  <section class="home-hero">
-    <div class="home-hero-inner">
-      <div class="container home-hero-grid">
-        <div class="reveal">
-          <p class="eyebrow">DONGGAM ADMINISTRATIVE OFFICE</p>
-          <h1>행정 절차의 시작부터<br>결과까지 함께합니다.</h1>
-          <p class="lead">민간자격 등록, 법인·단체 설립, 화장품·의약외품 관련 업무, 행정심판 등 다양한 행정업무를 전문적으로 지원합니다.</p>
-          <div class="home-hero-actions">
-            <a class="btn primary" href="#services">주요 업무</a>
-            <a class="btn secondary" href="pages/consult.html">상담 안내</a>
-          </div>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <p class="home-eyebrow">DONGGAM ADMINISTRATIVE OFFICE</p>
+        <h1>행정업무의 시작부터<br>필요한 절차를 정확하게.</h1>
+        <p class="lead">민간자격 등록, 법인·단체 설립, 화장품·의약외품 관련 업무, 행정심판까지. 업무별 요건과 준비사항을 확인하고 필요한 절차를 안내받으실 수 있습니다.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#services">주요 업무 보기</a>
+          <a class="btn secondary" href="pages/consult.html">상담 안내</a>
         </div>
-
-        <aside class="home-hero-side reveal">
-          <small>PRACTICE AREAS</small>
-          <p>분야별 업무와 필요한 절차를 확인하고 상세 내용과 관련 사례까지 이어서 살펴보실 수 있습니다.</p>
-          <ul>
-            <li>화장품 · 의약품 · 의약외품 <span>01</span></li>
-            <li>법인 · 단체 설립 <span>02</span></li>
-            <li>민간자격 등록 <span>03</span></li>
-            <li>행정심판 <span>04</span></li>
-          </ul>
-        </aside>
+        <div class="hero-contact">
+          <span><b>031-8049-0828</b><br>전화 상담</span>
+          <span><b>김포시 장기동</b><br>동감행정사사무소</span>
+        </div>
       </div>
+
+      <figure class="hero-image reveal">
+        <img src="https://images.unsplash.com/photo-1775163024488-e88e4a71179f?auto=format&fit=crop&q=82&w=1800" alt="" loading="eager">
+        <figcaption class="hero-badge">
+          <strong>상담과 서류 검토부터<br>업무에 맞는 절차를 확인합니다.</strong>
+          <span>ADMINISTRATIVE PRACTICE</span>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
-  <section class="home-section" id="services">
+  <section class="services" id="services">
     <div class="container">
-      <div class="home-heading reveal">
-        <div>
-          <p class="eyebrow">PRACTICE AREAS</p>
-          <h2>주요 업무 분야</h2>
-        </div>
-        <p class="desc">업무별 대상과 절차, 준비사항을 확인하고 필요한 전문정보까지 이어서 살펴보실 수 있습니다.</p>
+      <div class="section-head reveal">
+        <div><p class="home-eyebrow">PRACTICE AREAS</p><h2 class="home-title">주요 업무 분야</h2></div>
+        <p class="home-desc">업무별 대상과 절차, 준비사항을 확인하고 필요한 전문정보까지 이어서 살펴보실 수 있습니다.</p>
       </div>
 
-      <div class="service-list line-reveal reveal">
-        <a class="service-line" href="pages/service-cosmetics.html">
-          <span class="idx">01</span>
-          <h3>화장품 · 의약품 · 의약외품</h3>
-          <p>화장품 제조업·책임판매업, 의약품·의약외품 제조·수입 관련 등록 및 신고</p>
-          <span class="arrow">→</span>
-        </a>
-        <a class="service-line" href="pages/service-organization.html">
-          <span class="idx">02</span>
-          <h3>법인 · 단체 설립</h3>
-          <p>비영리사단법인, 비영리재단법인, 비영리민간단체, 사회적기업 관련 설립·등록·인증</p>
-          <span class="arrow">→</span>
-        </a>
-        <a class="service-line" href="pages/service-license.html">
-          <span class="idx">03</span>
-          <h3>민간자격 등록</h3>
-          <p>민간자격 등록 대상, 운영기준, 신청 절차와 관련 업무사례</p>
-          <span class="arrow">→</span>
-        </a>
-        <a class="service-line" href="pages/service-appeal.html">
-          <span class="idx">04</span>
-          <h3>행정심판</h3>
-          <p>음주운전 면허구제, 영업정지 대응, 학교폭력 조치 등 행정처분 대응</p>
-          <span class="arrow">→</span>
-        </a>
+      <div class="service-grid reveal">
+        <a class="service-block" href="pages/service-cosmetics.html"><span class="no">01</span><h3>화장품 · 의약품 · 의약외품</h3><p>화장품 제조업·책임판매업, 의약품·의약외품 제조·수입 관련 등록 및 신고</p><i>→</i></a>
+        <a class="service-block" href="pages/service-organization.html"><span class="no">02</span><h3>법인 · 단체 설립</h3><p>비영리사단법인, 비영리재단법인, 비영리민간단체, 사회적기업 관련 설립·등록·인증</p><i>→</i></a>
+        <a class="service-block" href="pages/service-license.html"><span class="no">03</span><h3>민간자격 등록</h3><p>민간자격 등록 대상, 운영기준, 신청 절차와 관련 업무사례</p><i>→</i></a>
+        <a class="service-block" href="pages/service-appeal.html"><span class="no">04</span><h3>행정심판</h3><p>음주운전 면허구제, 영업정지 대응, 학교폭력 조치 등 행정처분 대응</p><i>→</i></a>
       </div>
     </div>
   </section>
 
-  <section class="home-section process-section">
-    <div class="container process-wrap">
-      <div class="process-intro reveal">
-        <p class="eyebrow">HOW WE WORK</p>
-        <h2>필요한 절차를<br>순서에 맞춰 진행합니다.</h2>
-        <p>업무마다 요건과 제출자료는 다르지만 상담부터 결과 안내까지 필요한 과정을 확인하며 진행합니다.</p>
-      </div>
-
-      <div class="process-list line-reveal reveal">
-        <div class="process-step">
-          <span>01</span><b>상담</b><p>현재 상황과 필요한 업무를 확인합니다.</p>
-        </div>
-        <div class="process-step">
-          <span>02</span><b>자료 검토</b><p>요건과 준비자료, 추가 확인사항을 검토합니다.</p>
-        </div>
-        <div class="process-step">
-          <span>03</span><b>업무 진행</b><p>확인된 절차에 따라 신청·등록·대응 업무를 진행합니다.</p>
-        </div>
-        <div class="process-step">
-          <span>04</span><b>결과 안내</b><p>처리 결과와 이후 필요한 사항을 안내합니다.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="home-section case-section">
+  <section class="process">
     <div class="container">
-      <div class="home-heading reveal">
-        <div>
-          <p class="eyebrow">CASE ARCHIVE</p>
-          <h2>업무사례</h2>
-        </div>
-        <p class="desc">등록정보, 허가·신고 결과와 관련 자료를 통해 분야별 업무사례를 확인하실 수 있습니다.</p>
-      </div>
-
-      <div class="case-layout">
-        <a class="case-feature reveal" href="pages/case-license-ski.html">
-          <small>민간자격 등록</small>
-          <h3>수상스키지도사<br>민간자격 등록</h3>
-          <p>해양경찰청 · 등록 완료</p>
-          <span class="case-go">사례 자세히 보기 →</span>
-        </a>
-
-        <div class="reveal">
-          <div class="case-list">
-            <a class="case-row" href="pages/cases.html#license">
-              <small>민간자격</small>
-              <strong>민간자격 등록사례</strong>
-              <i>→</i>
-            </a>
-            <a class="case-row" href="pages/cases.html#organization">
-              <small>법인·단체</small>
-              <strong>설립·허가 사례</strong>
-              <i>→</i>
-            </a>
-            <a class="case-row" href="pages/cases.html#cosmetics">
-              <small>화장품·의약외품</small>
-              <strong>등록·신고 사례</strong>
-              <i>→</i>
-            </a>
-          </div>
-          <a class="case-more" href="pages/cases.html">업무사례 전체 보기 →</a>
-        </div>
+      <div class="process-intro reveal"><p class="home-eyebrow">PROCESS</p><h2 class="home-title">업무 진행 절차</h2><p class="home-desc">업무 종류에 따라 세부 과정은 달라질 수 있으며, 상담 후 필요한 자료와 진행 절차를 순서대로 안내합니다.</p></div>
+      <div class="timeline reveal">
+        <div class="step"><div class="step-no">01</div><h3>상담</h3><p>현재 상황과 필요한 업무를 확인합니다.</p></div>
+        <div class="step"><div class="step-no">02</div><h3>자료 검토</h3><p>요건과 준비자료, 추가 확인사항을 검토합니다.</p></div>
+        <div class="step"><div class="step-no">03</div><h3>업무 진행</h3><p>확인된 절차에 따라 신청·등록·대응 업무를 진행합니다.</p></div>
+        <div class="step"><div class="step-no">04</div><h3>결과 안내</h3><p>처리 결과와 이후 필요한 사항을 안내합니다.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="consult-section">
-    <div class="container consult-inner">
-      <div class="consult-copy reveal">
-        <p class="eyebrow">CONSULTATION</p>
-        <h2>상담이 필요하신가요?</h2>
-        <p>현재 상황과 준비 정도에 따라 전화 상담 또는 맞춤 상담으로 문의하실 수 있습니다.</p>
+  <section class="cases">
+    <div class="container cases-layout">
+      <figure class="cases-image reveal">
+        <img src="https://images.unsplash.com/photo-1762427907123-c7ab022a5de7?auto=format&fit=crop&q=82&w=1600" alt="" loading="lazy">
+        <figcaption><small>CASE ARCHIVE</small><strong>분야별 업무사례와<br>결과를 확인해 보세요.</strong></figcaption>
+      </figure>
+      <div class="reveal">
+        <p class="home-eyebrow">WORK CASES</p>
+        <h2 class="home-title">업무사례</h2>
+        <p class="home-desc">등록정보, 허가·신고 결과와 관련 자료를 통해 분야별 업무사례를 확인하실 수 있습니다.</p>
+        <div class="case-list">
+          <a class="case-link" href="pages/case-license-ski.html"><small>민간자격</small><strong>수상스키지도사 민간자격 등록</strong><i>→</i></a>
+          <a class="case-link" href="pages/cases.html#organization"><small>법인·단체</small><strong>설립·허가 업무사례</strong><i>→</i></a>
+          <a class="case-link" href="pages/cases.html#cosmetics"><small>화장품·의약외품</small><strong>등록·신고 업무사례</strong><i>→</i></a>
+        </div>
+        <a class="all-cases" href="pages/cases.html">업무사례 전체 보기 →</a>
       </div>
+    </div>
+  </section>
 
-      <div class="consult-links line-reveal reveal">
-        <a class="consult-link" href="tel:03180490828">
-          <small>PHONE</small>
-          <strong>전화 상담</strong>
-          <i>→</i>
-        </a>
-        <a class="consult-link" href="pages/consult.html">
-          <small>GUIDED</small>
-          <strong>맞춤 상담</strong>
-          <i>→</i>
-        </a>
+  <section class="trust">
+    <div class="container trust-grid">
+      <div class="trust-copy reveal">
+        <p class="home-eyebrow">DONGGAM OFFICE</p>
+        <h2 class="home-title">업무에 필요한 정보를<br>명확하게 확인할 수 있도록.</h2>
+        <p class="home-desc">업무 분야별 요건과 절차를 정리하고, 필요한 경우 관련 사례와 상담으로 이어질 수 있도록 안내합니다.</p>
+        <a class="trust-link" href="pages/about.html">동감 소개 및 오시는 길 →</a>
+      </div>
+      <div class="trust-points reveal">
+        <div class="trust-point"><small>01</small><strong>업무별 전문정보</strong><p>각 서비스의 대상, 준비사항과 세부 절차를 분야별로 확인합니다.</p></div>
+        <div class="trust-point"><small>02</small><strong>분야별 업무사례</strong><p>관련 등록·허가·신고 사례를 통해 실제 업무 분야를 확인합니다.</p></div>
+        <div class="trust-point"><small>03</small><strong>전화 상담</strong><p>빠른 확인이 필요한 내용은 전화로 문의하실 수 있습니다.</p></div>
+        <div class="trust-point"><small>04</small><strong>맞춤 상담</strong><p>문의 분야와 현재 준비상태를 정리해 상담을 시작할 수 있습니다.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="consult">
+    <div class="container consult-grid">
+      <div class="reveal">
+        <p class="home-eyebrow">CONSULTATION</p>
+        <h2 class="home-title">상담이 필요하신가요?</h2>
+        <p class="home-desc">현재 상황과 준비 정도에 따라 전화 상담 또는 맞춤 상담으로 문의하실 수 있습니다.</p>
+        <a class="phone" href="tel:03180490828">031-8049-0828</a>
+      </div>
+      <div class="consult-actions reveal">
+        <a class="consult-action" href="tel:03180490828"><small>PHONE</small><strong>전화 상담</strong><i>→</i></a>
+        <a class="consult-action" href="pages/consult.html"><small>GUIDED</small><strong>맞춤 상담</strong><i>→</i></a>
       </div>
     </div>
   </section>
 </main>
 
 <footer class="home-footer">
-  <div class="container home-footer-top">
-    <div class="home-footer-brand">
-      <strong>동감행정사사무소</strong>
-      <p>민간자격 등록, 법인·단체 설립, 화장품·의약외품 관련 신고, 행정심판 등 다양한 행정업무를 상담합니다.</p>
-    </div>
-
-    <div>
-      <div class="home-footer-title">CONTACT</div>
-      <div class="home-footer-contact">
-        <span>경기도 김포시 태장로795번길 23, R동 4층 408호 (장기동, 김포마스터비즈파크)</span>
-        <a href="tel:03180490828">Tel. 031-8049-0828</a>
-        <span>Fax. 070-7500-2992</span>
-        <a href="mailto:creafit@naver.com">creafit@naver.com</a>
-      </div>
-    </div>
-
-    <div>
-      <div class="home-footer-title">MENU</div>
-      <div class="home-footer-nav">
-        <a href="pages/services.html">서비스</a>
-        <a href="pages/cases.html">업무사례</a>
-        <a href="pages/consult.html">상담</a>
-        <a href="pages/about.html">동감 소개</a>
-      </div>
-    </div>
+  <div class="container footer-main">
+    <div class="footer-brand"><strong>동감행정사사무소</strong><p>민간자격 등록, 법인·단체 설립, 화장품·의약외품 관련 신고, 행정심판 등 다양한 행정업무를 상담합니다.</p></div>
+    <div><div class="footer-title">CONTACT</div><div class="footer-contact"><span>경기도 김포시 태장로795번길 23, R동 4층 408호 (장기동, 김포마스터비즈파크)</span><a href="tel:03180490828">Tel. 031-8049-0828</a><span>Fax. 070-7500-2992</span><a href="mailto:creafit@naver.com">creafit@naver.com</a></div></div>
+    <div><div class="footer-title">MENU</div><div class="footer-nav"><a href="pages/services.html">서비스</a><a href="pages/cases.html">업무사례</a><a href="pages/consult.html">상담</a><a href="pages/about.html">동감 소개</a></div></div>
   </div>
-
-  <div class="home-footer-bottom">
-    <div class="container home-footer-bottom-inner">
-      <span>© DONGGAM ADMINISTRATIVE OFFICE. All rights reserved.</span>
-      <span>Administrative Practice · Consultation · Case Archive</span>
-    </div>
-  </div>
+  <div class="footer-bottom"><div class="container footer-bottom-inner"><span>© DONGGAM ADMINISTRATIVE OFFICE. All rights reserved.</span><span>Tel. 031-8049-0828 · creafit@naver.com</span></div></div>
 </footer>
 
-<div class="mobile-quick">
-  <a href="tel:03180490828">전화 상담</a>
-  <a href="pages/consult.html">맞춤 상담</a>
-</div>
+<div class="mobile-quick"><a href="tel:03180490828">전화 상담</a><a href="pages/consult.html">맞춤 상담</a></div>
 
 <script src="assets/app.js"></script>
 <script>
   (() => {
     const items = document.querySelectorAll('.reveal');
     if (!items.length) return;
-
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      items.forEach(el => el.classList.add('visible'));
+      items.forEach(el => el.classList.add('is-visible'));
       return;
     }
-
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
+        entry.target.classList.add('is-visible');
         observer.unobserve(entry.target);
       });
-    }, {
-      threshold: .12,
-      rootMargin: '0px 0px -36px 0px'
-    });
-
+    }, { threshold: .12, rootMargin: '0px 0px -36px 0px' });
     items.forEach(el => observer.observe(el));
   })();
 </script>
