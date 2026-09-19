@@ -3,233 +3,965 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="민간자격 등록, 법인·단체 설립, 화장품·의약품·의약외품 관련 등록·신고, 행정심판 등 주요 행정업무의 요건과 절차를 안내합니다.">
+  <meta name="description" content="민간자격 등록, 법인·단체 설립, 화장품·의약품·의약외품 관련 등록·신고, 행정심판 등 주요 행정업무를 안내합니다.">
   <title>동감행정사사무소</title>
   <link rel="stylesheet" href="assets/styles.css">
   <style>
-    .home-v4{overflow-x:hidden;background:#fff}
-    .home-v4 .home-eyebrow{margin:0 0 14px;color:var(--wine);font-size:12px;font-weight:900;letter-spacing:.12em}
-    .home-v4 .home-title{margin:0;font-size:clamp(34px,4vw,54px);line-height:1.18;letter-spacing:-.045em;word-break:keep-all}
-    .home-v4 .home-desc{margin:18px 0 0;color:var(--sub);font-size:17px;line-height:1.78;word-break:keep-all}
+    /* =========================================================
+       DONGGAM MAIN ONLY
+       메인페이지 전용 스타일 - 서브페이지 / 공통파일 미수정
+    ========================================================= */
+    .home-v5{
+      --hwine:var(--wine,#751631);
+      --hink:var(--text,#171717);
+      --hsub:var(--sub,#666);
+      --hline:var(--line,#e7e1e3);
+      --hsoft:#f7f2f3;
+      --hpaper:#fff;
+      overflow-x:hidden;
+      background:#fff;
+      color:var(--hink);
+    }
+    .home-v5 main{overflow:hidden}
+    .home-v5 img{max-width:100%}
+    .home-v5 .home-kicker{
+      display:block;
+      margin:0 0 12px;
+      color:var(--hwine);
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.14em;
+    }
+    .home-v5 .home-h2{
+      margin:0;
+      font-size:clamp(34px,3.7vw,52px);
+      line-height:1.18;
+      letter-spacing:-.045em;
+      word-break:keep-all;
+    }
+    .home-v5 .home-copy{
+      margin:18px 0 0;
+      color:var(--hsub);
+      font-size:17px;
+      line-height:1.75;
+      word-break:keep-all;
+    }
 
-    /* HERO - real image + clear actions */
-    .home-v4 .hero{padding:56px 0 72px;background:#fbf8f9}
-    .home-v4 .hero-grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(460px,1.08fr);gap:56px;align-items:center}
-    .home-v4 .hero-copy h1{max-width:760px;margin:0;font-size:clamp(44px,5vw,68px);line-height:1.16;letter-spacing:-.05em;word-break:keep-all}
-    .home-v4 .hero-copy .lead{max-width:690px;margin-top:26px;color:var(--sub);font-size:18px;line-height:1.78;word-break:keep-all}
-    .home-v4 .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}
-    .home-v4 .hero-contact{display:flex;gap:22px;flex-wrap:wrap;margin-top:36px;padding-top:20px;border-top:1px solid rgba(117,22,49,.15);font-size:13px;color:var(--sub)}
-    .home-v4 .hero-contact b{color:var(--text);font-size:15px}
-    .home-v4 .hero-image{position:relative;min-height:570px;overflow:hidden;border-radius:4px 4px 36px 4px;background:#ddd}
-    .home-v4 .hero-image img{display:block;width:100%;height:100%;min-height:570px;object-fit:cover;filter:saturate(.74) contrast(.97);transform:scale(1.01);transition:transform 8s ease}
-    .home-v4 .hero-image.is-visible img{transform:scale(1.045)}
-    .home-v4 .hero-image::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(28,12,18,.58) 100%)}
-    .home-v4 .hero-badge{position:absolute;right:26px;bottom:24px;left:26px;z-index:2;display:flex;justify-content:space-between;gap:24px;align-items:end;color:#fff}
-    .home-v4 .hero-badge strong{max-width:430px;font-size:19px;line-height:1.5;word-break:keep-all}
-    .home-v4 .hero-badge span{font-size:11px;font-weight:900;letter-spacing:.1em;opacity:.78}
+    /* HERO */
+    .home-v5 .hero{
+      position:relative;
+      min-height:720px;
+      background:#fbf8f9;
+    }
+    .home-v5 .hero .container{
+      position:relative;
+      z-index:2;
+      min-height:720px;
+      display:grid;
+      grid-template-columns:minmax(0,.84fr) minmax(0,.16fr);
+      align-items:center;
+    }
+    .home-v5 .hero-copy{
+      max-width:720px;
+      padding:82px 0 90px;
+    }
+    .home-v5 .hero-copy h1{
+      margin:0;
+      max-width:720px;
+      font-size:clamp(46px,5.1vw,68px);
+      line-height:1.14;
+      letter-spacing:-.055em;
+      word-break:keep-all;
+    }
+    .home-v5 .hero-copy .lead{
+      max-width:650px;
+      margin:24px 0 0;
+      color:var(--hsub);
+      font-size:18px;
+      line-height:1.72;
+      word-break:keep-all;
+    }
+    .home-v5 .hero-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:30px;
+    }
+    .home-v5 .hero-meta{
+      display:flex;
+      gap:34px;
+      flex-wrap:wrap;
+      margin-top:42px;
+      padding-top:20px;
+      border-top:1px solid rgba(117,22,49,.16);
+    }
+    .home-v5 .hero-meta span{
+      color:var(--hsub);
+      font-size:13px;
+      line-height:1.55;
+    }
+    .home-v5 .hero-meta b{
+      display:block;
+      margin-bottom:2px;
+      color:var(--hink);
+      font-size:16px;
+    }
+    .home-v5 .hero-media{
+      position:absolute;
+      top:0;
+      right:0;
+      width:49vw;
+      height:100%;
+      overflow:hidden;
+      background:#ddd;
+      clip-path:inset(0 0 0 12%);
+      transition:clip-path .9s cubic-bezier(.2,.72,.25,1);
+    }
+    .home-v5 .hero-media.is-visible{clip-path:inset(0 0 0 0)}
+    .home-v5 .hero-media img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      object-position:center;
+      filter:saturate(.76) contrast(.97);
+      transform:scale(1.07);
+      transition:transform 7s ease;
+    }
+    .home-v5 .hero-media.is-visible img{transform:scale(1.015)}
+    .home-v5 .hero-media::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(90deg,rgba(251,248,249,.9) 0%,rgba(251,248,249,.16) 21%,transparent 45%,rgba(24,10,15,.18) 100%);
+    }
+    .home-v5 .hero-caption{
+      position:absolute;
+      right:34px;
+      bottom:34px;
+      z-index:2;
+      max-width:320px;
+      padding:18px 20px;
+      background:rgba(255,255,255,.9);
+      backdrop-filter:blur(12px);
+      color:var(--hink);
+      font-size:14px;
+      line-height:1.6;
+      box-shadow:0 16px 50px rgba(0,0,0,.12);
+    }
+    .home-v5 .hero-caption b{
+      display:block;
+      margin-bottom:5px;
+      color:var(--hwine);
+      font-size:11px;
+      letter-spacing:.08em;
+    }
 
-    /* SERVICES - 2x2 field map */
-    .home-v4 .services{padding:108px 0}
-    .home-v4 .section-head{display:grid;grid-template-columns:minmax(0,.8fr) minmax(320px,.5fr);gap:58px;align-items:end;margin-bottom:46px}
-    .home-v4 .section-head .home-desc{margin:0}
-    .home-v4 .service-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--text);border-left:1px solid var(--line)}
-    .home-v4 .service-block{position:relative;min-height:286px;padding:34px 38px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;transition:background .24s ease,color .24s ease}
-    .home-v4 .service-block:hover{background:#faf6f7;color:var(--wine)}
-    .home-v4 .service-block .no{color:var(--sub2);font-size:11px;font-weight:900}
-    .home-v4 .service-block h3{margin:46px 0 14px;font-size:clamp(24px,2.4vw,32px);line-height:1.3;word-break:keep-all}
-    .home-v4 .service-block p{max-width:540px;margin:0;color:var(--sub);font-size:15px;line-height:1.75;word-break:keep-all}
-    .home-v4 .service-block i{position:absolute;right:34px;bottom:28px;font-style:normal;font-size:20px;transition:transform .2s ease}
-    .home-v4 .service-block:hover i{transform:translateX(5px)}
+    /* SERVICES */
+    .home-v5 .services{padding:108px 0 122px;background:#fff}
+    .home-v5 .services-head{
+      display:grid;
+      grid-template-columns:minmax(0,.9fr) minmax(320px,.48fr);
+      gap:60px;
+      align-items:end;
+      margin-bottom:46px;
+    }
+    .home-v5 .services-head .home-copy{margin:0}
+    .home-v5 .service-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+    .home-v5 .service-card{
+      position:relative;
+      min-height:430px;
+      overflow:hidden;
+      background:#131313;
+      color:#fff;
+      isolation:isolate;
+    }
+    .home-v5 .service-card img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:saturate(.62) contrast(1.02) brightness(.7);
+      transform:scale(1.02);
+      transition:transform .65s ease,filter .4s ease;
+      z-index:-2;
+    }
+    .home-v5 .service-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,rgba(10,10,10,.08) 10%,rgba(10,10,10,.24) 45%,rgba(10,10,10,.9) 100%);
+      z-index:-1;
+    }
+    .home-v5 .service-card:hover img{
+      transform:scale(1.055);
+      filter:saturate(.78) contrast(1.02) brightness(.75);
+    }
+    .home-v5 .service-inner{
+      position:absolute;
+      inset:auto 0 0;
+      padding:30px 32px 32px;
+    }
+    .home-v5 .service-top{
+      position:absolute;
+      top:26px;
+      right:28px;
+      left:28px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      color:rgba(255,255,255,.78);
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.08em;
+    }
+    .home-v5 .service-top em{
+      width:34px;
+      height:34px;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(255,255,255,.5);
+      border-radius:50%;
+      font-style:normal;
+      font-size:16px;
+      transition:transform .25s ease,background .25s ease,color .25s ease;
+    }
+    .home-v5 .service-card:hover .service-top em{
+      transform:translateX(4px);
+      background:#fff;
+      color:#111;
+    }
+    .home-v5 .service-card h3{
+      margin:0;
+      max-width:620px;
+      font-size:clamp(27px,2.5vw,36px);
+      line-height:1.25;
+      letter-spacing:-.04em;
+      word-break:keep-all;
+    }
+    .home-v5 .service-card p{
+      max-width:620px;
+      margin:12px 0 0;
+      color:rgba(255,255,255,.82);
+      font-size:15px;
+      line-height:1.65;
+      word-break:keep-all;
+    }
+    .home-v5 .service-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:7px;
+      margin-top:16px;
+    }
+    .home-v5 .service-tags span{
+      padding:6px 9px;
+      border:1px solid rgba(255,255,255,.22);
+      background:rgba(0,0,0,.12);
+      font-size:11px;
+      color:rgba(255,255,255,.82);
+    }
 
-    /* CASES - image-led archive + list */
-    .home-v4 .cases{padding:118px 0 112px;background:linear-gradient(180deg,#faf7f8 0%,#fff 28%)}
-    .home-v4 .cases-layout{display:grid;grid-template-columns:minmax(380px,.9fr) minmax(0,1.1fr);gap:58px;align-items:center}
-    .home-v4 .cases-image{position:relative;min-height:560px;overflow:hidden;background:#eee}
-    .home-v4 .cases-image img{display:block;width:100%;height:100%;min-height:560px;object-fit:cover;filter:saturate(.56) contrast(.97)}
-    .home-v4 .cases-image::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(49,7,17,.02),rgba(49,7,17,.58))}
-    .home-v4 .cases-image figcaption{position:absolute;right:26px;bottom:26px;left:26px;z-index:2;color:#fff}
-    .home-v4 .cases-image small{display:block;margin-bottom:9px;font-weight:900;letter-spacing:.09em;opacity:.8}
-    .home-v4 .cases-image strong{font-size:30px;line-height:1.35}
-    .home-v4 .case-list{margin-top:32px;border-top:1px solid var(--text)}
-    .home-v4 .case-link{display:grid;grid-template-columns:120px 1fr 24px;gap:18px;align-items:center;padding:22px 0;border-bottom:1px solid var(--line);transition:padding .2s ease,color .2s ease}
-    .home-v4 .case-link:hover{padding-left:8px;color:var(--wine)}
-    .home-v4 .case-link small{color:var(--sub2);font-weight:900}
-    .home-v4 .case-link strong{font-size:18px}
-    .home-v4 .case-link i{justify-self:end;font-style:normal}
-    .home-v4 .all-cases{display:inline-block;margin-top:26px;color:var(--wine);font-weight:850}
+    /* VISUAL BREAK */
+    .home-v5 .visual-break{
+      position:relative;
+      min-height:520px;
+      overflow:hidden;
+      background:#111;
+      color:#fff;
+    }
+    .home-v5 .visual-break img{
+      position:absolute;
+      inset:-6% 0;
+      width:100%;
+      height:112%;
+      object-fit:cover;
+      filter:saturate(.55) contrast(1.04) brightness(.62);
+      transform:scale(1.07);
+      transition:transform 1.2s cubic-bezier(.2,.72,.25,1);
+    }
+    .home-v5 .visual-break.is-visible img{transform:scale(1.015)}
+    .home-v5 .visual-break::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(90deg,rgba(20,8,13,.76) 0%,rgba(20,8,13,.42) 48%,rgba(20,8,13,.18) 100%);
+    }
+    .home-v5 .visual-break .container{
+      position:relative;
+      z-index:2;
+      min-height:520px;
+      display:flex;
+      align-items:flex-end;
+      padding-bottom:58px;
+    }
+    .home-v5 .visual-copy{
+      max-width:760px;
+    }
+    .home-v5 .visual-copy .home-kicker{color:#f0c7d2}
+    .home-v5 .visual-copy h2{
+      margin:0;
+      max-width:760px;
+      font-size:clamp(36px,4vw,56px);
+      line-height:1.18;
+      letter-spacing:-.045em;
+      word-break:keep-all;
+    }
+    .home-v5 .visual-copy p{
+      max-width:650px;
+      margin:18px 0 0;
+      color:rgba(255,255,255,.8);
+      font-size:17px;
+      line-height:1.7;
+      word-break:keep-all;
+    }
 
-    /* OFFICE/TRUST - practical, not oversized copy */
-    .home-v4 .trust{padding:102px 0;background:#f8f4f5}
-    .home-v4 .trust-grid{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:70px;align-items:start}
-    .home-v4 .trust-copy{max-width:500px}
-    .home-v4 .trust-points{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(117,22,49,.25);border-left:1px solid rgba(117,22,49,.14)}
-    .home-v4 .trust-point{min-height:180px;padding:26px;border-right:1px solid rgba(117,22,49,.14);border-bottom:1px solid rgba(117,22,49,.14)}
-    .home-v4 .trust-point small{color:var(--wine);font-size:11px;font-weight:900;letter-spacing:.08em}
-    .home-v4 .trust-point strong{display:block;margin-top:34px;font-size:19px}
-    .home-v4 .trust-point p{margin:8px 0 0;color:var(--sub);font-size:14px;line-height:1.72;word-break:keep-all}
-    .home-v4 .trust-link{display:inline-block;margin-top:26px;color:var(--wine);font-weight:850}
+    /* CASES */
+    .home-v5 .cases{
+      position:relative;
+      padding:120px 0;
+      background:#f7f2f3;
+    }
+    .home-v5 .cases-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:40px;
+      margin-bottom:48px;
+    }
+    .home-v5 .cases-head .home-copy{
+      max-width:560px;
+      margin:0;
+    }
+    .home-v5 .case-stage{
+      display:grid;
+      grid-template-columns:minmax(0,1.08fr) minmax(390px,.92fr);
+      gap:28px;
+      align-items:stretch;
+    }
+    .home-v5 .case-visual{
+      position:relative;
+      min-height:580px;
+      overflow:hidden;
+      background:#22151a;
+    }
+    .home-v5 .case-visual > img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:saturate(.48) contrast(1.04) brightness(.58);
+      transform:scale(1.04);
+      transition:transform .8s ease;
+    }
+    .home-v5 .case-visual:hover > img{transform:scale(1.075)}
+    .home-v5 .case-visual::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg,rgba(43,10,19,.28),rgba(43,10,19,.78));
+    }
+    .home-v5 .case-sheet{
+      position:absolute;
+      z-index:2;
+      right:7%;
+      bottom:8%;
+      width:min(76%,520px);
+      min-height:390px;
+      padding:34px 34px 30px;
+      background:#fff;
+      color:#151515;
+      box-shadow:0 28px 80px rgba(0,0,0,.26);
+      transform:rotate(-1.2deg);
+      transition:transform .45s ease;
+    }
+    .home-v5 .case-visual:hover .case-sheet{transform:rotate(0deg) translateY(-6px)}
+    .home-v5 .case-sheet::before{
+      content:"";
+      position:absolute;
+      top:-18px;
+      left:24px;
+      width:58%;
+      height:16px;
+      background:rgba(255,255,255,.55);
+      filter:blur(.2px);
+    }
+    .home-v5 .case-sheet small{
+      color:var(--hwine);
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.13em;
+    }
+    .home-v5 .case-sheet h3{
+      margin:14px 0 26px;
+      font-size:30px;
+      letter-spacing:-.045em;
+    }
+    .home-v5 .case-data{
+      border-top:1px solid #ded7d9;
+    }
+    .home-v5 .case-data div{
+      display:grid;
+      grid-template-columns:92px 1fr;
+      gap:18px;
+      padding:12px 0;
+      border-bottom:1px solid #ebe5e7;
+      font-size:14px;
+    }
+    .home-v5 .case-data b{font-size:12px}
+    .home-v5 .case-sheet .case-go{
+      display:inline-block;
+      margin-top:22px;
+      color:var(--hwine);
+      font-weight:850;
+      font-size:14px;
+    }
+    .home-v5 .case-more{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      padding:42px 38px;
+      background:#fff;
+      border:1px solid #e5dddf;
+    }
+    .home-v5 .case-more h3{
+      margin:0 0 10px;
+      font-size:26px;
+      letter-spacing:-.04em;
+    }
+    .home-v5 .case-more > p{
+      margin:0;
+      color:var(--hsub);
+      font-size:15px;
+      line-height:1.7;
+    }
+    .home-v5 .case-links{
+      margin-top:32px;
+      border-top:1px solid var(--hink);
+    }
+    .home-v5 .case-links a{
+      display:grid;
+      grid-template-columns:110px 1fr 20px;
+      gap:14px;
+      align-items:center;
+      min-height:76px;
+      border-bottom:1px solid var(--hline);
+      transition:padding .22s ease,color .22s ease;
+    }
+    .home-v5 .case-links a:hover{
+      padding-left:8px;
+      color:var(--hwine);
+    }
+    .home-v5 .case-links small{
+      color:#888;
+      font-weight:800;
+    }
+    .home-v5 .case-links i{
+      justify-self:end;
+      font-style:normal;
+    }
+    .home-v5 .case-all{
+      display:inline-flex;
+      margin-top:26px;
+      color:var(--hwine);
+      font-size:14px;
+      font-weight:850;
+    }
 
-    /* CONSULT - strong action zone */
-    .home-v4 .consult{padding:96px 0 100px;background:var(--wine);color:#fff}
-    .home-v4 .consult-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(360px,1.1fr);gap:68px;align-items:end}
-    .home-v4 .consult .home-eyebrow{color:#efcbd6}
-    .home-v4 .consult .home-title{color:#fff}
-    .home-v4 .consult .home-desc{max-width:620px;color:#ecdde2}
-    .home-v4 .phone{display:block;margin-top:26px;color:#fff;font-size:clamp(32px,3.5vw,48px);font-weight:900;letter-spacing:-.04em}
-    .home-v4 .consult-actions{border-top:1px solid rgba(255,255,255,.42)}
-    .home-v4 .consult-action{display:grid;grid-template-columns:100px 1fr 24px;gap:18px;align-items:center;padding:24px 0;border-bottom:1px solid rgba(255,255,255,.2);color:#fff;transition:padding .2s ease}
-    .home-v4 .consult-action:hover{padding-left:8px}
-    .home-v4 .consult-action small{color:#e9bdca;font-weight:900}
-    .home-v4 .consult-action strong{font-size:23px}
-    .home-v4 .consult-action i{justify-self:end;font-style:normal}
+    /* ABOUT / TRUST */
+    .home-v5 .about{
+      position:relative;
+      min-height:610px;
+      background:#fff;
+    }
+    .home-v5 .about-photo{
+      position:absolute;
+      top:0;
+      bottom:0;
+      left:0;
+      width:46vw;
+      overflow:hidden;
+      background:#ddd;
+    }
+    .home-v5 .about-photo img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      filter:saturate(.66) contrast(.98);
+      transform:scale(1.02);
+      transition:transform 7s ease;
+    }
+    .home-v5 .about-photo.is-visible img{transform:scale(1.055)}
+    .home-v5 .about .container{
+      min-height:610px;
+      display:grid;
+      grid-template-columns:50% 50%;
+      align-items:center;
+    }
+    .home-v5 .about-copy{
+      grid-column:2;
+      padding:86px 0 86px 74px;
+    }
+    .home-v5 .about-copy p.home-copy{max-width:590px}
+    .home-v5 .office-facts{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:0;
+      margin-top:34px;
+      border-top:1px solid var(--hline);
+    }
+    .home-v5 .office-fact{
+      padding:16px 18px 16px 0;
+      border-bottom:1px solid var(--hline);
+    }
+    .home-v5 .office-fact:nth-child(odd){border-right:1px solid var(--hline);padding-right:22px}
+    .home-v5 .office-fact:nth-child(even){padding-left:22px}
+    .home-v5 .office-fact small{
+      display:block;
+      margin-bottom:4px;
+      color:#888;
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.08em;
+    }
+    .home-v5 .office-fact strong{
+      font-size:14px;
+      line-height:1.55;
+      word-break:keep-all;
+    }
+    .home-v5 .about-link{
+      display:inline-flex;
+      margin-top:28px;
+      color:var(--hwine);
+      font-weight:850;
+    }
+
+    /* CONSULT */
+    .home-v5 .consult{
+      position:relative;
+      padding:94px 0 100px;
+      overflow:hidden;
+      background:var(--hwine);
+      color:#fff;
+    }
+    .home-v5 .consult::before{
+      content:"";
+      position:absolute;
+      right:-150px;
+      top:-180px;
+      width:460px;
+      height:460px;
+      border:1px solid rgba(255,255,255,.13);
+      border-radius:50%;
+    }
+    .home-v5 .consult-inner{
+      position:relative;
+      z-index:2;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:54px;
+      align-items:end;
+    }
+    .home-v5 .consult .home-kicker{color:#efc7d2}
+    .home-v5 .consult h2{
+      margin:0;
+      max-width:760px;
+      color:#fff;
+      font-size:clamp(36px,4vw,56px);
+      line-height:1.16;
+      letter-spacing:-.045em;
+      word-break:keep-all;
+    }
+    .home-v5 .consult p{
+      max-width:650px;
+      margin:16px 0 0;
+      color:#eddde2;
+      font-size:17px;
+      line-height:1.7;
+    }
+    .home-v5 .consult-phone{
+      display:block;
+      margin-top:26px;
+      color:#fff;
+      font-size:clamp(30px,3.4vw,46px);
+      font-weight:900;
+      letter-spacing:-.04em;
+    }
+    .home-v5 .consult-actions{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      min-width:340px;
+    }
+    .home-v5 .consult-actions a{
+      min-height:54px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:0 22px;
+      border:1px solid rgba(255,255,255,.55);
+      color:#fff;
+      font-weight:850;
+      transition:background .2s ease,color .2s ease;
+    }
+    .home-v5 .consult-actions a:first-child{
+      background:#fff;
+      color:var(--hwine);
+      border-color:#fff;
+    }
+    .home-v5 .consult-actions a:hover{
+      background:#fff;
+      color:var(--hwine);
+    }
 
     /* FOOTER */
-    .home-v4 .home-footer{background:#080808;color:#777}
-    .home-v4 .footer-main{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(240px,.62fr) minmax(170px,.36fr);gap:64px;padding:68px 0 52px}
-    .home-v4 .footer-brand strong{display:block;margin-bottom:14px;color:#fff;font-size:25px}
-    .home-v4 .footer-brand p{max-width:530px;margin:0;font-size:14px;line-height:1.7}
-    .home-v4 .footer-title{margin-bottom:14px;color:#aaa;font-size:11px;font-weight:900;letter-spacing:.12em}
-    .home-v4 .footer-contact,.home-v4 .footer-nav{display:grid;gap:9px;font-size:13px}
-    .home-v4 .footer-contact a,.home-v4 .footer-nav a{color:#999;transition:color .2s ease}
-    .home-v4 .footer-contact a:hover,.home-v4 .footer-nav a:hover{color:#fff}
-    .home-v4 .footer-bottom{border-top:1px solid rgba(255,255,255,.08)}
-    .home-v4 .footer-bottom-inner{display:flex;justify-content:space-between;gap:20px;padding:20px 0;color:#555;font-size:11px}
-
-    /* motion */
-    .home-v4 .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.72,.25,1)}
-    .home-v4 .reveal.is-visible{opacity:1;transform:none}
-
-    @media(max-width:1020px){
-      .home-v4 .hero-grid,.home-v4 .section-head,.home-v4 .cases-layout,.home-v4 .trust-grid,.home-v4 .consult-grid,.home-v4 .footer-main{grid-template-columns:1fr;gap:38px}
-      .home-v4 .hero-image,.home-v4 .hero-image img{min-height:440px}
-      .home-v4 .cases-image,.home-v4 .cases-image img{min-height:430px}
+    .home-v5 .home-footer{background:#090909;color:#777}
+    .home-v5 .footer-main{
+      display:grid;
+      grid-template-columns:minmax(0,1.1fr) minmax(260px,.7fr) minmax(180px,.35fr);
+      gap:62px;
+      padding:66px 0 50px;
     }
+    .home-v5 .footer-brand strong{
+      display:block;
+      margin-bottom:12px;
+      color:#fff;
+      font-size:24px;
+    }
+    .home-v5 .footer-brand p{
+      max-width:520px;
+      margin:0;
+      font-size:14px;
+      line-height:1.7;
+    }
+    .home-v5 .footer-title{
+      margin-bottom:14px;
+      color:#aaa;
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.14em;
+    }
+    .home-v5 .footer-contact,.home-v5 .footer-nav{
+      display:grid;
+      gap:8px;
+      font-size:13px;
+      line-height:1.6;
+    }
+    .home-v5 .footer-contact a,.home-v5 .footer-nav a{color:#999}
+    .home-v5 .footer-contact a:hover,.home-v5 .footer-nav a:hover{color:#fff}
+    .home-v5 .footer-bottom{border-top:1px solid rgba(255,255,255,.08)}
+    .home-v5 .footer-bottom-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      padding:19px 0;
+      color:#555;
+      font-size:11px;
+    }
+
+    /* MOTION */
+    .home-v5 .reveal{
+      opacity:0;
+      transform:translateY(18px);
+      transition:opacity .62s ease,transform .62s cubic-bezier(.2,.72,.25,1);
+    }
+    .home-v5 .reveal.is-visible{
+      opacity:1;
+      transform:none;
+    }
+
+    @media(max-width:1100px){
+      .home-v5 .hero{min-height:auto;padding-bottom:0}
+      .home-v5 .hero .container{min-height:auto;grid-template-columns:1fr}
+      .home-v5 .hero-copy{max-width:760px;padding:64px 0 54px}
+      .home-v5 .hero-media{
+        position:relative;
+        width:100%;
+        height:500px;
+        clip-path:none;
+      }
+      .home-v5 .hero-media::after{background:linear-gradient(180deg,rgba(251,248,249,.1),rgba(24,10,15,.25))}
+      .home-v5 .services-head,.home-v5 .case-stage,.home-v5 .consult-inner,.home-v5 .footer-main{
+        grid-template-columns:1fr;
+      }
+      .home-v5 .services-head{gap:20px}
+      .home-v5 .cases-head{display:block}
+      .home-v5 .cases-head .home-copy{margin-top:16px}
+      .home-v5 .consult-actions{min-width:0;max-width:430px}
+      .home-v5 .about-photo{position:relative;width:100%;height:430px}
+      .home-v5 .about .container{min-height:auto;grid-template-columns:1fr}
+      .home-v5 .about-copy{grid-column:1;padding:70px 0}
+    }
+
     @media(max-width:760px){
-      .home-v4 .hero{padding:34px 0 56px}
-      .home-v4 .hero-copy h1{font-size:clamp(38px,10.5vw,50px)}
-      .home-v4 .hero-image,.home-v4 .hero-image img{min-height:340px}
-      .home-v4 .services,.home-v4 .cases,.home-v4 .trust{padding:74px 0}
-      .home-v4 .service-grid{grid-template-columns:1fr}
-      .home-v4 .service-block{min-height:240px;padding:28px 24px}
-      .home-v4 .service-block h3{margin-top:36px}
-      .home-v4 .cases-image,.home-v4 .cases-image img{min-height:330px}
-      .home-v4 .case-link{grid-template-columns:1fr 24px;gap:8px}
-      .home-v4 .case-link small{grid-column:1/3}
-      .home-v4 .trust-points{grid-template-columns:1fr}
-      .home-v4 .consult{padding:74px 0 80px}
-      .home-v4 .consult-action{grid-template-columns:76px 1fr 24px}
-      .home-v4 .footer-main{padding:52px 0 38px}
-      .home-v4 .footer-bottom-inner{display:grid;gap:6px}
+      .home-v5 .home-h2{font-size:34px}
+      .home-v5 .hero-copy{padding:44px 0 40px}
+      .home-v5 .hero-copy h1{font-size:clamp(38px,10.5vw,50px)}
+      .home-v5 .hero-copy .lead{font-size:17px}
+      .home-v5 .hero-meta{gap:18px;margin-top:30px}
+      .home-v5 .hero-media{height:360px}
+      .home-v5 .hero-caption{right:18px;bottom:18px;left:18px;max-width:none}
+      .home-v5 .services{padding:76px 0 84px}
+      .home-v5 .service-grid{grid-template-columns:1fr;gap:12px}
+      .home-v5 .service-card{min-height:360px}
+      .home-v5 .service-inner{padding:26px 24px}
+      .home-v5 .service-top{top:22px;right:22px;left:22px}
+      .home-v5 .visual-break,.home-v5 .visual-break .container{min-height:430px}
+      .home-v5 .visual-break .container{padding-bottom:38px}
+      .home-v5 .visual-copy h2{font-size:36px}
+      .home-v5 .cases{padding:80px 0}
+      .home-v5 .case-stage{gap:14px}
+      .home-v5 .case-visual{min-height:500px}
+      .home-v5 .case-sheet{
+        right:18px;
+        bottom:18px;
+        left:18px;
+        width:auto;
+        min-height:0;
+        padding:26px 22px 24px;
+      }
+      .home-v5 .case-sheet h3{font-size:25px}
+      .home-v5 .case-more{padding:30px 22px}
+      .home-v5 .case-links a{grid-template-columns:1fr 20px;gap:6px}
+      .home-v5 .case-links small{grid-column:1/3}
+      .home-v5 .about-photo{height:340px}
+      .home-v5 .about-copy{padding:62px 0}
+      .home-v5 .office-facts{grid-template-columns:1fr}
+      .home-v5 .office-fact,
+      .home-v5 .office-fact:nth-child(odd),
+      .home-v5 .office-fact:nth-child(even){
+        padding:14px 0;
+        border-right:0;
+      }
+      .home-v5 .consult{padding:72px 0 78px}
+      .home-v5 .consult h2{font-size:36px}
+      .home-v5 .consult-actions{grid-template-columns:1fr}
+      .home-v5 .footer-main{padding:52px 0 38px}
+      .home-v5 .footer-bottom-inner{display:grid;gap:6px}
     }
+
     @media(prefers-reduced-motion:reduce){
-      .home-v4 .reveal{opacity:1;transform:none;transition:none}
-      .home-v4 .hero-image img,.home-v4 .service-block,.home-v4 .service-block i,.home-v4 .case-link,.home-v4 .consult-action{transition:none}
+      .home-v5 *, .home-v5 *::before, .home-v5 *::after{
+        scroll-behavior:auto!important;
+        animation:none!important;
+        transition:none!important;
+      }
+      .home-v5 .reveal{opacity:1;transform:none}
+      .home-v5 .hero-media{clip-path:none}
     }
   </style>
 </head>
-<body class="home-v4">
+<body class="home-v5">
 <a class="skip" href="#main">본문 바로가기</a>
 
 <header class="site-header">
   <div class="container head">
-    <a class="brand" href="index.html"><span class="mark">同</span><span><b>동감행정사사무소</b><small>DONGGAM ADMINISTRATIVE OFFICE</small></span></a>
+    <a class="brand" href="index.html">
+      <span class="mark">同</span>
+      <span><b>동감행정사사무소</b><small>DONGGAM ADMINISTRATIVE OFFICE</small></span>
+    </a>
     <button class="menu" aria-label="메뉴"><span></span><span></span><span></span></button>
-    <nav class="nav"><a href="pages/services.html">서비스</a><a href="pages/cases.html">업무사례</a><a href="pages/consult.html">상담</a><a href="pages/about.html">동감 소개</a></nav>
+    <nav class="nav">
+      <a href="pages/services.html">서비스</a>
+      <a href="pages/cases.html">업무사례</a>
+      <a href="pages/consult.html">상담</a>
+      <a href="pages/about.html">동감 소개</a>
+    </nav>
     <a class="call-top" href="tel:03180490828">전화 상담</a>
   </div>
 </header>
 
 <main id="main">
   <section class="hero">
-    <div class="container hero-grid">
+    <div class="container">
       <div class="hero-copy reveal">
-        <p class="home-eyebrow">DONGGAM ADMINISTRATIVE OFFICE</p>
+        <span class="home-kicker">DONGGAM ADMINISTRATIVE OFFICE</span>
         <h1>복잡한 행정업무,<br>정확한 검토에서 시작합니다.</h1>
-        <p class="lead">민간자격 등록, 비영리법인·단체 설립, 화장품 제조업·책임판매업, 의약품·의약외품 제조·수입 관련 업무와 행정심판까지 주요 행정업무를 분야별로 안내합니다. 신청 전 확인해야 할 요건과 준비자료, 진행 절차를 살펴보고 필요한 경우 상담을 통해 구체적인 사항을 확인하실 수 있습니다.</p>
+        <p class="lead">민간자격 등록, 법인·단체 설립, 화장품·의약품·의약외품 관련 등록·신고와 행정심판 등 주요 행정업무를 분야별로 안내합니다.</p>
+
         <div class="hero-actions">
           <a class="btn primary" href="#services">주요 업무 보기</a>
           <a class="btn secondary" href="pages/consult.html">상담 안내</a>
         </div>
-        <div class="hero-contact">
-          <span><b>031-8049-0828</b><br>전화 상담</span>
-          <span><b>김포시 장기동</b><br>동감행정사사무소</span>
+
+        <div class="hero-meta">
+          <span><b>031-8049-0828</b>전화 상담</span>
+          <span><b>김포시 장기동</b>동감행정사사무소</span>
         </div>
       </div>
-
-      <figure class="hero-image reveal">
-        <img src="https://images.unsplash.com/photo-1775163024488-e88e4a71179f?auto=format&fit=crop&q=82&w=1800" alt="" loading="eager">
-        <figcaption class="hero-badge">
-          <strong>업무의 성격과 준비 단계에 따라<br>확인해야 할 요건과 제출자료가 달라질 수 있습니다.</strong>
-          <span>ADMINISTRATIVE PRACTICE</span>
-        </figcaption>
-      </figure>
     </div>
+
+    <figure class="hero-media reveal">
+      <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=84&w=1800" alt="" loading="eager">
+      <figcaption class="hero-caption">
+        <b>ADMINISTRATIVE PRACTICE</b>
+        업무의 종류와 현재 준비 상태에 따라 확인해야 할 요건과 준비자료가 달라질 수 있습니다.
+      </figcaption>
+    </figure>
   </section>
 
   <section class="services" id="services">
     <div class="container">
-      <div class="section-head reveal">
-        <div><p class="home-eyebrow">PRACTICE AREAS</p><h2 class="home-title">전문 행정업무 안내</h2></div>
-        <p class="home-desc">현재 준비 중인 업무와 가까운 분야를 선택하시면 등록·신고 대상, 준비자료, 세부 절차와 관련 사례를 단계별로 확인하실 수 있습니다.</p>
+      <div class="services-head reveal">
+        <div>
+          <span class="home-kicker">PRACTICE AREAS</span>
+          <h2 class="home-h2">주요 업무 분야</h2>
+        </div>
+        <p class="home-copy">현재 준비 중인 업무와 가까운 분야를 선택하시면 상세한 대상 요건과 준비사항, 관련 절차를 확인하실 수 있습니다.</p>
       </div>
 
-      <div class="service-grid reveal">
-        <a class="service-block" href="pages/service-cosmetics.html"><span class="no">01</span><h3>화장품 · 의약품 · 의약외품</h3><p>제품의 제조·유통·수입을 준비하고 있다면 사업 형태에 따라 필요한 등록과 신고가 달라집니다. 화장품 제조업·책임판매업과 의약품·의약외품 제조·수입 관련 업무를 확인하실 수 있습니다.</p><i>→</i></a>
-        <a class="service-block" href="pages/service-organization.html"><span class="no">02</span><h3>법인 · 단체 설립</h3><p>협회나 공익 목적의 단체를 준비하는 경우 운영 목적, 구성 방식과 재산 여부에 따라 적합한 형태와 절차가 달라질 수 있습니다. 비영리사단·재단법인, 비영리민간단체와 사회적기업 관련 업무를 안내합니다.</p><i>→</i></a>
-        <a class="service-block" href="pages/service-license.html"><span class="no">03</span><h3>민간자격 등록</h3><p>새로운 민간자격을 운영·발급하려는 경우 자격명칭과 직무내용, 검정기준, 관리·운영규정 등을 사전에 검토해야 합니다. 등록 대상과 준비사항, 신청 절차를 확인하실 수 있습니다.</p><i>→</i></a>
-        <a class="service-block" href="pages/service-appeal.html"><span class="no">04</span><h3>행정심판</h3><p>행정처분에 대한 대응이 필요한 경우 처분 내용과 사실관계, 청구기한 등을 먼저 확인해야 합니다. 음주운전 면허구제, 영업정지, 학교폭력 관련 행정심판 업무를 안내합니다.</p><i>→</i></a>
+      <div class="service-grid">
+        <a class="service-card reveal" href="pages/service-cosmetics.html">
+          <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=82&w=1400" alt="" loading="lazy">
+          <div class="service-top"><span>01 · REGISTRATION / REPORT</span><em>→</em></div>
+          <div class="service-inner">
+            <h3>화장품 · 의약품 · 의약외품</h3>
+            <p>제품 제조·유통·수입과 관련한 등록 및 신고 업무를 안내합니다.</p>
+            <div class="service-tags"><span>화장품 제조업</span><span>책임판매업</span><span>의약품·의약외품</span></div>
+          </div>
+        </a>
+
+        <a class="service-card reveal" href="pages/service-organization.html">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=82&w=1400" alt="" loading="lazy">
+          <div class="service-top"><span>02 · ORGANIZATION</span><em>→</em></div>
+          <div class="service-inner">
+            <h3>법인 · 단체 설립</h3>
+            <p>설립 목적과 운영 형태에 맞는 법인·단체 유형과 관련 절차를 안내합니다.</p>
+            <div class="service-tags"><span>사단법인</span><span>재단법인</span><span>비영리민간단체</span><span>사회적기업</span></div>
+          </div>
+        </a>
+
+        <a class="service-card reveal" href="pages/service-license.html">
+          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=82&w=1400" alt="" loading="lazy">
+          <div class="service-top"><span>03 · PRIVATE QUALIFICATION</span><em>→</em></div>
+          <div class="service-inner">
+            <h3>민간자격 등록</h3>
+            <p>자격명칭과 운영기준, 등록 대상과 신청에 필요한 준비사항을 확인합니다.</p>
+            <div class="service-tags"><span>등록 대상</span><span>운영규정</span><span>신청 절차</span></div>
+          </div>
+        </a>
+
+        <a class="service-card reveal" href="pages/service-appeal.html">
+          <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=82&w=1400" alt="" loading="lazy">
+          <div class="service-top"><span>04 · ADMINISTRATIVE APPEAL</span><em>→</em></div>
+          <div class="service-inner">
+            <h3>행정심판</h3>
+            <p>행정처분에 대한 대응이 필요한 경우 처분 내용과 기한, 준비사항을 확인합니다.</p>
+            <div class="service-tags"><span>음주운전 구제</span><span>영업정지</span><span>학교폭력</span></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="visual-break reveal" aria-label="행정업무 안내">
+    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=84&w=2200" alt="" loading="lazy">
+    <div class="container">
+      <div class="visual-copy">
+        <span class="home-kicker">BEFORE THE PROCEDURE</span>
+        <h2>같은 업무라도 준비 상태와 조건에 따라<br>확인해야 할 내용은 달라집니다.</h2>
+        <p>상세페이지에서는 서비스별 대상과 준비사항, 실제 진행 절차를 순서에 맞춰 확인할 수 있습니다.</p>
       </div>
     </div>
   </section>
 
   <section class="cases">
-    <div class="container cases-layout">
-      <figure class="cases-image reveal">
-        <img src="https://images.unsplash.com/photo-1762427907123-c7ab022a5de7?auto=format&fit=crop&q=82&w=1600" alt="" loading="lazy">
-        <figcaption><small>CASE ARCHIVE</small><strong>업무 분야와 처리 내용을<br>사례를 통해 확인할 수 있습니다.</strong></figcaption>
-      </figure>
-      <div class="reveal">
-        <p class="home-eyebrow">WORK CASES</p>
-        <h2 class="home-title">업무사례</h2>
-        <p class="home-desc">업무사례에서는 등록·허가·신고가 어떤 분야에서 진행되는지, 어떤 결과자료가 남는지 확인할 수 있습니다. 현재 준비 중인 업무와 유사한 분야가 있는지 살펴보실 수 있습니다.</p>
-        <div class="case-list">
-          <a class="case-link" href="pages/case-license-ski.html"><small>민간자격</small><strong>수상스키지도사 민간자격 등록</strong><i>→</i></a>
-          <a class="case-link" href="pages/cases.html#organization"><small>법인·단체</small><strong>설립·허가 업무사례</strong><i>→</i></a>
-          <a class="case-link" href="pages/cases.html#cosmetics"><small>화장품·의약외품</small><strong>등록·신고 업무사례</strong><i>→</i></a>
+    <div class="container">
+      <div class="cases-head reveal">
+        <div>
+          <span class="home-kicker">WORK CASES</span>
+          <h2 class="home-h2">업무사례</h2>
         </div>
-        <a class="all-cases" href="pages/cases.html">업무사례 전체 보기 →</a>
+        <p class="home-copy">실제 등록·허가·신고 업무가 어떤 분야에서 진행되는지 관련 사례를 통해 확인하실 수 있습니다.</p>
+      </div>
+
+      <div class="case-stage">
+        <a class="case-visual reveal" href="pages/case-license-ski.html" aria-label="수상스키지도사 민간자격 등록사례 보기">
+          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=82&w=1500" alt="" loading="lazy">
+          <div class="case-sheet">
+            <small>PRIVATE QUALIFICATION · REGISTERED</small>
+            <h3>수상스키지도사 민간자격 등록</h3>
+            <div class="case-data">
+              <div><b>주무부처</b><span>해양경찰청</span></div>
+              <div><b>등록번호</b><span>2026-006672</span></div>
+              <div><b>자격명칭</b><span>수상스키지도사</span></div>
+              <div><b>등급</b><span>단일등급</span></div>
+            </div>
+            <span class="case-go">사례 상세 보기 →</span>
+          </div>
+        </a>
+
+        <div class="case-more reveal">
+          <span class="home-kicker">CASE ARCHIVE</span>
+          <h3>분야별 사례를 확인할 수 있습니다.</h3>
+          <p>현재 준비 중인 업무와 유사한 분야가 있는지 확인하고, 상세 사례와 상담으로 이어갈 수 있습니다.</p>
+
+          <div class="case-links">
+            <a href="pages/cases.html#license"><small>민간자격</small><strong>등록 업무사례</strong><i>→</i></a>
+            <a href="pages/cases.html#organization"><small>법인·단체</small><strong>설립·허가 업무사례</strong><i>→</i></a>
+            <a href="pages/cases.html#cosmetics"><small>화장품·의약외품</small><strong>등록·신고 업무사례</strong><i>→</i></a>
+          </div>
+
+          <a class="case-all" href="pages/cases.html">업무사례 전체 보기 →</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="trust">
-    <div class="container trust-grid">
-      <div class="trust-copy reveal">
-        <p class="home-eyebrow">DONGGAM OFFICE</p>
-        <h2 class="home-title">복잡한 등록·인허가 업무는<br>준비 단계부터 확인이 필요합니다.</h2>
-        <p class="home-desc">같은 업무 분야라도 신청 주체와 사업 형태, 현재 준비 상태에 따라 확인해야 할 요건과 자료가 달라질 수 있습니다. 동감행정사사무소는 분야별 기준과 준비사항을 확인하고 필요한 행정절차를 안내합니다.</p>
-        <a class="trust-link" href="pages/about.html">동감 소개 및 오시는 길 →</a>
-      </div>
-      <div class="trust-points reveal">
-        <div class="trust-point"><small>01</small><strong>등록·신고 업무 검토</strong><p>화장품·의약외품, 민간자격 등 등록·신고 업무의 대상과 기본 준비사항을 확인합니다.</p></div>
-        <div class="trust-point"><small>02</small><strong>법인·단체 설립 안내</strong><p>설립 목적과 운영 형태에 따라 검토할 법인·단체 유형과 관련 절차를 안내합니다.</p></div>
-        <div class="trust-point"><small>03</small><strong>행정처분 대응</strong><p>행정처분에 이의가 있는 경우 처분 내용과 기한, 준비자료 등 확인이 필요한 사항을 살펴봅니다.</p></div>
-        <div class="trust-point"><small>04</small><strong>상담 및 준비자료 확인</strong><p>현재 상황과 보유자료를 바탕으로 상담 전 먼저 확인해야 할 내용을 정리할 수 있습니다.</p></div>
+  <section class="about">
+    <figure class="about-photo reveal">
+      <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=84&w=1700" alt="" loading="lazy">
+    </figure>
+
+    <div class="container">
+      <div class="about-copy reveal">
+        <span class="home-kicker">ABOUT DONGGAM</span>
+        <h2 class="home-h2">동감행정사사무소</h2>
+        <p class="home-copy">민간자격 등록, 법인·단체 설립, 화장품·의약품·의약외품 관련 등록·신고, 행정심판 등 다양한 행정업무의 요건과 준비사항을 확인하고 필요한 절차를 안내합니다.</p>
+
+        <div class="office-facts">
+          <div class="office-fact">
+            <small>LOCATION</small>
+            <strong>경기도 김포시 태장로795번길 23<br>R동 4층 408호</strong>
+          </div>
+          <div class="office-fact">
+            <small>CONTACT</small>
+            <strong>031-8049-0828</strong>
+          </div>
+          <div class="office-fact">
+            <small>FAX</small>
+            <strong>070-7500-2992</strong>
+          </div>
+          <div class="office-fact">
+            <small>EMAIL</small>
+            <strong>creafit@naver.com</strong>
+          </div>
+        </div>
+
+        <a class="about-link" href="pages/about.html">동감 소개 및 오시는 길 →</a>
       </div>
     </div>
   </section>
 
   <section class="consult">
-    <div class="container consult-grid">
+    <div class="container consult-inner">
       <div class="reveal">
-        <p class="home-eyebrow">CONSULTATION</p>
-        <h2 class="home-title">현재 준비 중인 업무에<br>전문적인 검토가 필요하신가요?</h2>
-        <p class="home-desc">문의 분야와 현재 진행 단계, 준비된 자료 등을 알려주시면 상담에 필요한 내용을 확인할 수 있습니다. 간단한 문의는 전화로, 내용을 정리해 전달하려는 경우에는 맞춤 상담을 이용하실 수 있습니다.</p>
-        <a class="phone" href="tel:03180490828">031-8049-0828</a>
+        <span class="home-kicker">CONSULTATION</span>
+        <h2>행정업무 상담이 필요하신가요?</h2>
+        <p>현재 준비 중인 업무와 상황을 확인한 뒤 상담에 필요한 내용을 안내합니다.</p>
+        <a class="consult-phone" href="tel:03180490828">031-8049-0828</a>
       </div>
+
       <div class="consult-actions reveal">
-        <a class="consult-action" href="tel:03180490828"><small>PHONE</small><strong>전화 상담</strong><i>→</i></a>
-        <a class="consult-action" href="pages/consult.html"><small>GUIDED</small><strong>맞춤 상담</strong><i>→</i></a>
+        <a href="tel:03180490828">전화 상담</a>
+        <a href="pages/consult.html">맞춤 상담</a>
       </div>
     </div>
   </section>
@@ -237,32 +969,70 @@
 
 <footer class="home-footer">
   <div class="container footer-main">
-    <div class="footer-brand"><strong>동감행정사사무소</strong><p>민간자격 등록, 비영리법인·단체 설립, 화장품·의약품·의약외품 관련 등록·신고, 행정심판 등 주요 행정업무를 상담합니다.</p></div>
-    <div><div class="footer-title">CONTACT</div><div class="footer-contact"><span>경기도 김포시 태장로795번길 23, R동 4층 408호 (장기동, 김포마스터비즈파크)</span><a href="tel:03180490828">Tel. 031-8049-0828</a><span>Fax. 070-7500-2992</span><a href="mailto:creafit@naver.com">creafit@naver.com</a></div></div>
-    <div><div class="footer-title">MENU</div><div class="footer-nav"><a href="pages/services.html">서비스</a><a href="pages/cases.html">업무사례</a><a href="pages/consult.html">상담</a><a href="pages/about.html">동감 소개</a></div></div>
+    <div class="footer-brand">
+      <strong>동감행정사사무소</strong>
+      <p>민간자격 등록, 법인·단체 설립, 화장품·의약품·의약외품 관련 등록·신고, 행정심판 등 주요 행정업무를 상담합니다.</p>
+    </div>
+
+    <div>
+      <div class="footer-title">CONTACT</div>
+      <div class="footer-contact">
+        <span>경기도 김포시 태장로795번길 23, R동 4층 408호 (장기동, 김포마스터비즈파크)</span>
+        <a href="tel:03180490828">Tel. 031-8049-0828</a>
+        <span>Fax. 070-7500-2992</span>
+        <a href="mailto:creafit@naver.com">creafit@naver.com</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="footer-title">MENU</div>
+      <div class="footer-nav">
+        <a href="pages/services.html">서비스</a>
+        <a href="pages/cases.html">업무사례</a>
+        <a href="pages/consult.html">상담</a>
+        <a href="pages/about.html">동감 소개</a>
+      </div>
+    </div>
   </div>
-  <div class="footer-bottom"><div class="container footer-bottom-inner"><span>© DONGGAM ADMINISTRATIVE OFFICE. All rights reserved.</span><span>Tel. 031-8049-0828 · creafit@naver.com</span></div></div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <span>© DONGGAM ADMINISTRATIVE OFFICE. All rights reserved.</span>
+      <span>Tel. 031-8049-0828 · creafit@naver.com</span>
+    </div>
+  </div>
 </footer>
 
-<div class="mobile-quick"><a href="tel:03180490828">전화 상담</a><a href="pages/consult.html">맞춤 상담</a></div>
+<div class="mobile-quick">
+  <a href="tel:03180490828">전화 상담</a>
+  <a href="pages/consult.html">맞춤 상담</a>
+</div>
 
 <script src="assets/app.js"></script>
 <script>
   (() => {
-    const items = document.querySelectorAll('.reveal');
+    const items = [...document.querySelectorAll('.reveal')];
     if (!items.length) return;
+
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       items.forEach(el => el.classList.add('is-visible'));
       return;
     }
+
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         entry.target.classList.add('is-visible');
         observer.unobserve(entry.target);
       });
-    }, { threshold: .12, rootMargin: '0px 0px -36px 0px' });
-    items.forEach(el => observer.observe(el));
+    }, { threshold: .12, rootMargin: '0px 0px -42px 0px' });
+
+    items.forEach((el, index) => {
+      if (el.classList.contains('service-card')) {
+        el.style.transitionDelay = ((index % 2) * 70) + 'ms';
+      }
+      observer.observe(el);
+    });
   })();
 </script>
 </body>
