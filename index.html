@@ -7,609 +7,740 @@
   <title>동감행정사사무소</title>
   <link rel="stylesheet" href="assets/styles.css">
   <style>
-    /* Main page only */
-    .home-renewal .home-hero{
+    /* =========================================================
+       HOME ONLY
+       메인페이지 전용 스타일 - 서브페이지 및 공통 CSS 미수정
+    ========================================================= */
+    .home-clean{overflow-x:hidden}
+    .home-clean main{background:#fff}
+
+    /* HERO */
+    .home-clean .home-hero{
       position:relative;
-      overflow:hidden;
-      padding:108px 0 92px;
-      background:
-        radial-gradient(circle at 82% 20%, rgba(117,22,49,.10), transparent 27%),
-        linear-gradient(180deg,#fbf7f8 0%,#fff 84%);
-    }
-    .home-renewal .home-hero::after{
-      content:"";
-      position:absolute;
-      right:-10vw;
-      bottom:-210px;
-      width:540px;
-      height:540px;
-      border:1px solid rgba(117,22,49,.08);
-      border-radius:50%;
-      pointer-events:none;
-    }
-    .home-renewal .home-hero-grid{
-      display:grid;
-      grid-template-columns:minmax(0,1.1fr) minmax(360px,.72fr);
-      gap:84px;
+      display:flex;
       align-items:center;
+      min-height:calc(100vh - 82px);
+      overflow:hidden;
+      background:linear-gradient(180deg,#fbf8f9 0%,#fff 76%);
     }
-    .home-renewal .home-hero h1{
-      max-width:820px;
-      font-size:clamp(48px,6.2vw,82px);
-      line-height:1.1;
+    .home-clean .home-hero::before{
+      content:"DONGGAM";
+      position:absolute;
+      right:-.04em;
+      bottom:-.16em;
+      color:rgba(117,22,49,.035);
+      font-size:clamp(120px,20vw,330px);
+      font-weight:950;
+      line-height:.8;
+      letter-spacing:-.08em;
+      pointer-events:none;
+      user-select:none;
     }
-    .home-renewal .home-hero .lead{
-      max-width:690px;
-      margin-top:28px;
+    .home-clean .home-hero-inner{
+      position:relative;
+      z-index:1;
+      width:100%;
+      padding:108px 0 94px;
     }
-    .home-renewal .home-hero-actions{
+    .home-clean .home-hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.18fr) minmax(300px,.52fr);
+      gap:92px;
+      align-items:end;
+    }
+    .home-clean .home-hero h1{
+      max-width:900px;
+      margin:0;
+      font-size:clamp(50px,6.5vw,90px);
+      line-height:1.07;
+      letter-spacing:-.055em;
+    }
+    .home-clean .home-hero .lead{
+      max-width:720px;
+      margin-top:30px;
+      color:var(--sub);
+      font-size:19px;
+    }
+    .home-clean .home-hero-actions{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
-      margin-top:34px;
+      margin-top:36px;
     }
-    .home-renewal .home-visual{
-      position:relative;
-      min-height:430px;
-      border:1px solid #eadde1;
-      border-radius:32px;
-      background:linear-gradient(145deg,#fff 0%,#f5eaee 100%);
-      box-shadow:0 30px 80px rgba(49,7,17,.10);
-      overflow:hidden;
-      isolation:isolate;
+    .home-clean .home-hero-side{
+      padding:0 0 8px 34px;
+      border-left:1px solid rgba(117,22,49,.18);
     }
-    .home-renewal .home-visual::before{
-      content:"";
-      position:absolute;
-      width:250px;
-      height:250px;
-      right:-65px;
-      top:-70px;
-      border-radius:50%;
-      background:var(--wine);
-      opacity:.95;
-      z-index:-1;
-    }
-    .home-renewal .home-visual::after{
-      content:"";
-      position:absolute;
-      width:170px;
-      height:170px;
-      left:-44px;
-      bottom:-58px;
-      border-radius:50%;
-      border:1px solid rgba(117,22,49,.18);
-      z-index:-1;
-    }
-    .home-renewal .home-visual-inner{
-      min-height:430px;
-      display:flex;
-      flex-direction:column;
-      padding:34px;
-    }
-    .home-renewal .home-visual-top{
-      display:flex;
-      justify-content:space-between;
-      gap:20px;
-      align-items:flex-start;
-      color:var(--sub);
+    .home-clean .home-hero-side small{
+      display:block;
+      margin-bottom:18px;
+      color:var(--wine);
       font-size:11px;
       font-weight:900;
-      letter-spacing:.11em;
+      letter-spacing:.13em;
     }
-    .home-renewal .home-visual-top b{
-      color:#fff;
-      font-size:13px;
-      letter-spacing:.06em;
-    }
-    .home-renewal .home-visual-copy{
-      margin-top:auto;
-      max-width:330px;
-    }
-    .home-renewal .home-visual-copy small{
-      color:var(--wine);
-      font-weight:900;
-      letter-spacing:.09em;
-    }
-    .home-renewal .home-visual-copy strong{
-      display:block;
-      margin-top:12px;
-      font-size:30px;
-      line-height:1.28;
-      letter-spacing:-.04em;
-    }
-    .home-renewal .home-visual-copy p{
-      margin:12px 0 0;
+    .home-clean .home-hero-side p{
+      margin:0;
       color:var(--sub);
       font-size:14px;
     }
-    .home-renewal .home-practice-tags{
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      margin-top:28px;
+    .home-clean .home-hero-side ul{
+      list-style:none;
+      padding:0;
+      margin:26px 0 0;
+      border-top:1px solid var(--line);
     }
-    .home-renewal .home-practice-tags span{
-      padding:8px 10px;
-      border-radius:999px;
-      background:rgba(255,255,255,.78);
-      border:1px solid rgba(117,22,49,.10);
-      color:var(--wine);
+    .home-clean .home-hero-side li{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      padding:13px 0;
+      border-bottom:1px solid var(--line);
+      color:var(--text2);
+      font-size:13px;
+    }
+    .home-clean .home-hero-side li span{
+      color:var(--sub2);
       font-size:11px;
-      font-weight:850;
-      backdrop-filter:blur(8px);
+      font-weight:900;
     }
 
-    .home-renewal .home-section{
-      padding:108px 0;
-    }
-    .home-renewal .home-section.band{
-      background:var(--soft);
-    }
-    .home-renewal .home-section-head{
+    /* COMMON */
+    .home-clean .home-section{padding:112px 0}
+    .home-clean .home-heading{
       display:grid;
-      grid-template-columns:minmax(0,.8fr) minmax(320px,.52fr);
-      gap:60px;
+      grid-template-columns:minmax(0,.8fr) minmax(320px,.48fr);
+      gap:56px;
       align-items:end;
-      margin-bottom:46px;
+      margin-bottom:48px;
     }
-    .home-renewal .home-section-head h2{
-      margin-bottom:0;
-    }
-    .home-renewal .home-section-head .intro{
+    .home-clean .home-heading h2{margin-bottom:0}
+    .home-clean .home-heading .desc{
       margin:0;
       color:var(--sub);
       font-size:17px;
     }
 
-    .home-renewal .home-services{
+    /* SERVICES - list / editorial */
+    .home-clean .service-list{border-top:1px solid var(--text)}
+    .home-clean .service-line{
       display:grid;
-      grid-template-columns:repeat(2,1fr);
-      border-top:1px solid var(--line);
-    }
-    .home-renewal .home-service-card{
-      position:relative;
-      min-height:270px;
-      padding:34px 34px 30px;
+      grid-template-columns:72px minmax(260px,.85fr) minmax(280px,1fr) 30px;
+      gap:28px;
+      align-items:center;
+      min-height:150px;
+      padding:26px 0;
       border-bottom:1px solid var(--line);
-      transition:transform .28s ease, background .28s ease, box-shadow .28s ease;
+      transition:padding .24s ease,color .24s ease;
     }
-    .home-renewal .home-service-card:nth-child(odd){
-      border-right:1px solid var(--line);
-    }
-    .home-renewal .home-service-card:hover{
-      z-index:1;
-      transform:translateY(-5px);
-      background:#fff;
-      box-shadow:0 24px 60px rgba(49,7,17,.08);
-    }
-    .home-renewal .home-service-card .num{
+    .home-clean .service-line:hover{
+      padding-left:10px;
       color:var(--wine);
+    }
+    .home-clean .service-line .idx{
+      color:var(--sub2);
       font-size:11px;
       font-weight:900;
       letter-spacing:.08em;
     }
-    .home-renewal .home-service-card h3{
-      margin-top:42px;
-      max-width:420px;
-      font-size:28px;
+    .home-clean .service-line h3{
+      margin:0;
+      font-size:clamp(24px,2.35vw,34px);
     }
-    .home-renewal .home-service-card p{
-      max-width:480px;
+    .home-clean .service-line p{
       margin:0;
       color:var(--sub);
+      font-size:15px;
     }
-    .home-renewal .home-service-card .more{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-      margin-top:28px;
-      color:var(--wine);
-      font-weight:850;
-      font-size:13px;
+    .home-clean .service-line .arrow{
+      justify-self:end;
+      font-size:21px;
+      transition:transform .24s ease;
     }
-    .home-renewal .home-service-card .more::after{
-      content:"→";
-      font-size:18px;
-      transition:transform .22s ease;
-    }
-    .home-renewal .home-service-card:hover .more::after{
-      transform:translateX(5px);
-    }
+    .home-clean .service-line:hover .arrow{transform:translateX(5px)}
 
-    .home-renewal .home-expertise{
+    /* PROCESS - continuous timeline */
+    .home-clean .process-section{background:var(--soft)}
+    .home-clean .process-wrap{
       display:grid;
-      grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
-      gap:74px;
+      grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);
+      gap:76px;
       align-items:start;
     }
-    .home-renewal .home-expertise-copy{
+    .home-clean .process-intro{
       position:sticky;
       top:118px;
     }
-    .home-renewal .home-expertise-copy p:last-child{
+    .home-clean .process-intro p:last-child{
       color:var(--sub);
       font-size:17px;
     }
-    .home-renewal .home-process{
+    .home-clean .process-list{border-top:1px solid var(--text)}
+    .home-clean .process-step{
       display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
+      grid-template-columns:70px 160px 1fr;
+      gap:20px;
+      align-items:start;
+      padding:27px 0;
+      border-bottom:1px solid var(--line);
     }
-    .home-renewal .home-process-item{
-      min-height:210px;
-      padding:24px;
-      border:1px solid var(--line);
-      border-radius:20px;
-      background:#fff;
-    }
-    .home-renewal .home-process-item span{
+    .home-clean .process-step span{
       color:var(--wine);
       font-size:11px;
       font-weight:900;
     }
-    .home-renewal .home-process-item b{
-      display:block;
-      margin-top:56px;
-      font-size:19px;
-    }
-    .home-renewal .home-process-item p{
-      margin:8px 0 0;
+    .home-clean .process-step b{font-size:18px}
+    .home-clean .process-step p{
+      margin:0;
       color:var(--sub);
-      font-size:13px;
+      font-size:14px;
     }
 
-    .home-renewal .home-cases{
+    /* CASES - feature + list */
+    .home-clean .case-section{
       background:var(--wine-deep);
       color:#fff;
     }
-    .home-renewal .home-cases .home-section-head .intro{
-      color:#d5c1c8;
-    }
-    .home-renewal .home-case-grid{
+    .home-clean .case-section .home-heading .desc{color:#cfbbc2}
+    .home-clean .case-layout{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:14px;
+      grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);
+      gap:56px;
+      align-items:stretch;
     }
-    .home-renewal .home-case-card{
+    .home-clean .case-feature{
+      position:relative;
       display:flex;
       flex-direction:column;
-      min-height:330px;
-      padding:26px;
-      border:1px solid rgba(255,255,255,.13);
-      border-radius:22px;
-      background:rgba(255,255,255,.055);
-      transition:transform .28s ease, background .28s ease;
+      justify-content:flex-end;
+      min-height:480px;
+      padding:0 0 28px;
+      overflow:hidden;
+      border-bottom:1px solid rgba(255,255,255,.25);
     }
-    .home-renewal .home-case-card:hover{
-      transform:translateY(-5px);
-      background:rgba(255,255,255,.085);
+    .home-clean .case-feature::before{
+      content:"01";
+      position:absolute;
+      top:-30px;
+      right:0;
+      color:rgba(255,255,255,.045);
+      font-size:clamp(130px,16vw,240px);
+      font-weight:950;
+      line-height:1;
     }
-    .home-renewal .home-case-card small{
+    .home-clean .case-feature small{
       color:#dca8b8;
-      font-weight:900;
-    }
-    .home-renewal .home-case-card h3{
-      margin-top:auto;
-      font-size:23px;
-    }
-    .home-renewal .home-case-card p{
-      margin:0;
-      color:#d8c6cc;
-      font-size:14px;
-    }
-    .home-renewal .home-case-card .case-link{
-      margin-top:20px;
-      color:#fff;
-      font-weight:850;
-      font-size:13px;
-    }
-    .home-renewal .home-cases .section-link{
-      color:#fff;
-    }
-
-    .home-renewal .home-consult{
-      padding:104px 0;
-      background:#fff;
-    }
-    .home-renewal .home-consult-grid{
-      display:grid;
-      grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
-      gap:72px;
-      align-items:start;
-    }
-    .home-renewal .home-consult-copy p:last-child{
-      color:var(--sub);
-      font-size:17px;
-    }
-    .home-renewal .home-consult-options{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:14px;
-    }
-    .home-renewal .home-consult-card{
-      min-height:280px;
-      padding:26px;
-      border:1px solid var(--line);
-      border-radius:22px;
-      background:#fff;
-      display:flex;
-      flex-direction:column;
-      transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
-    }
-    .home-renewal .home-consult-card:hover{
-      transform:translateY(-4px);
-      border-color:#d9bec7;
-      box-shadow:var(--shadow);
-    }
-    .home-renewal .home-consult-card.primary-card{
-      background:var(--wine);
-      border-color:var(--wine);
-      color:#fff;
-    }
-    .home-renewal .home-consult-card small{
-      color:var(--wine);
       font-weight:900;
       letter-spacing:.08em;
     }
-    .home-renewal .home-consult-card.primary-card small,
-    .home-renewal .home-consult-card.primary-card p{
-      color:#f0d8df;
+    .home-clean .case-feature h3{
+      max-width:610px;
+      margin:16px 0 14px;
+      font-size:clamp(34px,4vw,54px);
     }
-    .home-renewal .home-consult-card h3{
-      margin-top:44px;
-      font-size:25px;
-    }
-    .home-renewal .home-consult-card p{
+    .home-clean .case-feature p{
       margin:0;
-      color:var(--sub);
+      color:#d8c6cc;
     }
-    .home-renewal .home-consult-card .more{
-      margin-top:auto;
-      padding-top:26px;
+    .home-clean .case-feature .case-go{
+      display:inline-block;
+      margin-top:26px;
+      color:#fff;
+      font-weight:850;
+    }
+    .home-clean .case-list{border-top:1px solid rgba(255,255,255,.25)}
+    .home-clean .case-row{
+      display:grid;
+      grid-template-columns:120px 1fr 24px;
+      gap:18px;
+      align-items:center;
+      padding:25px 0;
+      border-bottom:1px solid rgba(255,255,255,.16);
+      transition:padding .24s ease;
+    }
+    .home-clean .case-row:hover{padding-left:8px}
+    .home-clean .case-row small{
+      color:#dca8b8;
       font-weight:900;
     }
-
-    .home-renewal .home-reveal{
-      opacity:0;
-      transform:translateY(20px);
-      transition:opacity .68s ease,transform .68s cubic-bezier(.2,.75,.25,1);
+    .home-clean .case-row strong{
+      color:#fff;
+      font-size:18px;
     }
-    .home-renewal .home-reveal.is-visible{
+    .home-clean .case-row i{
+      justify-self:end;
+      color:#fff;
+      font-style:normal;
+    }
+    .home-clean .case-more{
+      display:inline-block;
+      margin-top:28px;
+      color:#fff;
+      font-weight:850;
+    }
+
+    /* CONSULT */
+    .home-clean .consult-section{
+      padding:112px 0;
+      background:#fff;
+    }
+    .home-clean .consult-inner{
+      display:grid;
+      grid-template-columns:minmax(0,.82fr) minmax(360px,1fr);
+      gap:76px;
+      align-items:end;
+    }
+    .home-clean .consult-copy p:last-child{
+      max-width:650px;
+      color:var(--sub);
+      font-size:17px;
+    }
+    .home-clean .consult-links{border-top:1px solid var(--text)}
+    .home-clean .consult-link{
+      display:grid;
+      grid-template-columns:110px 1fr 30px;
+      gap:20px;
+      align-items:center;
+      padding:26px 0;
+      border-bottom:1px solid var(--line);
+      transition:padding .24s ease,color .24s ease;
+    }
+    .home-clean .consult-link:hover{
+      padding-left:8px;
+      color:var(--wine);
+    }
+    .home-clean .consult-link small{
+      color:var(--sub2);
+      font-weight:900;
+      letter-spacing:.08em;
+    }
+    .home-clean .consult-link strong{font-size:22px}
+    .home-clean .consult-link i{
+      justify-self:end;
+      font-style:normal;
+      font-size:20px;
+      transition:transform .24s ease;
+    }
+    .home-clean .consult-link:hover i{transform:translateX(5px)}
+
+    /* FOOTER - home only */
+    .home-clean .home-footer{
+      position:relative;
+      overflow:hidden;
+      background:#080808;
+      color:#888;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    .home-clean .home-footer::before{
+      content:"DONGGAM";
+      position:absolute;
+      right:-.03em;
+      bottom:-.13em;
+      color:rgba(255,255,255,.035);
+      font-size:clamp(110px,18vw,290px);
+      font-weight:950;
+      line-height:.8;
+      letter-spacing:-.08em;
+      pointer-events:none;
+      user-select:none;
+    }
+    .home-clean .home-footer-top{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:minmax(0,1.15fr) minmax(240px,.6fr) minmax(180px,.4fr);
+      gap:64px;
+      padding:72px 0 58px;
+    }
+    .home-clean .home-footer-brand strong{
+      display:block;
+      margin-bottom:16px;
+      color:#fff;
+      font-size:26px;
+      letter-spacing:-.04em;
+    }
+    .home-clean .home-footer-brand p{
+      max-width:560px;
+      margin:0;
+      color:#777;
+      font-size:14px;
+    }
+    .home-clean .home-footer-title{
+      margin-bottom:16px;
+      color:#aaa;
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.12em;
+    }
+    .home-clean .home-footer-contact,
+    .home-clean .home-footer-nav{
+      display:grid;
+      gap:9px;
+      font-size:13px;
+    }
+    .home-clean .home-footer-contact a,
+    .home-clean .home-footer-nav a{
+      color:#999;
+      transition:color .2s ease;
+    }
+    .home-clean .home-footer-contact a:hover,
+    .home-clean .home-footer-nav a:hover{color:#fff}
+    .home-clean .home-footer-bottom{
+      position:relative;
+      z-index:1;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    .home-clean .home-footer-bottom-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:24px;
+      padding:20px 0;
+      color:#555;
+      font-size:11px;
+    }
+
+    /* restrained motion */
+    .home-clean .reveal{
+      opacity:0;
+      transform:translateY(18px);
+      transition:opacity .62s ease,transform .62s cubic-bezier(.2,.72,.25,1);
+    }
+    .home-clean .reveal.visible{
       opacity:1;
       transform:none;
     }
-    .home-renewal .home-service-card:nth-child(2),
-    .home-renewal .home-process-item:nth-child(2),
-    .home-renewal .home-case-card:nth-child(2){
-      transition-delay:.06s;
+    .home-clean .line-reveal{
+      position:relative;
+      overflow:hidden;
     }
-    .home-renewal .home-service-card:nth-child(3),
-    .home-renewal .home-process-item:nth-child(3),
-    .home-renewal .home-case-card:nth-child(3){
-      transition-delay:.12s;
+    .home-clean .line-reveal::after{
+      content:"";
+      position:absolute;
+      right:0;
+      bottom:0;
+      left:0;
+      height:1px;
+      background:var(--wine);
+      transform:scaleX(0);
+      transform-origin:left;
+      transition:transform .78s ease;
     }
-    .home-renewal .home-service-card:nth-child(4),
-    .home-renewal .home-process-item:nth-child(4){
-      transition-delay:.18s;
-    }
+    .home-clean .line-reveal.visible::after{transform:scaleX(1)}
 
-    @media(max-width:1000px){
-      .home-renewal .home-hero-grid,
-      .home-renewal .home-section-head,
-      .home-renewal .home-expertise,
-      .home-renewal .home-consult-grid{
+    @media(max-width:980px){
+      .home-clean .home-hero-grid,
+      .home-clean .home-heading,
+      .home-clean .process-wrap,
+      .home-clean .case-layout,
+      .home-clean .consult-inner,
+      .home-clean .home-footer-top{
         grid-template-columns:1fr;
         gap:38px;
       }
-      .home-renewal .home-expertise-copy{position:static}
-      .home-renewal .home-visual{min-height:340px}
-      .home-renewal .home-visual-inner{min-height:340px}
+      .home-clean .home-hero{min-height:auto}
+      .home-clean .home-hero-side{max-width:620px}
+      .home-clean .process-intro{position:static}
+      .home-clean .case-feature{min-height:380px}
     }
-    @media(max-width:760px){
-      .home-renewal .home-hero{padding:68px 0 58px}
-      .home-renewal .home-hero h1{font-size:clamp(40px,12vw,58px)}
-      .home-renewal .home-section,.home-renewal .home-consult{padding:76px 0}
-      .home-renewal .home-services,
-      .home-renewal .home-process,
-      .home-renewal .home-case-grid,
-      .home-renewal .home-consult-options{
-        grid-template-columns:1fr;
+    @media(max-width:720px){
+      .home-clean .home-hero-inner{padding:70px 0 62px}
+      .home-clean .home-hero h1{font-size:clamp(40px,12vw,58px)}
+      .home-clean .home-hero-side{padding-left:20px}
+      .home-clean .home-section,
+      .home-clean .consult-section{padding:76px 0}
+      .home-clean .service-line{
+        grid-template-columns:44px 1fr 24px;
+        gap:14px;
+        min-height:0;
+        padding:24px 0;
       }
-      .home-renewal .home-service-card:nth-child(odd){border-right:0}
-      .home-renewal .home-service-card{min-height:240px;padding:26px 4px}
-      .home-renewal .home-service-card h3{margin-top:34px}
-      .home-renewal .home-process-item{min-height:170px}
-      .home-renewal .home-process-item b{margin-top:38px}
-      .home-renewal .home-case-card{min-height:260px}
-      .home-renewal .home-consult-card{min-height:230px}
+      .home-clean .service-line p{
+        grid-column:2/4;
+        margin-top:-4px;
+      }
+      .home-clean .service-line .arrow{
+        grid-column:3;
+        grid-row:1;
+      }
+      .home-clean .process-step{
+        grid-template-columns:46px 1fr;
+        gap:12px;
+      }
+      .home-clean .process-step p{grid-column:2}
+      .home-clean .case-feature{min-height:320px}
+      .home-clean .case-row{
+        grid-template-columns:1fr 24px;
+        gap:10px;
+      }
+      .home-clean .case-row small{
+        grid-column:1/3;
+      }
+      .home-clean .consult-link{
+        grid-template-columns:80px 1fr 24px;
+      }
+      .home-clean .home-footer-top{padding:58px 0 42px}
+      .home-clean .home-footer-bottom-inner{
+        display:grid;
+        gap:6px;
+      }
     }
     @media(prefers-reduced-motion:reduce){
-      .home-renewal .home-reveal{opacity:1;transform:none;transition:none}
-      .home-renewal .home-service-card,
-      .home-renewal .home-case-card,
-      .home-renewal .home-consult-card{transition:none}
+      .home-clean .reveal{
+        opacity:1;
+        transform:none;
+        transition:none;
+      }
+      .home-clean .line-reveal::after{display:none}
+      .home-clean .service-line,
+      .home-clean .service-line .arrow,
+      .home-clean .case-row,
+      .home-clean .consult-link,
+      .home-clean .consult-link i{transition:none}
     }
   </style>
 </head>
-<body class="home-renewal">
+<body class="home-clean">
 <a class="skip" href="#main">본문 바로가기</a>
+
 <header class="site-header">
   <div class="container head">
-    <a class="brand" href="index.html"><span class="mark">同</span><span><b>동감행정사사무소</b><small>DONGGAM ADMINISTRATIVE OFFICE</small></span></a>
+    <a class="brand" href="index.html">
+      <span class="mark">同</span>
+      <span><b>동감행정사사무소</b><small>DONGGAM ADMINISTRATIVE OFFICE</small></span>
+    </a>
     <button class="menu" aria-label="메뉴"><span></span><span></span><span></span></button>
-    <nav class="nav"><a href="pages/services.html">서비스</a><a href="pages/cases.html">업무사례</a><a href="pages/consult.html">상담</a><a href="pages/about.html">동감 소개</a></nav>
+    <nav class="nav">
+      <a href="pages/services.html">서비스</a>
+      <a href="pages/cases.html">업무사례</a>
+      <a href="pages/consult.html">상담</a>
+      <a href="pages/about.html">동감 소개</a>
+    </nav>
     <a class="call-top" href="tel:03180490828">전화 상담</a>
   </div>
 </header>
 
 <main id="main">
   <section class="home-hero">
-    <div class="container home-hero-grid">
-      <div class="home-reveal">
-        <p class="eyebrow">DONGGAM ADMINISTRATIVE OFFICE</p>
-        <h1>복잡한 행정 절차에 필요한<br>정확한 안내와 실무 지원.</h1>
-        <p class="lead">민간자격 등록, 법인·단체 설립, 화장품·의약외품 관련 업무, 행정심판까지. 준비 단계부터 필요한 절차와 정보를 확인하실 수 있습니다.</p>
-        <div class="home-hero-actions">
-          <a class="btn primary" href="#services">주요 업무 보기</a>
-          <a class="btn secondary" href="pages/consult.html">상담 안내</a>
-        </div>
-      </div>
-
-      <div class="home-visual home-reveal" aria-hidden="true">
-        <div class="home-visual-inner">
-          <div class="home-visual-top"><span>ADMINISTRATIVE PRACTICE</span><b>DONGGAM</b></div>
-          <div class="home-visual-copy">
-            <small>PROFESSIONAL SERVICE</small>
-            <strong>행정 절차의 시작부터<br>결과 확인까지.</strong>
-            <p>업무별 필요한 요건과 절차를 정리하고, 실제 진행 과정에 맞춰 안내합니다.</p>
-            <div class="home-practice-tags">
-              <span>민간자격</span>
-              <span>법인·단체</span>
-              <span>화장품·의약외품</span>
-              <span>행정심판</span>
-            </div>
+    <div class="home-hero-inner">
+      <div class="container home-hero-grid">
+        <div class="reveal">
+          <p class="eyebrow">DONGGAM ADMINISTRATIVE OFFICE</p>
+          <h1>행정 절차의 시작부터<br>결과까지 함께합니다.</h1>
+          <p class="lead">민간자격 등록, 법인·단체 설립, 화장품·의약외품 관련 업무, 행정심판 등 다양한 행정업무를 전문적으로 지원합니다.</p>
+          <div class="home-hero-actions">
+            <a class="btn primary" href="#services">주요 업무</a>
+            <a class="btn secondary" href="pages/consult.html">상담 안내</a>
           </div>
         </div>
+
+        <aside class="home-hero-side reveal">
+          <small>PRACTICE AREAS</small>
+          <p>분야별 업무와 필요한 절차를 확인하고 상세 내용과 관련 사례까지 이어서 살펴보실 수 있습니다.</p>
+          <ul>
+            <li>화장품 · 의약품 · 의약외품 <span>01</span></li>
+            <li>법인 · 단체 설립 <span>02</span></li>
+            <li>민간자격 등록 <span>03</span></li>
+            <li>행정심판 <span>04</span></li>
+          </ul>
+        </aside>
       </div>
     </div>
   </section>
 
   <section class="home-section" id="services">
     <div class="container">
-      <div class="home-section-head home-reveal">
+      <div class="home-heading reveal">
         <div>
           <p class="eyebrow">PRACTICE AREAS</p>
           <h2>주요 업무 분야</h2>
         </div>
-        <p class="intro">각 업무의 대상, 준비사항과 절차를 확인하고 필요한 전문정보까지 이어서 살펴보실 수 있습니다.</p>
+        <p class="desc">업무별 대상과 절차, 준비사항을 확인하고 필요한 전문정보까지 이어서 살펴보실 수 있습니다.</p>
       </div>
 
-      <div class="home-services">
-        <a class="home-service-card home-reveal" href="pages/service-cosmetics.html">
-          <span class="num">01</span>
+      <div class="service-list line-reveal reveal">
+        <a class="service-line" href="pages/service-cosmetics.html">
+          <span class="idx">01</span>
           <h3>화장품 · 의약품 · 의약외품</h3>
-          <p>화장품 제조업·책임판매업, 의약품·의약외품 제조·수입 관련 등록과 신고 업무를 안내합니다.</p>
-          <span class="more">업무 안내 보기</span>
+          <p>화장품 제조업·책임판매업, 의약품·의약외품 제조·수입 관련 등록 및 신고</p>
+          <span class="arrow">→</span>
         </a>
-        <a class="home-service-card home-reveal" href="pages/service-organization.html">
-          <span class="num">02</span>
+        <a class="service-line" href="pages/service-organization.html">
+          <span class="idx">02</span>
           <h3>법인 · 단체 설립</h3>
-          <p>비영리사단법인, 비영리재단법인, 비영리민간단체와 사회적기업 관련 설립·등록·인증 업무를 안내합니다.</p>
-          <span class="more">업무 안내 보기</span>
+          <p>비영리사단법인, 비영리재단법인, 비영리민간단체, 사회적기업 관련 설립·등록·인증</p>
+          <span class="arrow">→</span>
         </a>
-        <a class="home-service-card home-reveal" href="pages/service-license.html">
-          <span class="num">03</span>
+        <a class="service-line" href="pages/service-license.html">
+          <span class="idx">03</span>
           <h3>민간자격 등록</h3>
-          <p>민간자격의 등록 대상, 운영기준, 신청 절차와 관련 업무사례를 확인하실 수 있습니다.</p>
-          <span class="more">업무 안내 보기</span>
+          <p>민간자격 등록 대상, 운영기준, 신청 절차와 관련 업무사례</p>
+          <span class="arrow">→</span>
         </a>
-        <a class="home-service-card home-reveal" href="pages/service-appeal.html">
-          <span class="num">04</span>
+        <a class="service-line" href="pages/service-appeal.html">
+          <span class="idx">04</span>
           <h3>행정심판</h3>
-          <p>음주운전 면허구제, 영업정지 대응, 학교폭력 조치 등 행정처분에 대한 대응 업무를 안내합니다.</p>
-          <span class="more">업무 안내 보기</span>
+          <p>음주운전 면허구제, 영업정지 대응, 학교폭력 조치 등 행정처분 대응</p>
+          <span class="arrow">→</span>
         </a>
       </div>
     </div>
   </section>
 
-  <section class="home-section band">
-    <div class="container home-expertise">
-      <div class="home-expertise-copy home-reveal">
+  <section class="home-section process-section">
+    <div class="container process-wrap">
+      <div class="process-intro reveal">
         <p class="eyebrow">HOW WE WORK</p>
-        <h2>행정절차의 시작부터<br>결과까지 이어집니다.</h2>
-        <p>업무마다 필요한 요건과 제출자료는 다르지만, 상담부터 검토·진행·결과 안내까지 필요한 과정을 순서에 맞춰 진행합니다.</p>
+        <h2>필요한 절차를<br>순서에 맞춰 진행합니다.</h2>
+        <p>업무마다 요건과 제출자료는 다르지만 상담부터 결과 안내까지 필요한 과정을 확인하며 진행합니다.</p>
       </div>
-      <div class="home-process">
-        <div class="home-process-item home-reveal"><span>01</span><b>상담</b><p>현재 상황과 필요한 업무를 확인합니다.</p></div>
-        <div class="home-process-item home-reveal"><span>02</span><b>자료 검토</b><p>필요한 요건과 준비자료를 확인합니다.</p></div>
-        <div class="home-process-item home-reveal"><span>03</span><b>업무 진행</b><p>확인된 절차에 따라 업무를 진행합니다.</p></div>
-        <div class="home-process-item home-reveal"><span>04</span><b>결과 안내</b><p>처리 결과와 이후 필요한 사항을 안내합니다.</p></div>
+
+      <div class="process-list line-reveal reveal">
+        <div class="process-step">
+          <span>01</span><b>상담</b><p>현재 상황과 필요한 업무를 확인합니다.</p>
+        </div>
+        <div class="process-step">
+          <span>02</span><b>자료 검토</b><p>요건과 준비자료, 추가 확인사항을 검토합니다.</p>
+        </div>
+        <div class="process-step">
+          <span>03</span><b>업무 진행</b><p>확인된 절차에 따라 신청·등록·대응 업무를 진행합니다.</p>
+        </div>
+        <div class="process-step">
+          <span>04</span><b>결과 안내</b><p>처리 결과와 이후 필요한 사항을 안내합니다.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="home-section home-cases">
+  <section class="home-section case-section">
     <div class="container">
-      <div class="home-section-head home-reveal">
+      <div class="home-heading reveal">
         <div>
           <p class="eyebrow">CASE ARCHIVE</p>
           <h2>업무사례</h2>
         </div>
-        <p class="intro">등록정보, 허가·신고 결과와 관련 자료 등 실제 업무사례를 분야별로 확인하실 수 있습니다.</p>
+        <p class="desc">등록정보, 허가·신고 결과와 관련 자료를 통해 분야별 업무사례를 확인하실 수 있습니다.</p>
       </div>
 
-      <div class="home-case-grid">
-        <a class="home-case-card home-reveal" href="pages/case-license-ski.html">
-          <small>민간자격</small>
+      <div class="case-layout">
+        <a class="case-feature reveal" href="pages/case-license-ski.html">
+          <small>민간자격 등록</small>
           <h3>수상스키지도사<br>민간자격 등록</h3>
           <p>해양경찰청 · 등록 완료</p>
-          <span class="case-link">사례 보기 →</span>
+          <span class="case-go">사례 자세히 보기 →</span>
         </a>
-        <a class="home-case-card home-reveal" href="pages/cases.html#license">
-          <small>민간자격</small>
-          <h3>ChatGPT 활용강사<br>민간자격 등록</h3>
-          <p>민간자격 등록 업무사례</p>
-          <span class="case-link">사례 보기 →</span>
-        </a>
-        <a class="home-case-card home-reveal" href="pages/cases.html#organization">
-          <small>법인·단체</small>
-          <h3>비영리사단법인<br>설립 허가</h3>
-          <p>법인·단체 설립 허가 업무사례</p>
-          <span class="case-link">사례 보기 →</span>
-        </a>
+
+        <div class="reveal">
+          <div class="case-list">
+            <a class="case-row" href="pages/cases.html#license">
+              <small>민간자격</small>
+              <strong>민간자격 등록사례</strong>
+              <i>→</i>
+            </a>
+            <a class="case-row" href="pages/cases.html#organization">
+              <small>법인·단체</small>
+              <strong>설립·허가 사례</strong>
+              <i>→</i>
+            </a>
+            <a class="case-row" href="pages/cases.html#cosmetics">
+              <small>화장품·의약외품</small>
+              <strong>등록·신고 사례</strong>
+              <i>→</i>
+            </a>
+          </div>
+          <a class="case-more" href="pages/cases.html">업무사례 전체 보기 →</a>
+        </div>
       </div>
-      <a class="section-link" href="pages/cases.html">업무사례 전체 보기 →</a>
     </div>
   </section>
 
-  <section class="home-consult">
-    <div class="container home-consult-grid">
-      <div class="home-consult-copy home-reveal">
+  <section class="consult-section">
+    <div class="container consult-inner">
+      <div class="consult-copy reveal">
         <p class="eyebrow">CONSULTATION</p>
         <h2>상담이 필요하신가요?</h2>
-        <p>정확한 업무명을 모르셔도 괜찮습니다. 현재 상황과 준비 정도에 맞는 방법으로 문의해 주세요.</p>
+        <p>현재 상황과 준비 정도에 따라 전화 상담 또는 맞춤 상담으로 문의하실 수 있습니다.</p>
       </div>
-      <div class="home-consult-options">
-        <a class="home-consult-card home-reveal" href="tel:03180490828">
+
+      <div class="consult-links line-reveal reveal">
+        <a class="consult-link" href="tel:03180490828">
           <small>PHONE</small>
-          <h3>전화 상담</h3>
-          <p>빠르게 확인이 필요한 내용은 전화로 문의하실 수 있습니다.</p>
-          <span class="more">031-8049-0828 →</span>
+          <strong>전화 상담</strong>
+          <i>→</i>
         </a>
-        <a class="home-consult-card primary-card home-reveal" href="pages/consult.html">
-          <small>GUIDED CONSULT</small>
-          <h3>맞춤 상담</h3>
-          <p>문의 분야와 현재 준비단계를 정리해 상담 내용을 전달하실 수 있습니다.</p>
-          <span class="more">맞춤 상담 시작 →</span>
+        <a class="consult-link" href="pages/consult.html">
+          <small>GUIDED</small>
+          <strong>맞춤 상담</strong>
+          <i>→</i>
         </a>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="footer"></footer>
-<div class="mobile-quick"><a href="tel:03180490828">전화 상담</a><a href="pages/consult.html">맞춤 상담</a></div>
+<footer class="home-footer">
+  <div class="container home-footer-top">
+    <div class="home-footer-brand">
+      <strong>동감행정사사무소</strong>
+      <p>민간자격 등록, 법인·단체 설립, 화장품·의약외품 관련 신고, 행정심판 등 다양한 행정업무를 상담합니다.</p>
+    </div>
+
+    <div>
+      <div class="home-footer-title">CONTACT</div>
+      <div class="home-footer-contact">
+        <span>경기도 김포시 태장로795번길 23, R동 4층 408호 (장기동, 김포마스터비즈파크)</span>
+        <a href="tel:03180490828">Tel. 031-8049-0828</a>
+        <span>Fax. 070-7500-2992</span>
+        <a href="mailto:creafit@naver.com">creafit@naver.com</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="home-footer-title">MENU</div>
+      <div class="home-footer-nav">
+        <a href="pages/services.html">서비스</a>
+        <a href="pages/cases.html">업무사례</a>
+        <a href="pages/consult.html">상담</a>
+        <a href="pages/about.html">동감 소개</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-footer-bottom">
+    <div class="container home-footer-bottom-inner">
+      <span>© DONGGAM ADMINISTRATIVE OFFICE. All rights reserved.</span>
+      <span>Administrative Practice · Consultation · Case Archive</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-quick">
+  <a href="tel:03180490828">전화 상담</a>
+  <a href="pages/consult.html">맞춤 상담</a>
+</div>
+
 <script src="assets/app.js"></script>
 <script>
   (() => {
-    const items = document.querySelectorAll('.home-reveal');
+    const items = document.querySelectorAll('.reveal');
     if (!items.length) return;
+
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      items.forEach(item => item.classList.add('is-visible'));
+      items.forEach(el => el.classList.add('visible'));
       return;
     }
+
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    items.forEach(item => observer.observe(item));
+    }, {
+      threshold: .12,
+      rootMargin: '0px 0px -36px 0px'
+    });
+
+    items.forEach(el => observer.observe(el));
   })();
 </script>
 </body>
