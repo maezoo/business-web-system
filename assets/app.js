@@ -31,10 +31,9 @@
     },
     {
       label:'동감 소개', href:p+'about.html',
-      intro:'동감 안내', desc:'사무소 소개와 업무 진행 방식을 안내합니다.',
+      intro:'동감 안내', desc:'사무소와 행정사 정보를 확인해 보세요.',
       links:[
         ['행정사 소개','동감행정사사무소 소개',p+'about.html'],
-        ['업무 진행 안내','상담부터 결과 안내까지',p+'about.html#process'],
         ['오시는 길','주소 및 연락처 안내',p+'about.html#location']
       ]
     }
@@ -79,31 +78,23 @@
       <div class="container footer-main">
         <div class="footer-brand">
           <strong>동감행정사사무소</strong>
-          <p>민간자격 등록, 법인·단체 설립, 화장품·의약외품 관련 신고, 행정심판 등 다양한 행정업무를 상담합니다.</p>
+          <p>${CONTACT.address}</p>
         </div>
-        <div>
-          <div class="footer-heading">CONTACT</div>
-          <div class="footer-contact">
-            <span>${CONTACT.address}</span>
-            <a href="tel:${CONTACT.tel}">Tel. ${CONTACT.telText}</a>
-            <span>Fax. ${CONTACT.fax}</span>
-            <a href="mailto:${CONTACT.email}">${CONTACT.email}</a>
-          </div>
+        <div class="footer-contact">
+          <a href="tel:${CONTACT.tel}">T. ${CONTACT.telText}</a>
+          <span>F. ${CONTACT.fax}</span>
+          <a href="mailto:${CONTACT.email}">E. ${CONTACT.email}</a>
         </div>
-        <div>
-          <div class="footer-heading">QUICK LINK</div>
-          <div class="footer-nav">
-            <a href="${p}services.html">서비스</a>
-            <a href="${p}cases.html">업무사례</a>
-            <a href="${p}consult.html">맞춤 상담</a>
-            <a href="${p}about.html">동감 소개</a>
-          </div>
+        <div class="footer-nav">
+          <a href="${p}services.html">서비스</a>
+          <a href="${p}cases.html">업무사례</a>
+          <a href="${p}consult.html">상담</a>
+          <a href="${p}about.html">동감 소개</a>
         </div>
       </div>
       <div class="footer-bottom">
         <div class="container footer-bottom-inner">
           <span>© DONGGAM ADMINISTRATIVE OFFICE. All rights reserved.</span>
-          <span>Tel. ${CONTACT.telText} · ${CONTACT.email}</span>
         </div>
       </div>`;
   }
