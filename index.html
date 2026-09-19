@@ -41,19 +41,8 @@
     .home-v4 .service-block i{position:absolute;right:34px;bottom:28px;font-style:normal;font-size:20px;transition:transform .2s ease}
     .home-v4 .service-block:hover i{transform:translateX(5px)}
 
-    /* PROCESS - timeline */
-    .home-v4 .process{padding:100px 0;background:var(--soft)}
-    .home-v4 .process-intro{max-width:720px;margin-bottom:54px}
-    .home-v4 .timeline{position:relative;display:grid;grid-template-columns:repeat(4,1fr)}
-    .home-v4 .timeline::before{content:"";position:absolute;top:25px;right:12.5%;left:12.5%;height:1px;background:#cdd3d8}
-    .home-v4 .step{position:relative;z-index:1;padding:0 22px;text-align:center}
-    .home-v4 .step-no{display:grid;place-items:center;width:52px;height:52px;margin:0 auto 22px;border:1px solid #c6ccd1;border-radius:50%;background:var(--soft);color:var(--wine);font-size:11px;font-weight:900;transition:.22s ease}
-    .home-v4 .step:hover .step-no{background:var(--wine);border-color:var(--wine);color:#fff;transform:translateY(-3px)}
-    .home-v4 .step h3{margin:0 0 8px;font-size:19px}
-    .home-v4 .step p{margin:0;color:var(--sub);font-size:14px;line-height:1.65}
-
     /* CASES - image-led archive + list */
-    .home-v4 .cases{padding:110px 0}
+    .home-v4 .cases{padding:118px 0 112px;background:linear-gradient(180deg,#faf7f8 0%,#fff 28%)}
     .home-v4 .cases-layout{display:grid;grid-template-columns:minmax(380px,.9fr) minmax(0,1.1fr);gap:58px;align-items:center}
     .home-v4 .cases-image{position:relative;min-height:560px;overflow:hidden;background:#eee}
     .home-v4 .cases-image img{display:block;width:100%;height:100%;min-height:560px;object-fit:cover;filter:saturate(.56) contrast(.97)}
@@ -119,15 +108,10 @@
       .home-v4 .hero{padding:34px 0 56px}
       .home-v4 .hero-copy h1{font-size:clamp(40px,12vw,58px)}
       .home-v4 .hero-image,.home-v4 .hero-image img{min-height:340px}
-      .home-v4 .services,.home-v4 .process,.home-v4 .cases,.home-v4 .trust{padding:74px 0}
+      .home-v4 .services,.home-v4 .cases,.home-v4 .trust{padding:74px 0}
       .home-v4 .service-grid{grid-template-columns:1fr}
       .home-v4 .service-block{min-height:240px;padding:28px 24px}
       .home-v4 .service-block h3{margin-top:36px}
-      .home-v4 .timeline{grid-template-columns:1fr}
-      .home-v4 .timeline::before{top:24px;bottom:24px;left:25px;width:1px;height:auto}
-      .home-v4 .step{display:grid;grid-template-columns:52px 1fr;gap:16px;padding:0 0 28px;text-align:left}
-      .home-v4 .step-no{grid-row:1/3;margin:0}
-      .home-v4 .step h3{align-self:end}
       .home-v4 .cases-image,.home-v4 .cases-image img{min-height:330px}
       .home-v4 .case-link{grid-template-columns:1fr 24px;gap:8px}
       .home-v4 .case-link small{grid-column:1/3}
@@ -139,7 +123,7 @@
     }
     @media(prefers-reduced-motion:reduce){
       .home-v4 .reveal{opacity:1;transform:none;transition:none}
-      .home-v4 .hero-image img,.home-v4 .service-block,.home-v4 .service-block i,.home-v4 .step-no,.home-v4 .case-link,.home-v4 .consult-action{transition:none}
+      .home-v4 .hero-image img,.home-v4 .service-block,.home-v4 .service-block i,.home-v4 .case-link,.home-v4 .consult-action{transition:none}
     }
   </style>
 </head>
@@ -194,18 +178,6 @@
         <a class="service-block" href="pages/service-organization.html"><span class="no">02</span><h3>법인 · 단체 설립</h3><p>비영리사단법인, 비영리재단법인, 비영리민간단체, 사회적기업 관련 설립·등록·인증</p><i>→</i></a>
         <a class="service-block" href="pages/service-license.html"><span class="no">03</span><h3>민간자격 등록</h3><p>민간자격 등록 대상, 운영기준, 신청 절차와 관련 업무사례</p><i>→</i></a>
         <a class="service-block" href="pages/service-appeal.html"><span class="no">04</span><h3>행정심판</h3><p>음주운전 면허구제, 영업정지 대응, 학교폭력 조치 등 행정처분 대응</p><i>→</i></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="process">
-    <div class="container">
-      <div class="process-intro reveal"><p class="home-eyebrow">PROCESS</p><h2 class="home-title">업무 진행 절차</h2><p class="home-desc">업무 종류에 따라 세부 과정은 달라질 수 있으며, 상담 후 필요한 자료와 진행 절차를 순서대로 안내합니다.</p></div>
-      <div class="timeline reveal">
-        <div class="step"><div class="step-no">01</div><h3>상담</h3><p>현재 상황과 필요한 업무를 확인합니다.</p></div>
-        <div class="step"><div class="step-no">02</div><h3>자료 검토</h3><p>요건과 준비자료, 추가 확인사항을 검토합니다.</p></div>
-        <div class="step"><div class="step-no">03</div><h3>업무 진행</h3><p>확인된 절차에 따라 신청·등록·대응 업무를 진행합니다.</p></div>
-        <div class="step"><div class="step-no">04</div><h3>결과 안내</h3><p>처리 결과와 이후 필요한 사항을 안내합니다.</p></div>
       </div>
     </div>
   </section>
