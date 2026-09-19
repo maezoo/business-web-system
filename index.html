@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="민간자격 등록, 화장품·의약외품, 법인·단체 설립, 행정심판 관련 행정업무를 안내합니다.">
+  <meta name="description" content="민간자격 등록, 법인·단체 설립, 화장품·의약품·의약외품 관련 등록·신고, 행정심판 등 주요 행정업무의 요건과 절차를 안내합니다.">
   <title>동감행정사사무소</title>
   <link rel="stylesheet" href="assets/styles.css">
   <style>
     .home-v4{overflow-x:hidden;background:#fff}
     .home-v4 .home-eyebrow{margin:0 0 14px;color:var(--wine);font-size:12px;font-weight:900;letter-spacing:.12em}
-    .home-v4 .home-title{margin:0;font-size:clamp(36px,4.7vw,66px);line-height:1.12;letter-spacing:-.055em}
-    .home-v4 .home-desc{margin:18px 0 0;color:var(--sub);font-size:17px;line-height:1.75}
+    .home-v4 .home-title{margin:0;font-size:clamp(34px,4vw,54px);line-height:1.18;letter-spacing:-.045em;word-break:keep-all}
+    .home-v4 .home-desc{margin:18px 0 0;color:var(--sub);font-size:17px;line-height:1.78;word-break:keep-all}
 
     /* HERO - real image + clear actions */
     .home-v4 .hero{padding:56px 0 72px;background:#fbf8f9}
     .home-v4 .hero-grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(460px,1.08fr);gap:56px;align-items:center}
-    .home-v4 .hero-copy h1{max-width:760px;margin:0;font-size:clamp(46px,5.9vw,82px);line-height:1.08;letter-spacing:-.06em}
-    .home-v4 .hero-copy .lead{max-width:670px;margin-top:26px;color:var(--sub);font-size:18px;line-height:1.72}
+    .home-v4 .hero-copy h1{max-width:760px;margin:0;font-size:clamp(44px,5vw,68px);line-height:1.16;letter-spacing:-.05em;word-break:keep-all}
+    .home-v4 .hero-copy .lead{max-width:690px;margin-top:26px;color:var(--sub);font-size:18px;line-height:1.78;word-break:keep-all}
     .home-v4 .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}
     .home-v4 .hero-contact{display:flex;gap:22px;flex-wrap:wrap;margin-top:36px;padding-top:20px;border-top:1px solid rgba(117,22,49,.15);font-size:13px;color:var(--sub)}
     .home-v4 .hero-contact b{color:var(--text);font-size:15px}
@@ -25,7 +25,7 @@
     .home-v4 .hero-image.is-visible img{transform:scale(1.045)}
     .home-v4 .hero-image::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(28,12,18,.58) 100%)}
     .home-v4 .hero-badge{position:absolute;right:26px;bottom:24px;left:26px;z-index:2;display:flex;justify-content:space-between;gap:24px;align-items:end;color:#fff}
-    .home-v4 .hero-badge strong{max-width:360px;font-size:23px;line-height:1.35}
+    .home-v4 .hero-badge strong{max-width:430px;font-size:19px;line-height:1.5;word-break:keep-all}
     .home-v4 .hero-badge span{font-size:11px;font-weight:900;letter-spacing:.1em;opacity:.78}
 
     /* SERVICES - 2x2 field map */
@@ -36,8 +36,8 @@
     .home-v4 .service-block{position:relative;min-height:286px;padding:34px 38px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;transition:background .24s ease,color .24s ease}
     .home-v4 .service-block:hover{background:#faf6f7;color:var(--wine)}
     .home-v4 .service-block .no{color:var(--sub2);font-size:11px;font-weight:900}
-    .home-v4 .service-block h3{margin:52px 0 14px;font-size:clamp(25px,2.8vw,38px)}
-    .home-v4 .service-block p{max-width:520px;margin:0;color:var(--sub);line-height:1.7}
+    .home-v4 .service-block h3{margin:46px 0 14px;font-size:clamp(24px,2.4vw,32px);line-height:1.3;word-break:keep-all}
+    .home-v4 .service-block p{max-width:540px;margin:0;color:var(--sub);font-size:15px;line-height:1.75;word-break:keep-all}
     .home-v4 .service-block i{position:absolute;right:34px;bottom:28px;font-style:normal;font-size:20px;transition:transform .2s ease}
     .home-v4 .service-block:hover i{transform:translateX(5px)}
 
@@ -66,7 +66,7 @@
     .home-v4 .trust-point{min-height:180px;padding:26px;border-right:1px solid rgba(117,22,49,.14);border-bottom:1px solid rgba(117,22,49,.14)}
     .home-v4 .trust-point small{color:var(--wine);font-size:11px;font-weight:900;letter-spacing:.08em}
     .home-v4 .trust-point strong{display:block;margin-top:34px;font-size:19px}
-    .home-v4 .trust-point p{margin:8px 0 0;color:var(--sub);font-size:14px;line-height:1.65}
+    .home-v4 .trust-point p{margin:8px 0 0;color:var(--sub);font-size:14px;line-height:1.72;word-break:keep-all}
     .home-v4 .trust-link{display:inline-block;margin-top:26px;color:var(--wine);font-weight:850}
 
     /* CONSULT - strong action zone */
@@ -106,7 +106,7 @@
     }
     @media(max-width:760px){
       .home-v4 .hero{padding:34px 0 56px}
-      .home-v4 .hero-copy h1{font-size:clamp(40px,12vw,58px)}
+      .home-v4 .hero-copy h1{font-size:clamp(38px,10.5vw,50px)}
       .home-v4 .hero-image,.home-v4 .hero-image img{min-height:340px}
       .home-v4 .services,.home-v4 .cases,.home-v4 .trust{padding:74px 0}
       .home-v4 .service-grid{grid-template-columns:1fr}
@@ -144,8 +144,8 @@
     <div class="container hero-grid">
       <div class="hero-copy reveal">
         <p class="home-eyebrow">DONGGAM ADMINISTRATIVE OFFICE</p>
-        <h1>행정업무의 시작부터<br>필요한 절차를 정확하게.</h1>
-        <p class="lead">민간자격 등록, 법인·단체 설립, 화장품·의약외품 관련 업무, 행정심판까지. 업무별 요건과 준비사항을 확인하고 필요한 절차를 안내받으실 수 있습니다.</p>
+        <h1>복잡한 행정업무,<br>정확한 검토에서 시작합니다.</h1>
+        <p class="lead">민간자격 등록, 비영리법인·단체 설립, 화장품 제조업·책임판매업, 의약품·의약외품 제조·수입 관련 업무와 행정심판까지 주요 행정업무를 분야별로 안내합니다. 신청 전 확인해야 할 요건과 준비자료, 진행 절차를 살펴보고 필요한 경우 상담을 통해 구체적인 사항을 확인하실 수 있습니다.</p>
         <div class="hero-actions">
           <a class="btn primary" href="#services">주요 업무 보기</a>
           <a class="btn secondary" href="pages/consult.html">상담 안내</a>
@@ -159,7 +159,7 @@
       <figure class="hero-image reveal">
         <img src="https://images.unsplash.com/photo-1775163024488-e88e4a71179f?auto=format&fit=crop&q=82&w=1800" alt="" loading="eager">
         <figcaption class="hero-badge">
-          <strong>상담과 서류 검토부터<br>업무에 맞는 절차를 확인합니다.</strong>
+          <strong>업무의 성격과 준비 단계에 따라<br>확인해야 할 요건과 제출자료가 달라질 수 있습니다.</strong>
           <span>ADMINISTRATIVE PRACTICE</span>
         </figcaption>
       </figure>
@@ -169,15 +169,15 @@
   <section class="services" id="services">
     <div class="container">
       <div class="section-head reveal">
-        <div><p class="home-eyebrow">PRACTICE AREAS</p><h2 class="home-title">주요 업무 분야</h2></div>
-        <p class="home-desc">업무별 대상과 절차, 준비사항을 확인하고 필요한 전문정보까지 이어서 살펴보실 수 있습니다.</p>
+        <div><p class="home-eyebrow">PRACTICE AREAS</p><h2 class="home-title">전문 행정업무 안내</h2></div>
+        <p class="home-desc">현재 준비 중인 업무와 가까운 분야를 선택하시면 등록·신고 대상, 준비자료, 세부 절차와 관련 사례를 단계별로 확인하실 수 있습니다.</p>
       </div>
 
       <div class="service-grid reveal">
-        <a class="service-block" href="pages/service-cosmetics.html"><span class="no">01</span><h3>화장품 · 의약품 · 의약외품</h3><p>화장품 제조업·책임판매업, 의약품·의약외품 제조·수입 관련 등록 및 신고</p><i>→</i></a>
-        <a class="service-block" href="pages/service-organization.html"><span class="no">02</span><h3>법인 · 단체 설립</h3><p>비영리사단법인, 비영리재단법인, 비영리민간단체, 사회적기업 관련 설립·등록·인증</p><i>→</i></a>
-        <a class="service-block" href="pages/service-license.html"><span class="no">03</span><h3>민간자격 등록</h3><p>민간자격 등록 대상, 운영기준, 신청 절차와 관련 업무사례</p><i>→</i></a>
-        <a class="service-block" href="pages/service-appeal.html"><span class="no">04</span><h3>행정심판</h3><p>음주운전 면허구제, 영업정지 대응, 학교폭력 조치 등 행정처분 대응</p><i>→</i></a>
+        <a class="service-block" href="pages/service-cosmetics.html"><span class="no">01</span><h3>화장품 · 의약품 · 의약외품</h3><p>제품의 제조·유통·수입을 준비하고 있다면 사업 형태에 따라 필요한 등록과 신고가 달라집니다. 화장품 제조업·책임판매업과 의약품·의약외품 제조·수입 관련 업무를 확인하실 수 있습니다.</p><i>→</i></a>
+        <a class="service-block" href="pages/service-organization.html"><span class="no">02</span><h3>법인 · 단체 설립</h3><p>협회나 공익 목적의 단체를 준비하는 경우 운영 목적, 구성 방식과 재산 여부에 따라 적합한 형태와 절차가 달라질 수 있습니다. 비영리사단·재단법인, 비영리민간단체와 사회적기업 관련 업무를 안내합니다.</p><i>→</i></a>
+        <a class="service-block" href="pages/service-license.html"><span class="no">03</span><h3>민간자격 등록</h3><p>새로운 민간자격을 운영·발급하려는 경우 자격명칭과 직무내용, 검정기준, 관리·운영규정 등을 사전에 검토해야 합니다. 등록 대상과 준비사항, 신청 절차를 확인하실 수 있습니다.</p><i>→</i></a>
+        <a class="service-block" href="pages/service-appeal.html"><span class="no">04</span><h3>행정심판</h3><p>행정처분에 대한 대응이 필요한 경우 처분 내용과 사실관계, 청구기한 등을 먼저 확인해야 합니다. 음주운전 면허구제, 영업정지, 학교폭력 관련 행정심판 업무를 안내합니다.</p><i>→</i></a>
       </div>
     </div>
   </section>
@@ -186,12 +186,12 @@
     <div class="container cases-layout">
       <figure class="cases-image reveal">
         <img src="https://images.unsplash.com/photo-1762427907123-c7ab022a5de7?auto=format&fit=crop&q=82&w=1600" alt="" loading="lazy">
-        <figcaption><small>CASE ARCHIVE</small><strong>분야별 업무사례와<br>결과를 확인해 보세요.</strong></figcaption>
+        <figcaption><small>CASE ARCHIVE</small><strong>업무 분야와 처리 내용을<br>사례를 통해 확인할 수 있습니다.</strong></figcaption>
       </figure>
       <div class="reveal">
         <p class="home-eyebrow">WORK CASES</p>
         <h2 class="home-title">업무사례</h2>
-        <p class="home-desc">등록정보, 허가·신고 결과와 관련 자료를 통해 분야별 업무사례를 확인하실 수 있습니다.</p>
+        <p class="home-desc">업무사례에서는 등록·허가·신고가 어떤 분야에서 진행되는지, 어떤 결과자료가 남는지 확인할 수 있습니다. 현재 준비 중인 업무와 유사한 분야가 있는지 살펴보실 수 있습니다.</p>
         <div class="case-list">
           <a class="case-link" href="pages/case-license-ski.html"><small>민간자격</small><strong>수상스키지도사 민간자격 등록</strong><i>→</i></a>
           <a class="case-link" href="pages/cases.html#organization"><small>법인·단체</small><strong>설립·허가 업무사례</strong><i>→</i></a>
@@ -206,15 +206,15 @@
     <div class="container trust-grid">
       <div class="trust-copy reveal">
         <p class="home-eyebrow">DONGGAM OFFICE</p>
-        <h2 class="home-title">업무에 필요한 정보를<br>명확하게 확인할 수 있도록.</h2>
-        <p class="home-desc">업무 분야별 요건과 절차를 정리하고, 필요한 경우 관련 사례와 상담으로 이어질 수 있도록 안내합니다.</p>
+        <h2 class="home-title">복잡한 등록·인허가 업무는<br>준비 단계부터 확인이 필요합니다.</h2>
+        <p class="home-desc">같은 업무 분야라도 신청 주체와 사업 형태, 현재 준비 상태에 따라 확인해야 할 요건과 자료가 달라질 수 있습니다. 동감행정사사무소는 분야별 기준과 준비사항을 확인하고 필요한 행정절차를 안내합니다.</p>
         <a class="trust-link" href="pages/about.html">동감 소개 및 오시는 길 →</a>
       </div>
       <div class="trust-points reveal">
-        <div class="trust-point"><small>01</small><strong>업무별 전문정보</strong><p>각 서비스의 대상, 준비사항과 세부 절차를 분야별로 확인합니다.</p></div>
-        <div class="trust-point"><small>02</small><strong>분야별 업무사례</strong><p>관련 등록·허가·신고 사례를 통해 실제 업무 분야를 확인합니다.</p></div>
-        <div class="trust-point"><small>03</small><strong>전화 상담</strong><p>빠른 확인이 필요한 내용은 전화로 문의하실 수 있습니다.</p></div>
-        <div class="trust-point"><small>04</small><strong>맞춤 상담</strong><p>문의 분야와 현재 준비상태를 정리해 상담을 시작할 수 있습니다.</p></div>
+        <div class="trust-point"><small>01</small><strong>등록·신고 업무 검토</strong><p>화장품·의약외품, 민간자격 등 등록·신고 업무의 대상과 기본 준비사항을 확인합니다.</p></div>
+        <div class="trust-point"><small>02</small><strong>법인·단체 설립 안내</strong><p>설립 목적과 운영 형태에 따라 검토할 법인·단체 유형과 관련 절차를 안내합니다.</p></div>
+        <div class="trust-point"><small>03</small><strong>행정처분 대응</strong><p>행정처분에 이의가 있는 경우 처분 내용과 기한, 준비자료 등 확인이 필요한 사항을 살펴봅니다.</p></div>
+        <div class="trust-point"><small>04</small><strong>상담 및 준비자료 확인</strong><p>현재 상황과 보유자료를 바탕으로 상담 전 먼저 확인해야 할 내용을 정리할 수 있습니다.</p></div>
       </div>
     </div>
   </section>
@@ -223,8 +223,8 @@
     <div class="container consult-grid">
       <div class="reveal">
         <p class="home-eyebrow">CONSULTATION</p>
-        <h2 class="home-title">상담이 필요하신가요?</h2>
-        <p class="home-desc">현재 상황과 준비 정도에 따라 전화 상담 또는 맞춤 상담으로 문의하실 수 있습니다.</p>
+        <h2 class="home-title">현재 준비 중인 업무에<br>전문적인 검토가 필요하신가요?</h2>
+        <p class="home-desc">문의 분야와 현재 진행 단계, 준비된 자료 등을 알려주시면 상담에 필요한 내용을 확인할 수 있습니다. 간단한 문의는 전화로, 내용을 정리해 전달하려는 경우에는 맞춤 상담을 이용하실 수 있습니다.</p>
         <a class="phone" href="tel:03180490828">031-8049-0828</a>
       </div>
       <div class="consult-actions reveal">
@@ -237,7 +237,7 @@
 
 <footer class="home-footer">
   <div class="container footer-main">
-    <div class="footer-brand"><strong>동감행정사사무소</strong><p>민간자격 등록, 법인·단체 설립, 화장품·의약외품 관련 신고, 행정심판 등 다양한 행정업무를 상담합니다.</p></div>
+    <div class="footer-brand"><strong>동감행정사사무소</strong><p>민간자격 등록, 비영리법인·단체 설립, 화장품·의약품·의약외품 관련 등록·신고, 행정심판 등 주요 행정업무를 상담합니다.</p></div>
     <div><div class="footer-title">CONTACT</div><div class="footer-contact"><span>경기도 김포시 태장로795번길 23, R동 4층 408호 (장기동, 김포마스터비즈파크)</span><a href="tel:03180490828">Tel. 031-8049-0828</a><span>Fax. 070-7500-2992</span><a href="mailto:creafit@naver.com">creafit@naver.com</a></div></div>
     <div><div class="footer-title">MENU</div><div class="footer-nav"><a href="pages/services.html">서비스</a><a href="pages/cases.html">업무사례</a><a href="pages/consult.html">상담</a><a href="pages/about.html">동감 소개</a></div></div>
   </div>
