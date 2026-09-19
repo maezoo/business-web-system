@@ -27,12 +27,7 @@
       ]
     },
     {
-      label:'상담', href:p+'consult.html',
-      intro:'상담 안내', desc:'전화 또는 맞춤 상담으로 문의하실 수 있습니다.',
-      links:[
-        ['전화 상담','010-4004-5802','tel:01040045802'],
-        ['맞춤 상담','몇 가지 항목을 선택해 문의 내용을 남겨주세요.',p+'consult.html']
-      ]
+      label:'상담', href:p+'consult.html', direct:true
     },
     {
       label:'동감 소개', href:p+'about.html',
@@ -46,7 +41,11 @@
   ];
 
   if(nav){
-    nav.innerHTML = groups.map(g=>`
+    nav.innerHTML = groups.map(g=>{
+      if(g.direct){
+        return `<div class="nav-item"><a class="nav-link" href="${g.href}">${g.label}</a></div>`;
+      }
+      return `
       <div class="nav-item has-menu">
         <a class="nav-link" href="${g.href}">${g.label}</a>
         <button class="submenu-toggle" type="button" aria-label="${g.label} 하위메뉴 열기">+</button>
@@ -58,7 +57,55 @@
             </div>
           </div>
         </div>
-      </div>`).join('');
+      </div>`;
+    }).join('');
+  }
+
+  const CONTACT = {
+    tel:'03180490828',
+    telText:'031-8049-0828',
+    fax:'070-7500-2992',
+    email:'creafit@naver.com',
+    address:'경기도 김포시 태장로795번길 23, R동 4층 408호 (장기동, 김포마스터비즈파크)'
+  };
+
+  document.querySelectorAll('a[href^="tel:"]').forEach(a=>a.setAttribute('href','tel:'+CONTACT.tel));
+  document.querySelectorAll('.call-top').forEach(a=>{a.textContent='전화 상담';a.setAttribute('href','tel:'+CONTACT.tel)});
+  document.querySelectorAll('.mobile-quick a:first-child').forEach(a=>a.setAttribute('href','tel:'+CONTACT.tel));
+
+  const footer=document.querySelector('.footer');
+  if(footer){
+    footer.innerHTML = `
+      <div class="container footer-main">
+        <div class="footer-brand">
+          <strong>동감행정사사무소</strong>
+          <p>민간자격 등록, 법인·단체 설립, 화장품·의약외품 관련 신고, 행정심판 등 다양한 행정업무를 상담합니다.</p>
+        </div>
+        <div>
+          <div class="footer-heading">CONTACT</div>
+          <div class="footer-contact">
+            <span>${CONTACT.address}</span>
+            <a href="tel:${CONTACT.tel}">Tel. ${CONTACT.telText}</a>
+            <span>Fax. ${CONTACT.fax}</span>
+            <a href="mailto:${CONTACT.email}">${CONTACT.email}</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">QUICK LINK</div>
+          <div class="footer-nav">
+            <a href="${p}services.html">서비스</a>
+            <a href="${p}cases.html">업무사례</a>
+            <a href="${p}consult.html">맞춤 상담</a>
+            <a href="${p}about.html">동감 소개</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <span>© DONGGAM ADMINISTRATIVE OFFICE. All rights reserved.</span>
+          <span>Tel. ${CONTACT.telText} · ${CONTACT.email}</span>
+        </div>
+      </div>`;
   }
 
   menuBtn?.addEventListener('click',()=>header?.classList.toggle('open'));
