@@ -204,3 +204,37 @@ textarea{width:100%;padding:14px;border:1px solid var(--line);border-radius:13px
 .case-media b{font-size:15px}.case-media span{display:block;color:var(--sub);font-size:12px;margin-top:3px}
 @media(max-width:900px){.case-archive-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.case-archive-grid,.case-facts,.case-media-grid{grid-template-columns:1fr}.case-fact:nth-child(odd),.case-fact:nth-child(even){padding-left:0;padding-right:0;border-left:0}.case-fact{grid-template-columns:95px 1fr}}
+
+/* ADMINISTRATIVE APPEAL */
+.appeal-hub{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.appeal-card{display:flex;flex-direction:column;min-height:330px;padding:26px;border:1px solid var(--line);border-radius:22px;background:#fff;transition:.2s}
+.appeal-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#d9bec7}
+.appeal-card .num{color:var(--wine);font-size:11px;font-weight:900}
+.appeal-card h3{margin-top:52px}
+.appeal-card p{color:var(--sub)}
+.appeal-card .more{margin-top:auto;color:var(--wine);font-weight:900}
+.appeal-summary{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.appeal-summary .info-card strong{display:block;margin-bottom:6px;font-size:18px}
+.factor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.factor{padding:20px;border:1px solid var(--line);border-radius:16px;background:#fff}
+.factor span{display:block;color:var(--wine);font-size:11px;font-weight:900;margin-bottom:10px}
+.factor b{display:block;margin-bottom:6px}
+.factor p{margin:0;color:var(--sub);font-size:14px}
+.penalty-table{width:100%;border-collapse:collapse;margin-top:20px;border-top:2px solid var(--wine)}
+.penalty-table th,.penalty-table td{padding:16px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.penalty-table th{width:32%;background:var(--soft);font-size:13px}
+.penalty-table td{color:var(--text2)}
+.route-compare{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.route-box{padding:22px;border:1px solid var(--line);border-radius:18px;background:#fff}
+.route-box.accent{background:var(--wine-soft);border-color:#ead4db}
+.route-box small{color:var(--wine);font-weight:900}.route-box h3{margin-top:8px}
+.route-box ul{padding-left:18px;margin:12px 0 0;color:var(--sub)}
+.timeline{display:grid;gap:0;border-top:1px solid var(--line)}
+.timeline-item{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--line)}
+.timeline-item b{color:var(--wine)}
+.timeline-item p{margin:0;color:var(--sub)}
+.type-chips{display:flex;gap:8px;flex-wrap:wrap}
+.type-chips span{padding:9px 12px;border-radius:999px;background:var(--soft);color:var(--text2);font-size:13px;font-weight:800}
+.legal-note{margin-top:20px;padding:17px 18px;border-radius:14px;background:var(--soft);border:1px solid var(--line);color:var(--sub);font-size:13px}
+@media(max-width:900px){.appeal-hub{grid-template-columns:1fr}.appeal-summary,.factor-grid,.route-compare{grid-template-columns:1fr}}
+@media(max-width:620px){.timeline-item{grid-template-columns:1fr;gap:6px}.penalty-table th,.penalty-table td{display:block;width:100%}.penalty-table th{border-bottom:0;padding-bottom:4px}.penalty-table td{padding-top:4px}}
