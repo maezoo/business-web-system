@@ -101,16 +101,34 @@
     }
     .home-v6 .hero-media.is-visible{clip-path:inset(0 0 0 0)}
     .home-v6 .hero-media img{
+      position:absolute;
+      inset:0;
       width:100%;
       height:100%;
       display:block;
       object-fit:cover;
       object-position:center;
       filter:saturate(.74) contrast(.98);
-      transform:scale(1.06);
-      transition:transform 7s ease;
+      transform:scale(1.035);
+      opacity:0;
+      will-change:opacity,transform;
     }
-    .home-v6 .hero-media.is-visible img{transform:scale(1.015)}
+    .home-v6 .hero-media img:first-child{
+      animation:heroCrossfadeA 12s ease-in-out infinite;
+    }
+    .home-v6 .hero-media img:nth-child(2){
+      animation:heroCrossfadeB 12s ease-in-out infinite;
+    }
+    @keyframes heroCrossfadeA{
+      0%,42%{opacity:1;transform:scale(1.035)}
+      50%,92%{opacity:0;transform:scale(1.07)}
+      100%{opacity:1;transform:scale(1.035)}
+    }
+    @keyframes heroCrossfadeB{
+      0%,42%{opacity:0;transform:scale(1.07)}
+      50%,92%{opacity:1;transform:scale(1.035)}
+      100%{opacity:0;transform:scale(1.07)}
+    }
     .home-v6 .hero-media::after{
       content:"";
       position:absolute;
@@ -249,7 +267,99 @@
       font-size:11px;
     }
 
-    /* CASES - horizontal archive */
+    /* VISUAL BREAK - information + work image */
+    .home-v6 .visual-break{
+      position:relative;
+      min-height:520px;
+      overflow:hidden;
+      background:#161214;
+      color:#fff;
+    }
+    .home-v6 .visual-break > img{
+      position:absolute;
+      inset:-5% 0;
+      width:100%;
+      height:110%;
+      object-fit:cover;
+      filter:saturate(.48) contrast(1.06) brightness(.52);
+      transform:scale(1.055);
+      transition:transform 1.2s cubic-bezier(.2,.72,.25,1);
+    }
+    .home-v6 .visual-break.is-visible > img{transform:scale(1.015)}
+    .home-v6 .visual-break::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(90deg,rgba(33,9,18,.86) 0%,rgba(33,9,18,.62) 50%,rgba(20,12,15,.28) 100%);
+    }
+    .home-v6 .visual-break .container{
+      position:relative;
+      z-index:2;
+      min-height:520px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      padding-top:80px;
+      padding-bottom:54px;
+    }
+    .home-v6 .visual-break .home-kicker{color:#efc8d3}
+    .home-v6 .visual-message{
+      max-width:890px;
+    }
+    .home-v6 .visual-message h2{
+      margin:0;
+      max-width:850px;
+      font-size:clamp(35px,3.5vw,48px);
+      line-height:1.22;
+      letter-spacing:-.044em;
+      word-break:keep-all;
+      text-wrap:balance;
+    }
+    .home-v6 .visual-message > p{
+      max-width:700px;
+      margin:17px 0 0;
+      color:rgba(255,255,255,.8);
+      font-size:17px;
+      line-height:1.72;
+      word-break:keep-all;
+    }
+    .home-v6 .visual-facts{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:0;
+      max-width:920px;
+      margin-top:34px;
+      border-top:1px solid rgba(255,255,255,.3);
+      border-bottom:1px solid rgba(255,255,255,.18);
+    }
+    .home-v6 .visual-fact{
+      min-height:104px;
+      padding:20px 24px 19px 0;
+      border-right:1px solid rgba(255,255,255,.2);
+    }
+    .home-v6 .visual-fact + .visual-fact{padding-left:24px}
+    .home-v6 .visual-fact:last-child{border-right:0}
+    .home-v6 .visual-fact small{
+      display:block;
+      margin-bottom:8px;
+      color:#efc8d3;
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.1em;
+    }
+    .home-v6 .visual-fact strong{
+      display:block;
+      font-size:16px;
+      line-height:1.45;
+    }
+    .home-v6 .visual-fact p{
+      margin:5px 0 0;
+      color:rgba(255,255,255,.68);
+      font-size:13px;
+      line-height:1.55;
+    }
+
+    /* CASES - auto swipe certificate archive */
     .home-v6 .cases{
       padding:116px 0 122px;
       background:var(--hsoft);
@@ -259,14 +369,14 @@
       grid-template-columns:minmax(0,.9fr) minmax(340px,.5fr);
       gap:56px;
       align-items:end;
-      margin-bottom:38px;
+      margin-bottom:32px;
     }
     .home-v6 .cases-head .home-copy{margin:0}
     .home-v6 .case-toolbar{
       display:flex;
       justify-content:flex-end;
       gap:8px;
-      margin-bottom:18px;
+      margin-bottom:16px;
     }
     .home-v6 .case-nav{
       width:46px;
@@ -285,110 +395,148 @@
       border-color:var(--hwine);
       color:#fff;
     }
-    .home-v6 .case-viewport{
-      overflow:visible;
-    }
     .home-v6 .case-track{
       display:grid;
       grid-auto-flow:column;
-      grid-auto-columns:minmax(360px,31vw);
+      grid-auto-columns:minmax(350px,30vw);
       gap:18px;
       overflow-x:auto;
       overscroll-behavior-inline:contain;
       scroll-snap-type:x mandatory;
       scrollbar-width:none;
-      padding:0 max(24px,calc((100vw - min(calc(100% - 40px),1180px))/2)) 10px;
+      padding:0 max(24px,calc((100vw - min(calc(100% - 40px),1180px))/2)) 12px;
       margin-left:calc(-1 * max(24px,calc((100vw - min(calc(100% - 40px),1180px))/2)));
       margin-right:calc(-1 * max(24px,calc((100vw - min(calc(100% - 40px),1180px))/2)));
+      touch-action:pan-x;
+      -webkit-overflow-scrolling:touch;
     }
     .home-v6 .case-track::-webkit-scrollbar{display:none}
     .home-v6 .case-card{
-      position:relative;
-      min-height:430px;
-      overflow:hidden;
+      min-height:455px;
+      padding:22px;
       scroll-snap-align:start;
-      background:#171214;
-      color:#fff;
-      isolation:isolate;
+      background:#e9e0e3;
+      color:var(--hink);
     }
-    .home-v6 .case-card img{
-      position:absolute;
-      inset:0;
-      z-index:-2;
-      width:100%;
+    .home-v6 .certificate{
+      position:relative;
+      min-height:411px;
       height:100%;
-      object-fit:cover;
-      filter:saturate(.52) contrast(1.02) brightness(.62);
-      transition:transform .65s ease;
+      padding:30px 28px 27px;
+      overflow:hidden;
+      border:1px solid #cabdc1;
+      outline:5px solid #fff;
+      outline-offset:-11px;
+      background:
+        linear-gradient(135deg,rgba(117,22,49,.035),transparent 42%),
+        #fff;
+      box-shadow:0 18px 42px rgba(40,18,25,.11);
+      transition:transform .35s ease,box-shadow .35s ease;
     }
-    .home-v6 .case-card:hover img{transform:scale(1.045)}
-    .home-v6 .case-card::before{
+    .home-v6 .case-card:hover .certificate{
+      transform:translateY(-6px);
+      box-shadow:0 24px 54px rgba(40,18,25,.16);
+    }
+    .home-v6 .certificate::before,
+    .home-v6 .certificate::after{
       content:"";
       position:absolute;
-      inset:0;
-      z-index:-1;
-      background:linear-gradient(180deg,rgba(15,8,10,.06) 20%,rgba(15,8,10,.32) 52%,rgba(15,8,10,.92) 100%);
+      width:120px;
+      height:120px;
+      border:1px solid rgba(117,22,49,.09);
+      border-radius:50%;
     }
-    .home-v6 .case-no{
-      position:absolute;
-      top:24px;
-      right:24px;
-      color:rgba(255,255,255,.68);
-      font-size:11px;
+    .home-v6 .certificate::before{right:-54px;top:-54px}
+    .home-v6 .certificate::after{left:-58px;bottom:-58px}
+    .home-v6 .certificate-head{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:start;
+      padding-bottom:20px;
+      border-bottom:1px solid #d9ced1;
+    }
+    .home-v6 .certificate-head small{
+      color:var(--hwine);
+      font-size:10px;
       font-weight:900;
-      letter-spacing:.1em;
+      letter-spacing:.12em;
     }
-    .home-v6 .case-card-body{
-      position:absolute;
-      right:0;
-      bottom:0;
-      left:0;
-      padding:28px 28px 30px;
-    }
-    .home-v6 .case-card small{
-      display:block;
-      margin-bottom:10px;
-      color:#efc8d3;
-      font-size:11px;
+    .home-v6 .certificate-no{
+      color:#8c7d82;
+      font-size:10px;
       font-weight:900;
-      letter-spacing:.08em;
+      letter-spacing:.09em;
     }
-    .home-v6 .case-card h3{
-      margin:0;
-      font-size:clamp(24px,2vw,30px);
+    .home-v6 .certificate-body{
+      position:relative;
+      z-index:2;
+      padding-top:24px;
+    }
+    .home-v6 .certificate-type{
+      color:#8d7f84;
+      font-size:11px;
+      font-weight:800;
+    }
+    .home-v6 .certificate h3{
+      margin:10px 0 13px;
+      font-size:clamp(24px,2vw,29px);
       line-height:1.3;
       letter-spacing:-.04em;
       word-break:keep-all;
     }
-    .home-v6 .case-card p{
-      margin:11px 0 0;
-      color:rgba(255,255,255,.78);
+    .home-v6 .certificate p{
+      min-height:70px;
+      margin:0;
+      color:#6f6569;
       font-size:14px;
       line-height:1.65;
       word-break:keep-all;
     }
-    .home-v6 .case-meta{
-      display:flex;
-      flex-wrap:wrap;
-      gap:7px;
-      margin-top:17px;
+    .home-v6 .certificate-lines{
+      display:grid;
+      gap:8px;
+      margin-top:22px;
     }
-    .home-v6 .case-meta span{
-      padding:6px 8px;
-      border:1px solid rgba(255,255,255,.22);
-      color:rgba(255,255,255,.8);
+    .home-v6 .certificate-line{
+      display:grid;
+      grid-template-columns:82px 1fr;
+      gap:12px;
+      padding-top:9px;
+      border-top:1px solid #ece5e7;
+      font-size:12px;
+      line-height:1.5;
+    }
+    .home-v6 .certificate-line b{
+      color:#897a7f;
       font-size:10px;
     }
-    .home-v6 .case-card .case-go{
+    .home-v6 .certificate-seal{
+      position:absolute;
+      right:27px;
+      bottom:28px;
+      width:58px;
+      height:58px;
+      display:grid;
+      place-items:center;
+      border:2px solid rgba(117,22,49,.4);
+      border-radius:50%;
+      color:var(--hwine);
+      font-size:9px;
+      font-weight:950;
+      letter-spacing:.03em;
+      transform:rotate(-10deg);
+    }
+    .home-v6 .certificate-go{
       display:inline-flex;
-      margin-top:18px;
-      color:#fff;
+      margin-top:23px;
+      color:var(--hwine);
       font-size:13px;
       font-weight:850;
     }
     .home-v6 .case-all{
       display:inline-flex;
-      margin-top:25px;
+      margin-top:24px;
       color:var(--hwine);
       font-size:14px;
       font-weight:850;
@@ -401,6 +549,7 @@
       background:#fff;
     }
     .home-v6 .about-photo{
+      margin:0;
       position:absolute;
       top:0;
       bottom:0;
@@ -607,6 +756,7 @@
         grid-template-columns:1fr;
       }
       .home-v6 .services-head,.home-v6 .cases-head{gap:18px}
+      .home-v6 .visual-facts{max-width:100%}
       .home-v6 .consult-actions{min-width:0;max-width:430px}
       .home-v6 .about-photo{position:relative;width:100%;height:420px}
       .home-v6 .about .container{min-height:auto;grid-template-columns:1fr}
@@ -625,18 +775,32 @@
       .home-v6 .service-card{min-height:350px}
       .home-v6 .service-inner{padding:25px 23px}
       .home-v6 .service-top{top:21px;right:21px;left:21px}
+      .home-v6 .visual-break,.home-v6 .visual-break .container{min-height:500px}
+      .home-v6 .visual-break .container{padding-top:62px;padding-bottom:40px}
+      .home-v6 .visual-message h2{font-size:34px}
+      .home-v6 .visual-facts{grid-template-columns:1fr;margin-top:28px}
+      .home-v6 .visual-fact,
+      .home-v6 .visual-fact + .visual-fact{
+        min-height:auto;
+        padding:15px 0;
+        border-right:0;
+        border-bottom:1px solid rgba(255,255,255,.18);
+      }
+      .home-v6 .visual-fact:last-child{border-bottom:0}
       .home-v6 .cases{padding:78px 0 84px}
       .home-v6 .case-toolbar{justify-content:flex-start}
       .home-v6 .case-track{
-        grid-auto-columns:minmax(285px,82vw);
+        grid-auto-columns:minmax(292px,84vw);
         gap:12px;
         padding-left:20px;
         padding-right:20px;
         margin-left:-20px;
         margin-right:-20px;
       }
-      .home-v6 .case-card{min-height:390px}
-      .home-v6 .case-card-body{padding:24px 22px 25px}
+      .home-v6 .case-card{min-height:430px;padding:16px}
+      .home-v6 .certificate{min-height:398px;padding:26px 23px 24px}
+      .home-v6 .certificate h3{font-size:24px}
+      .home-v6 .certificate-seal{right:23px;bottom:24px}
       .home-v6 .about-photo{height:330px}
       .home-v6 .about-copy{padding:60px 0}
       .home-v6 .consult{padding:70px 0 76px}
@@ -654,6 +818,8 @@
       }
       .home-v6 .reveal{opacity:1;transform:none}
       .home-v6 .hero-media{clip-path:none}
+      .home-v6 .hero-media img{animation:none!important;opacity:0}
+      .home-v6 .hero-media img:first-child{opacity:1}
     }
   </style>
 </head>
@@ -693,9 +859,10 @@
 
     <figure class="hero-media reveal">
       <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=84&w=1800" alt="" loading="eager">
+      <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=84&w=1800" alt="" loading="eager">
       <figcaption class="hero-caption">
         <b>ADMINISTRATIVE PRACTICE</b>
-        업무의 종류와 현재 준비 상태에 따라 확인해야 할 요건과 준비자료가 달라질 수 있습니다.
+        상담과 자료 검토를 통해 업무의 성격과 준비 상태를 확인하고 필요한 행정절차를 안내합니다.
       </figcaption>
     </figure>
   </section>
@@ -754,6 +921,35 @@
     </div>
   </section>
 
+  <section class="visual-break reveal" aria-label="업무 검토 안내">
+    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=84&w=2200" alt="" loading="lazy">
+    <div class="container">
+      <div class="visual-message">
+        <span class="home-kicker">BEFORE THE PROCEDURE</span>
+        <h2>업무마다 확인해야 할 기준과 준비자료는 다릅니다.</h2>
+        <p>등록·신고·허가·행정심판은 신청 주체와 현재 준비 상태에 따라 검토할 내용이 달라질 수 있습니다. 상세페이지에서는 필요한 정보를 아래 순서로 확인하실 수 있습니다.</p>
+
+        <div class="visual-facts">
+          <div class="visual-fact">
+            <small>01 · ELIGIBILITY</small>
+            <strong>대상과 요건 확인</strong>
+            <p>현재 상황이 해당 업무의 대상에 맞는지 먼저 확인합니다.</p>
+          </div>
+          <div class="visual-fact">
+            <small>02 · DOCUMENTS</small>
+            <strong>준비자료 검토</strong>
+            <p>신청 전 필요한 자료와 추가 확인사항을 정리합니다.</p>
+          </div>
+          <div class="visual-fact">
+            <small>03 · PROCEDURE</small>
+            <strong>실제 진행 절차</strong>
+            <p>업무별 신청·보완·결과 확인 흐름을 안내합니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="cases" id="cases">
     <div class="container">
       <div class="cases-head reveal">
@@ -761,7 +957,7 @@
           <span class="home-kicker">WORK CASES</span>
           <h2 class="home-h2">분야별 업무사례</h2>
         </div>
-        <p class="home-copy">등록·허가·신고와 행정심판 등 여러 업무 분야의 사례를 한곳에서 확인하실 수 있습니다.</p>
+        <p class="home-copy">한 분야의 사례만 강조하기보다 민간자격, 등록·신고, 법인·단체, 행정심판 등 여러 업무를 함께 확인할 수 있도록 구성했습니다.</p>
       </div>
 
       <div class="case-toolbar reveal" aria-label="업무사례 이동">
@@ -770,56 +966,78 @@
       </div>
     </div>
 
-    <div class="case-viewport">
-      <div class="case-track" id="caseTrack">
-        <a class="case-card reveal" href="pages/case-license-ski.html">
-          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=82&w=1200" alt="" loading="lazy">
-          <span class="case-no">01</span>
-          <div class="case-card-body">
-            <small>민간자격 · 등록정보형</small>
+    <div class="case-track" id="caseTrack">
+      <a class="case-card" href="pages/case-license-ski.html">
+        <article class="certificate">
+          <div class="certificate-head"><small>PRIVATE QUALIFICATION</small><span class="certificate-no">CASE 01</span></div>
+          <div class="certificate-body">
+            <span class="certificate-type">민간자격 · 등록 완료</span>
             <h3>수상스키지도사 민간자격 등록</h3>
-            <p>주무부처와 등록번호 등 주요 등록정보를 확인할 수 있는 사례입니다.</p>
-            <div class="case-meta"><span>해양경찰청</span><span>등록 완료</span><span>단일등급</span></div>
-            <span class="case-go">사례 상세 보기 →</span>
+            <p>실제 등록정보가 확인된 민간자격 등록 업무사례입니다.</p>
+            <div class="certificate-lines">
+              <div class="certificate-line"><b>주무부처</b><span>해양경찰청</span></div>
+              <div class="certificate-line"><b>등록번호</b><span>2026-006672</span></div>
+              <div class="certificate-line"><b>등급</b><span>단일등급</span></div>
+            </div>
+            <span class="certificate-go">사례 상세 보기 →</span>
           </div>
-        </a>
+          <span class="certificate-seal">DONGGAM</span>
+        </article>
+      </a>
 
-        <a class="case-card reveal" href="pages/case-cosmetics-gallery.html">
-          <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=82&w=1200" alt="" loading="lazy">
-          <span class="case-no">02</span>
-          <div class="case-card-body">
-            <small>화장품·의약외품 · 등록·신고</small>
+      <a class="case-card" href="pages/case-cosmetics-gallery.html">
+        <article class="certificate">
+          <div class="certificate-head"><small>COSMETICS / REPORT</small><span class="certificate-no">CASE 02</span></div>
+          <div class="certificate-body">
+            <span class="certificate-type">화장품·의약외품 · 등록·신고</span>
             <h3>화장품 제조업·책임판매업 업무</h3>
-            <p>사업장과 시설, 등록·신고 결과 등 관련 자료를 확인하는 업무사례입니다.</p>
-            <div class="case-meta"><span>현장·시설</span><span>등록·신고</span><span>결과자료</span></div>
-            <span class="case-go">사례 상세 보기 →</span>
+            <p>사업장과 시설 관련 자료, 등록·신고 결과를 함께 확인하는 업무사례 영역입니다.</p>
+            <div class="certificate-lines">
+              <div class="certificate-line"><b>업무분야</b><span>제조업 · 책임판매업</span></div>
+              <div class="certificate-line"><b>확인자료</b><span>현장 · 시설 · 결과자료</span></div>
+              <div class="certificate-line"><b>유형</b><span>등록·신고 업무</span></div>
+            </div>
+            <span class="certificate-go">사례 상세 보기 →</span>
           </div>
-        </a>
+          <span class="certificate-seal">DONGGAM</span>
+        </article>
+      </a>
 
-        <a class="case-card reveal" href="pages/cases.html#organization">
-          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=82&w=1200" alt="" loading="lazy">
-          <span class="case-no">03</span>
-          <div class="case-card-body">
-            <small>법인·단체 · 설립·허가</small>
+      <a class="case-card" href="pages/cases.html#organization">
+        <article class="certificate">
+          <div class="certificate-head"><small>ORGANIZATION</small><span class="certificate-no">CASE 03</span></div>
+          <div class="certificate-body">
+            <span class="certificate-type">법인·단체 · 설립·허가</span>
             <h3>법인·단체 설립 업무사례</h3>
             <p>비영리법인과 단체 설립 관련 허가·등록 사례를 분야별로 확인하실 수 있습니다.</p>
-            <div class="case-meta"><span>설립</span><span>허가</span><span>법인·단체</span></div>
-            <span class="case-go">관련 사례 보기 →</span>
+            <div class="certificate-lines">
+              <div class="certificate-line"><b>업무분야</b><span>법인·단체 설립</span></div>
+              <div class="certificate-line"><b>유형</b><span>설립 · 허가 · 등록</span></div>
+              <div class="certificate-line"><b>확인</b><span>분야별 사례 모음</span></div>
+            </div>
+            <span class="certificate-go">관련 사례 보기 →</span>
           </div>
-        </a>
+          <span class="certificate-seal">DONGGAM</span>
+        </article>
+      </a>
 
-        <a class="case-card reveal" href="pages/cases.html">
-          <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=82&w=1200" alt="" loading="lazy">
-          <span class="case-no">04</span>
-          <div class="case-card-body">
-            <small>행정심판 · 대응업무</small>
+      <a class="case-card" href="pages/cases.html">
+        <article class="certificate">
+          <div class="certificate-head"><small>ADMINISTRATIVE APPEAL</small><span class="certificate-no">CASE 04</span></div>
+          <div class="certificate-body">
+            <span class="certificate-type">행정심판 · 처분 대응</span>
             <h3>행정심판 업무사례</h3>
-            <p>사건 유형과 진행 결과를 중심으로 행정심판 관련 업무사례를 확인하실 수 있습니다.</p>
-            <div class="case-meta"><span>행정심판</span><span>처분 대응</span></div>
-            <span class="case-go">관련 사례 보기 →</span>
+            <p>사건 유형과 진행 결과를 중심으로 행정심판 관련 사례를 확인하는 영역입니다.</p>
+            <div class="certificate-lines">
+              <div class="certificate-line"><b>업무분야</b><span>행정심판</span></div>
+              <div class="certificate-line"><b>확인사항</b><span>처분 내용 · 기한 · 대응</span></div>
+              <div class="certificate-line"><b>유형</b><span>사건별 업무사례</span></div>
+            </div>
+            <span class="certificate-go">관련 사례 보기 →</span>
           </div>
-        </a>
-      </div>
+          <span class="certificate-seal">DONGGAM</span>
+        </article>
+      </a>
     </div>
 
     <div class="container">
@@ -926,21 +1144,64 @@
     const track = document.getElementById('caseTrack');
     const prev = document.querySelector('.case-prev');
     const next = document.querySelector('.case-next');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (track && prev && next) {
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const move = direction => {
+      let timer = null;
+      let resumeTimer = null;
+
+      const cardSize = () => {
         const card = track.querySelector('.case-card');
-        if (!card) return;
-        const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || 0);
-        track.scrollBy({
-          left:(card.getBoundingClientRect().width + gap) * direction,
-          behavior:reduce ? 'auto' : 'smooth'
-        });
+        if (!card) return 0;
+        const styles = getComputedStyle(track);
+        const gap = parseFloat(styles.columnGap || styles.gap || 0);
+        return card.getBoundingClientRect().width + gap;
       };
 
-      prev.addEventListener('click', () => move(-1));
-      next.addEventListener('click', () => move(1));
+      const move = direction => {
+        const step = cardSize();
+        if (!step) return;
+
+        const max = track.scrollWidth - track.clientWidth;
+        const nextLeft = track.scrollLeft + step * direction;
+
+        if (direction > 0 && nextLeft >= max - 8) {
+          track.scrollTo({ left:0, behavior:reduce ? 'auto' : 'smooth' });
+        } else if (direction < 0 && nextLeft <= 0) {
+          track.scrollTo({ left:max, behavior:reduce ? 'auto' : 'smooth' });
+        } else {
+          track.scrollBy({ left:step * direction, behavior:reduce ? 'auto' : 'smooth' });
+        }
+      };
+
+      const stopAuto = () => {
+        if (timer) clearInterval(timer);
+        timer = null;
+      };
+
+      const startAuto = () => {
+        if (reduce) return;
+        stopAuto();
+        timer = setInterval(() => move(1), 3400);
+      };
+
+      const resumeAuto = () => {
+        if (reduce) return;
+        if (resumeTimer) clearTimeout(resumeTimer);
+        resumeTimer = setTimeout(startAuto, 2200);
+      };
+
+      prev.addEventListener('click', () => { move(-1); stopAuto(); resumeAuto(); });
+      next.addEventListener('click', () => { move(1); stopAuto(); resumeAuto(); });
+
+      track.addEventListener('pointerenter', stopAuto);
+      track.addEventListener('pointerleave', startAuto);
+      track.addEventListener('focusin', stopAuto);
+      track.addEventListener('focusout', resumeAuto);
+      track.addEventListener('touchstart', stopAuto, { passive:true });
+      track.addEventListener('touchend', resumeAuto, { passive:true });
+
+      startAuto();
     }
   })();
 </script>
