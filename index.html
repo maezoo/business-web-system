@@ -17,7 +17,6 @@
       --hsub:var(--sub,#666);
       --hline:var(--line,#e7e1e3);
       --hsoft:#f7f2f3;
-      --hgold:#BD9E13;
       overflow-x:hidden;
       background:#fff;
       color:var(--hink);
@@ -278,12 +277,12 @@
     }
     .home-v6 .visual-break > img{
       position:absolute;
-      inset:-12% 0;
+      inset:-15% 0;
       width:100%;
-      height:124%;
+      height:130%;
       object-fit:cover;
       filter:saturate(.48) contrast(1.06) brightness(.5);
-      transform:translate3d(0,var(--visual-parallax,0px),0) scale(1.06);
+      transform:translate3d(0,var(--visual-parallax,0px),0) scale(1.08);
       will-change:transform;
     }
     .home-v6 .visual-break::after{
@@ -302,7 +301,7 @@
       padding-top:80px;
       padding-bottom:54px;
     }
-    .home-v6 .visual-break .home-kicker{color:var(--hgold)}
+    .home-v6 .visual-break .home-kicker{color:#ead7dd}
     .home-v6 .visual-message{
       max-width:980px;
     }
@@ -316,7 +315,7 @@
       text-wrap:balance;
     }
     .home-v6 .visual-message > p{
-      max-width:720px;
+      max-width:760px;
       margin:14px 0 0;
       color:rgba(255,255,255,.78);
       font-size:16px;
@@ -329,7 +328,7 @@
       gap:0;
       max-width:980px;
       margin-top:34px;
-      border-top:1px solid rgba(189,158,19,.68);
+      border-top:1px solid rgba(255,255,255,.34);
       border-bottom:1px solid rgba(255,255,255,.18);
     }
     .home-v6 .visual-fact{
@@ -341,24 +340,25 @@
     .home-v6 .visual-fact:last-child{border-right:0}
     .home-v6 .visual-number{
       display:block;
-      margin-bottom:18px;
-      color:var(--hgold);
-      font-size:clamp(34px,3.2vw,48px);
-      font-weight:850;
+      margin-bottom:16px;
+      color:#fff;
+      font-size:clamp(36px,3.3vw,50px);
+      font-weight:800;
       line-height:1;
       letter-spacing:-.045em;
+      opacity:.92;
     }
     .home-v6 .visual-fact small{
       display:block;
       margin-bottom:7px;
-      color:rgba(255,255,255,.54);
+      color:#d9bcc5;
       font-size:10px;
       font-weight:900;
       letter-spacing:.1em;
     }
     .home-v6 .visual-fact strong{
       display:block;
-      font-size:19px;
+      font-size:20px;
       line-height:1.4;
       word-break:keep-all;
     }
@@ -435,7 +435,7 @@
       min-height:0;
       padding:27px 25px 24px;
       overflow:hidden;
-      border:1px solid rgba(189,158,19,.52);
+      border:1px solid #cfc5c8;
       outline:5px solid #fff;
       outline-offset:-11px;
       background:
@@ -468,13 +468,13 @@
       border-bottom:1px solid #d9ced1;
     }
     .home-v6 .certificate-head small{
-      color:var(--hgold);
+      color:var(--hwine);
       font-size:10px;
       font-weight:900;
       letter-spacing:.12em;
     }
     .home-v6 .certificate-no{
-      color:var(--hgold);
+      color:#8c7d82;
       font-size:10px;
       font-weight:900;
       letter-spacing:.09em;
@@ -530,9 +530,9 @@
       height:58px;
       display:grid;
       place-items:center;
-      border:2px solid rgba(189,158,19,.7);
+      border:2px solid rgba(117,22,49,.28);
       border-radius:50%;
-      color:var(--hgold);
+      color:rgba(117,22,49,.68);
       font-size:9px;
       font-weight:950;
       letter-spacing:.03em;
@@ -939,27 +939,27 @@
     <div class="container">
       <div class="visual-message">
         <span class="home-kicker">BEFORE THE PROCEDURE</span>
-        <h2>행정업무 전,<br>먼저 확인할 3가지</h2>
-        <p>업무 유형과 현재 준비 상태를 먼저 확인하면 필요한 자료와 다음 절차를 보다 정확하게 정리할 수 있습니다.</p>
+        <h2>내 상황에 맞는 절차를 찾으려면<br>먼저 세 가지를 확인해야 합니다.</h2>
+        <p>같은 서비스라도 신청 주체, 현재 준비 상태와 업무 목적이 다르면 필요한 자료와 절차도 달라질 수 있습니다.</p>
 
         <div class="visual-facts">
           <div class="visual-fact">
             <span class="visual-number">01</span>
-            <small>SERVICE TYPE</small>
-            <strong>업무 유형</strong>
-            <p>누가 어떤 업무를 신청하는지, 적용되는 기본 요건을 확인합니다.</p>
+            <small>WHO</small>
+            <strong>신청 주체</strong>
+            <p>개인·사업자·법인·단체 등 누가 신청하는 업무인지 확인합니다.</p>
           </div>
           <div class="visual-fact">
             <span class="visual-number">02</span>
-            <small>DOCUMENTS</small>
-            <strong>준비 상태</strong>
-            <p>현재 갖춘 자료와 추가로 준비해야 할 항목을 확인합니다.</p>
+            <small>READY</small>
+            <strong>현재 준비 상태</strong>
+            <p>사업장, 시설, 운영규정, 구성원, 관련 서류 등 이미 준비된 내용을 확인합니다.</p>
           </div>
           <div class="visual-fact">
             <span class="visual-number">03</span>
-            <small>NEXT STEP</small>
-            <strong>진행 절차</strong>
-            <p>신청·보완·결과 확인 또는 처분 대응 등 이후 순서를 살펴봅니다.</p>
+            <small>PURPOSE</small>
+            <strong>업무 목적과 현재 상황</strong>
+            <p>신규 등록·변경·신고인지, 행정처분 대응이 필요한 상황인지 구분합니다.</p>
           </div>
         </div>
       </div>
@@ -1168,7 +1168,7 @@
         const viewport = window.innerHeight || document.documentElement.clientHeight;
         const progress = (viewport - rect.top) / (viewport + rect.height);
         const clamped = Math.max(0, Math.min(1, progress));
-        const offset = (clamped - .5) * 72;
+        const offset = (clamped - .5) * 120;
         visualBreak.style.setProperty('--visual-parallax', offset.toFixed(1) + 'px');
         visualTicking = false;
       };
