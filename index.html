@@ -267,10 +267,10 @@
       font-size:11px;
     }
 
-    /* VISUAL BREAK - information + work image */
+    /* VISUAL BREAK - decision criteria */
     .home-v6 .visual-break{
       position:relative;
-      min-height:520px;
+      min-height:560px;
       overflow:hidden;
       background:#161214;
       color:#fff;
@@ -281,7 +281,7 @@
       width:100%;
       height:130%;
       object-fit:cover;
-      filter:saturate(.48) contrast(1.06) brightness(.5);
+      filter:saturate(.45) contrast(1.06) brightness(.46);
       transform:translate3d(0,var(--visual-parallax,0px),0) scale(1.08);
       will-change:transform;
     }
@@ -289,84 +289,91 @@
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(90deg,rgba(33,9,18,.86) 0%,rgba(33,9,18,.62) 50%,rgba(20,12,15,.28) 100%);
+      background:linear-gradient(90deg,rgba(28,8,14,.9) 0%,rgba(28,8,14,.74) 42%,rgba(20,12,15,.48) 100%);
     }
     .home-v6 .visual-break .container{
       position:relative;
       z-index:2;
-      min-height:520px;
+      min-height:560px;
       display:flex;
-      flex-direction:column;
-      justify-content:flex-end;
-      padding-top:80px;
-      padding-bottom:54px;
+      align-items:center;
+      padding-top:76px;
+      padding-bottom:76px;
     }
-    .home-v6 .visual-break .home-kicker{color:#ead7dd}
-    .home-v6 .visual-message{
-      max-width:980px;
+    .home-v6 .visual-layout{
+      width:100%;
+      display:grid;
+      grid-template-columns:minmax(0,.82fr) minmax(520px,1.18fr);
+      gap:76px;
+      align-items:center;
     }
-    .home-v6 .visual-message h2{
+    .home-v6 .visual-intro{
+      max-width:520px;
+    }
+    .home-v6 .visual-break .home-kicker{
+      color:#dec7ce;
+      margin-bottom:14px;
+    }
+    .home-v6 .visual-intro h2{
       margin:0;
-      max-width:760px;
-      font-size:clamp(36px,3.4vw,46px);
+      max-width:500px;
+      font-size:clamp(37px,3.5vw,48px);
       line-height:1.2;
-      letter-spacing:-.044em;
+      letter-spacing:-.045em;
       word-break:keep-all;
       text-wrap:balance;
     }
-    .home-v6 .visual-message > p{
-      max-width:760px;
-      margin:14px 0 0;
-      color:rgba(255,255,255,.78);
+    .home-v6 .visual-intro > p{
+      max-width:500px;
+      margin:18px 0 0;
+      color:rgba(255,255,255,.72);
       font-size:16px;
-      line-height:1.65;
+      line-height:1.7;
       word-break:keep-all;
     }
     .home-v6 .visual-facts{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:0;
-      max-width:980px;
-      margin-top:34px;
-      border-top:1px solid rgba(255,255,255,.34);
+      border-top:1px solid rgba(255,255,255,.38);
       border-bottom:1px solid rgba(255,255,255,.18);
     }
     .home-v6 .visual-fact{
-      min-height:164px;
-      padding:24px 28px 23px 0;
-      border-right:1px solid rgba(255,255,255,.2);
+      display:grid;
+      grid-template-columns:74px minmax(0,1fr);
+      gap:24px;
+      align-items:start;
+      padding:24px 0;
+      border-bottom:1px solid rgba(255,255,255,.18);
     }
-    .home-v6 .visual-fact + .visual-fact{padding-left:24px}
-    .home-v6 .visual-fact:last-child{border-right:0}
+    .home-v6 .visual-fact:last-child{border-bottom:0}
     .home-v6 .visual-number{
       display:block;
-      margin-bottom:16px;
       color:#fff;
-      font-size:clamp(36px,3.3vw,50px);
+      font-size:clamp(34px,3vw,44px);
       font-weight:800;
       line-height:1;
       letter-spacing:-.045em;
       opacity:.92;
     }
-    .home-v6 .visual-fact small{
+    .home-v6 .visual-fact-copy small{
       display:block;
-      margin-bottom:7px;
+      margin-bottom:6px;
       color:#d9bcc5;
       font-size:10px;
       font-weight:900;
-      letter-spacing:.1em;
+      letter-spacing:.12em;
     }
     .home-v6 .visual-fact strong{
       display:block;
-      font-size:20px;
-      line-height:1.4;
+      font-size:21px;
+      line-height:1.38;
       word-break:keep-all;
     }
     .home-v6 .visual-fact p{
-      margin:5px 0 0;
+      margin:7px 0 0;
       color:rgba(255,255,255,.68);
-      font-size:13px;
-      line-height:1.55;
+      font-size:14px;
+      line-height:1.6;
+      word-break:keep-all;
     }
 
     /* CASES - auto swipe certificate archive */
@@ -767,7 +774,13 @@
         grid-template-columns:1fr;
       }
       .home-v6 .services-head,.home-v6 .cases-head{gap:18px}
-      .home-v6 .visual-facts{max-width:100%}
+      .home-v6 .visual-layout{
+        grid-template-columns:1fr;
+        gap:38px;
+      }
+      .home-v6 .visual-intro{max-width:720px}
+      .home-v6 .visual-intro h2{max-width:680px}
+      .home-v6 .visual-intro > p{max-width:680px}
       .home-v6 .consult-actions{min-width:0;max-width:430px}
       .home-v6 .about-photo{position:relative;width:100%;height:420px}
       .home-v6 .about .container{min-height:auto;grid-template-columns:1fr}
@@ -786,19 +799,20 @@
       .home-v6 .service-card{min-height:350px}
       .home-v6 .service-inner{padding:25px 23px}
       .home-v6 .service-top{top:21px;right:21px;left:21px}
-      .home-v6 .visual-break,.home-v6 .visual-break .container{min-height:500px}
+      .home-v6 .visual-break,.home-v6 .visual-break .container{min-height:520px}
       .home-v6 .visual-break > img{inset:0;height:100%;transform:scale(1.03)}
-      .home-v6 .visual-break .container{padding-top:62px;padding-bottom:40px}
-      .home-v6 .visual-message h2{font-size:34px}
-      .home-v6 .visual-facts{grid-template-columns:1fr;margin-top:28px}
-      .home-v6 .visual-fact,
-      .home-v6 .visual-fact + .visual-fact{
-        min-height:auto;
-        padding:15px 0;
-        border-right:0;
-        border-bottom:1px solid rgba(255,255,255,.18);
+      .home-v6 .visual-break .container{padding-top:58px;padding-bottom:58px}
+      .home-v6 .visual-layout{grid-template-columns:1fr;gap:30px}
+      .home-v6 .visual-intro h2{font-size:34px}
+      .home-v6 .visual-intro > p{font-size:15px}
+      .home-v6 .visual-fact{
+        grid-template-columns:54px minmax(0,1fr);
+        gap:18px;
+        padding:20px 0;
       }
-      .home-v6 .visual-fact:last-child{border-bottom:0}
+      .home-v6 .visual-number{font-size:32px}
+      .home-v6 .visual-fact strong{font-size:19px}
+      .home-v6 .visual-fact p{font-size:13px}
       .home-v6 .cases{padding:78px 0 84px}
       .home-v6 .case-toolbar{justify-content:flex-start}
       .home-v6 .case-track{
@@ -937,29 +951,37 @@
   <section class="visual-break reveal" aria-label="업무 검토 안내">
     <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=84&w=2200" alt="" loading="lazy">
     <div class="container">
-      <div class="visual-message">
-        <span class="home-kicker">BEFORE THE PROCEDURE</span>
-        <h2>내 상황에 맞는 절차를 찾으려면<br>먼저 세 가지를 확인해야 합니다.</h2>
-        <p>같은 서비스라도 신청 주체, 현재 준비 상태와 업무 목적이 다르면 필요한 자료와 절차도 달라질 수 있습니다.</p>
+      <div class="visual-layout">
+        <div class="visual-intro">
+          <span class="home-kicker">BEFORE THE PROCEDURE</span>
+          <h2>내 상황을 판단하기 위한 3가지 기준</h2>
+          <p>같은 행정업무라도 신청하는 주체와 현재 준비 상태, 업무 상황에 따라 필요한 자료와 진행 절차가 달라질 수 있습니다.</p>
+        </div>
 
         <div class="visual-facts">
           <div class="visual-fact">
             <span class="visual-number">01</span>
-            <small>WHO</small>
-            <strong>신청 주체</strong>
-            <p>개인·사업자·법인·단체 등 누가 신청하는 업무인지 확인합니다.</p>
+            <div class="visual-fact-copy">
+              <small>WHO</small>
+              <strong>신청 주체</strong>
+              <p>개인·사업자·법인·단체 등 누가 신청하는 업무인지 확인합니다.</p>
+            </div>
           </div>
           <div class="visual-fact">
             <span class="visual-number">02</span>
-            <small>READY</small>
-            <strong>현재 준비 상태</strong>
-            <p>사업장, 시설, 운영규정, 구성원, 관련 서류 등 이미 준비된 내용을 확인합니다.</p>
+            <div class="visual-fact-copy">
+              <small>READY</small>
+              <strong>현재 준비 상태</strong>
+              <p>사업장, 시설, 운영규정, 구성원, 관련 서류 등 현재 준비된 내용을 확인합니다.</p>
+            </div>
           </div>
           <div class="visual-fact">
             <span class="visual-number">03</span>
-            <small>PURPOSE</small>
-            <strong>업무 목적과 현재 상황</strong>
-            <p>신규 등록·변경·신고인지, 행정처분 대응이 필요한 상황인지 구분합니다.</p>
+            <div class="visual-fact-copy">
+              <small>SITUATION</small>
+              <strong>업무 상황</strong>
+              <p>신규 등록·변경·신고인지, 행정처분 대응이 필요한 상황인지 구분합니다.</p>
+            </div>
           </div>
         </div>
       </div>
