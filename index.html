@@ -278,15 +278,14 @@
     }
     .home-v6 .visual-break > img{
       position:absolute;
-      inset:-5% 0;
+      inset:-12% 0;
       width:100%;
-      height:110%;
+      height:124%;
       object-fit:cover;
-      filter:saturate(.48) contrast(1.06) brightness(.52);
-      transform:scale(1.055);
-      transition:transform 1.2s cubic-bezier(.2,.72,.25,1);
+      filter:saturate(.48) contrast(1.06) brightness(.5);
+      transform:translate3d(0,var(--visual-parallax,0px),0) scale(1.06);
+      will-change:transform;
     }
-    .home-v6 .visual-break.is-visible > img{transform:scale(1.015)}
     .home-v6 .visual-break::after{
       content:"";
       position:absolute;
@@ -305,53 +304,63 @@
     }
     .home-v6 .visual-break .home-kicker{color:var(--hgold)}
     .home-v6 .visual-message{
-      max-width:890px;
+      max-width:980px;
     }
     .home-v6 .visual-message h2{
       margin:0;
-      max-width:850px;
-      font-size:clamp(35px,3.5vw,48px);
-      line-height:1.22;
+      max-width:760px;
+      font-size:clamp(36px,3.4vw,46px);
+      line-height:1.2;
       letter-spacing:-.044em;
       word-break:keep-all;
       text-wrap:balance;
     }
     .home-v6 .visual-message > p{
-      max-width:700px;
-      margin:17px 0 0;
-      color:rgba(255,255,255,.8);
-      font-size:17px;
-      line-height:1.72;
+      max-width:720px;
+      margin:14px 0 0;
+      color:rgba(255,255,255,.78);
+      font-size:16px;
+      line-height:1.65;
       word-break:keep-all;
     }
     .home-v6 .visual-facts{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:0;
-      max-width:920px;
+      max-width:980px;
       margin-top:34px;
-      border-top:1px solid rgba(189,158,19,.58);
+      border-top:1px solid rgba(189,158,19,.68);
       border-bottom:1px solid rgba(255,255,255,.18);
     }
     .home-v6 .visual-fact{
-      min-height:104px;
-      padding:20px 24px 19px 0;
+      min-height:164px;
+      padding:24px 28px 23px 0;
       border-right:1px solid rgba(255,255,255,.2);
     }
     .home-v6 .visual-fact + .visual-fact{padding-left:24px}
     .home-v6 .visual-fact:last-child{border-right:0}
+    .home-v6 .visual-number{
+      display:block;
+      margin-bottom:18px;
+      color:var(--hgold);
+      font-size:clamp(34px,3.2vw,48px);
+      font-weight:850;
+      line-height:1;
+      letter-spacing:-.045em;
+    }
     .home-v6 .visual-fact small{
       display:block;
-      margin-bottom:8px;
-      color:var(--hgold);
+      margin-bottom:7px;
+      color:rgba(255,255,255,.54);
       font-size:10px;
       font-weight:900;
       letter-spacing:.1em;
     }
     .home-v6 .visual-fact strong{
       display:block;
-      font-size:16px;
-      line-height:1.45;
+      font-size:19px;
+      line-height:1.4;
+      word-break:keep-all;
     }
     .home-v6 .visual-fact p{
       margin:5px 0 0;
@@ -399,7 +408,7 @@
     .home-v6 .case-track{
       display:grid;
       grid-auto-flow:column;
-      grid-auto-columns:minmax(350px,30vw);
+      grid-auto-columns:clamp(300px,24vw,360px);
       gap:18px;
       overflow-x:auto;
       overscroll-behavior-inline:contain;
@@ -414,16 +423,17 @@
     .home-v6 .case-track:active{cursor:grabbing}
     .home-v6 .case-track::-webkit-scrollbar{display:none}
     .home-v6 .case-card{
-      min-height:455px;
-      padding:22px;
+      padding:18px;
       background:#e9e0e3;
       color:var(--hink);
     }
     .home-v6 .certificate{
       position:relative;
-      min-height:411px;
-      height:100%;
-      padding:30px 28px 27px;
+      width:100%;
+      aspect-ratio:210 / 297;
+      height:auto;
+      min-height:0;
+      padding:27px 25px 24px;
       overflow:hidden;
       border:1px solid rgba(189,158,19,.52);
       outline:5px solid #fff;
@@ -487,7 +497,7 @@
       word-break:keep-all;
     }
     .home-v6 .certificate p{
-      min-height:70px;
+      min-height:0;
       margin:0;
       color:#6f6569;
       font-size:14px;
@@ -777,6 +787,7 @@
       .home-v6 .service-inner{padding:25px 23px}
       .home-v6 .service-top{top:21px;right:21px;left:21px}
       .home-v6 .visual-break,.home-v6 .visual-break .container{min-height:500px}
+      .home-v6 .visual-break > img{inset:0;height:100%;transform:scale(1.03)}
       .home-v6 .visual-break .container{padding-top:62px;padding-bottom:40px}
       .home-v6 .visual-message h2{font-size:34px}
       .home-v6 .visual-facts{grid-template-columns:1fr;margin-top:28px}
@@ -791,15 +802,15 @@
       .home-v6 .cases{padding:78px 0 84px}
       .home-v6 .case-toolbar{justify-content:flex-start}
       .home-v6 .case-track{
-        grid-auto-columns:minmax(292px,84vw);
+        grid-auto-columns:minmax(282px,78vw);
         gap:12px;
         padding-left:20px;
         padding-right:20px;
         margin-left:-20px;
         margin-right:-20px;
       }
-      .home-v6 .case-card{min-height:430px;padding:16px}
-      .home-v6 .certificate{min-height:398px;padding:26px 23px 24px}
+      .home-v6 .case-card{padding:14px}
+      .home-v6 .certificate{aspect-ratio:210 / 297;padding:24px 21px 22px}
       .home-v6 .certificate h3{font-size:24px}
       .home-v6 .certificate-seal{right:23px;bottom:24px}
       .home-v6 .about-photo{height:330px}
@@ -821,6 +832,7 @@
       .home-v6 .hero-media{clip-path:none}
       .home-v6 .hero-media img{animation:none!important;opacity:0}
       .home-v6 .hero-media img:first-child{opacity:1}
+      .home-v6 .visual-break > img{transform:scale(1.03)!important}
     }
   </style>
 </head>
@@ -927,24 +939,27 @@
     <div class="container">
       <div class="visual-message">
         <span class="home-kicker">BEFORE THE PROCEDURE</span>
-        <h2>행정업무는 시작 전에 세 가지를 먼저 확인합니다.</h2>
-        <p>같은 업무라도 신청 주체, 현재 준비 상태와 관련 기준에 따라 필요한 자료와 절차가 달라질 수 있습니다. 아래 항목을 우선 확인하면 준비 범위와 다음 절차를 보다 구체적으로 정리할 수 있습니다.</p>
+        <h2>행정업무 전,<br>먼저 확인할 3가지</h2>
+        <p>업무 유형과 현재 준비 상태를 먼저 확인하면 필요한 자료와 다음 절차를 보다 정확하게 정리할 수 있습니다.</p>
 
         <div class="visual-facts">
           <div class="visual-fact">
-            <small>01 · SERVICE TYPE</small>
-            <strong>업무 대상과 유형</strong>
-            <p>신청 주체·사업 형태·처분 유형에 따라 적용되는 업무와 기본 요건을 확인합니다.</p>
+            <span class="visual-number">01</span>
+            <small>SERVICE TYPE</small>
+            <strong>업무 유형</strong>
+            <p>누가 어떤 업무를 신청하는지, 적용되는 기본 요건을 확인합니다.</p>
           </div>
           <div class="visual-fact">
-            <small>02 · DOCUMENTS</small>
-            <strong>현재 준비 상태와 자료</strong>
-            <p>사업장·시설·운영규정·구성원·처분서류 등 현재 갖춘 자료와 추가 준비사항을 확인합니다.</p>
+            <span class="visual-number">02</span>
+            <small>DOCUMENTS</small>
+            <strong>준비 상태</strong>
+            <p>현재 갖춘 자료와 추가로 준비해야 할 항목을 확인합니다.</p>
           </div>
           <div class="visual-fact">
-            <small>03 · NEXT STEP</small>
-            <strong>진행 절차와 확인사항</strong>
-            <p>신청·보완·결과 확인 또는 처분 대응 등 이후 절차와 확인해야 할 기한을 살펴봅니다.</p>
+            <span class="visual-number">03</span>
+            <small>NEXT STEP</small>
+            <strong>진행 절차</strong>
+            <p>신청·보완·결과 확인 또는 처분 대응 등 이후 순서를 살펴봅니다.</p>
           </div>
         </div>
       </div>
@@ -1142,10 +1157,36 @@
       items.forEach(el => observer.observe(el));
     }
 
+    const visualBreak = document.querySelector('.visual-break');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (visualBreak && !reduce && window.innerWidth > 760) {
+      let visualTicking = false;
+
+      const updateVisualParallax = () => {
+        const rect = visualBreak.getBoundingClientRect();
+        const viewport = window.innerHeight || document.documentElement.clientHeight;
+        const progress = (viewport - rect.top) / (viewport + rect.height);
+        const clamped = Math.max(0, Math.min(1, progress));
+        const offset = (clamped - .5) * 72;
+        visualBreak.style.setProperty('--visual-parallax', offset.toFixed(1) + 'px');
+        visualTicking = false;
+      };
+
+      const requestVisualParallax = () => {
+        if (visualTicking) return;
+        visualTicking = true;
+        requestAnimationFrame(updateVisualParallax);
+      };
+
+      window.addEventListener('scroll', requestVisualParallax, { passive:true });
+      window.addEventListener('resize', requestVisualParallax);
+      updateVisualParallax();
+    }
+
     const track = document.getElementById('caseTrack');
     const prev = document.querySelector('.case-prev');
     const next = document.querySelector('.case-next');
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (track && prev && next) {
       const originals = [...track.children];
