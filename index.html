@@ -17,6 +17,7 @@
       --hsub:var(--sub,#666);
       --hline:var(--line,#e7e1e3);
       --hsoft:#f7f2f3;
+      --hgold:#BD9E13;
       overflow-x:hidden;
       background:#fff;
       color:var(--hink);
@@ -302,7 +303,7 @@
       padding-top:80px;
       padding-bottom:54px;
     }
-    .home-v6 .visual-break .home-kicker{color:#efc8d3}
+    .home-v6 .visual-break .home-kicker{color:var(--hgold)}
     .home-v6 .visual-message{
       max-width:890px;
     }
@@ -329,7 +330,7 @@
       gap:0;
       max-width:920px;
       margin-top:34px;
-      border-top:1px solid rgba(255,255,255,.3);
+      border-top:1px solid rgba(189,158,19,.58);
       border-bottom:1px solid rgba(255,255,255,.18);
     }
     .home-v6 .visual-fact{
@@ -342,7 +343,7 @@
     .home-v6 .visual-fact small{
       display:block;
       margin-bottom:8px;
-      color:#efc8d3;
+      color:var(--hgold);
       font-size:10px;
       font-weight:900;
       letter-spacing:.1em;
@@ -402,19 +403,19 @@
       gap:18px;
       overflow-x:auto;
       overscroll-behavior-inline:contain;
-      scroll-snap-type:x mandatory;
       scrollbar-width:none;
       padding:0 max(24px,calc((100vw - min(calc(100% - 40px),1180px))/2)) 12px;
       margin-left:calc(-1 * max(24px,calc((100vw - min(calc(100% - 40px),1180px))/2)));
       margin-right:calc(-1 * max(24px,calc((100vw - min(calc(100% - 40px),1180px))/2)));
       touch-action:pan-x;
       -webkit-overflow-scrolling:touch;
+      cursor:grab;
     }
+    .home-v6 .case-track:active{cursor:grabbing}
     .home-v6 .case-track::-webkit-scrollbar{display:none}
     .home-v6 .case-card{
       min-height:455px;
       padding:22px;
-      scroll-snap-align:start;
       background:#e9e0e3;
       color:var(--hink);
     }
@@ -424,7 +425,7 @@
       height:100%;
       padding:30px 28px 27px;
       overflow:hidden;
-      border:1px solid #cabdc1;
+      border:1px solid rgba(189,158,19,.52);
       outline:5px solid #fff;
       outline-offset:-11px;
       background:
@@ -457,13 +458,13 @@
       border-bottom:1px solid #d9ced1;
     }
     .home-v6 .certificate-head small{
-      color:var(--hwine);
+      color:var(--hgold);
       font-size:10px;
       font-weight:900;
       letter-spacing:.12em;
     }
     .home-v6 .certificate-no{
-      color:#8c7d82;
+      color:var(--hgold);
       font-size:10px;
       font-weight:900;
       letter-spacing:.09em;
@@ -519,9 +520,9 @@
       height:58px;
       display:grid;
       place-items:center;
-      border:2px solid rgba(117,22,49,.4);
+      border:2px solid rgba(189,158,19,.7);
       border-radius:50%;
-      color:var(--hwine);
+      color:var(--hgold);
       font-size:9px;
       font-weight:950;
       letter-spacing:.03em;
@@ -922,28 +923,28 @@
   </section>
 
   <section class="visual-break reveal" aria-label="업무 검토 안내">
-    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=84&w=2200" alt="" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=84&w=2200" alt="" loading="lazy">
     <div class="container">
       <div class="visual-message">
         <span class="home-kicker">BEFORE THE PROCEDURE</span>
-        <h2>업무마다 확인해야 할 기준과 준비자료는 다릅니다.</h2>
-        <p>등록·신고·허가·행정심판은 신청 주체와 현재 준비 상태에 따라 검토할 내용이 달라질 수 있습니다. 상세페이지에서는 필요한 정보를 아래 순서로 확인하실 수 있습니다.</p>
+        <h2>행정업무는 시작 전에 세 가지를 먼저 확인합니다.</h2>
+        <p>같은 업무라도 신청 주체, 현재 준비 상태와 관련 기준에 따라 필요한 자료와 절차가 달라질 수 있습니다. 아래 항목을 우선 확인하면 준비 범위와 다음 절차를 보다 구체적으로 정리할 수 있습니다.</p>
 
         <div class="visual-facts">
           <div class="visual-fact">
-            <small>01 · ELIGIBILITY</small>
-            <strong>대상과 요건 확인</strong>
-            <p>현재 상황이 해당 업무의 대상에 맞는지 먼저 확인합니다.</p>
+            <small>01 · SERVICE TYPE</small>
+            <strong>업무 대상과 유형</strong>
+            <p>신청 주체·사업 형태·처분 유형에 따라 적용되는 업무와 기본 요건을 확인합니다.</p>
           </div>
           <div class="visual-fact">
             <small>02 · DOCUMENTS</small>
-            <strong>준비자료 검토</strong>
-            <p>신청 전 필요한 자료와 추가 확인사항을 정리합니다.</p>
+            <strong>현재 준비 상태와 자료</strong>
+            <p>사업장·시설·운영규정·구성원·처분서류 등 현재 갖춘 자료와 추가 준비사항을 확인합니다.</p>
           </div>
           <div class="visual-fact">
-            <small>03 · PROCEDURE</small>
-            <strong>실제 진행 절차</strong>
-            <p>업무별 신청·보완·결과 확인 흐름을 안내합니다.</p>
+            <small>03 · NEXT STEP</small>
+            <strong>진행 절차와 확인사항</strong>
+            <p>신청·보완·결과 확인 또는 처분 대응 등 이후 절차와 확인해야 할 기한을 살펴봅니다.</p>
           </div>
         </div>
       </div>
@@ -957,7 +958,7 @@
           <span class="home-kicker">WORK CASES</span>
           <h2 class="home-h2">분야별 업무사례</h2>
         </div>
-        <p class="home-copy">한 분야의 사례만 강조하기보다 민간자격, 등록·신고, 법인·단체, 행정심판 등 여러 업무를 함께 확인할 수 있도록 구성했습니다.</p>
+        <p class="home-copy">민간자격 등록, 화장품 관련 등록·신고, 법인·단체 설립과 행정심판 등 분야별 업무사례를 이어서 확인하실 수 있습니다.</p>
       </div>
 
       <div class="case-toolbar reveal" aria-label="업무사례 이동">
@@ -1147,61 +1148,110 @@
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (track && prev && next) {
-      let timer = null;
+      const originals = [...track.children];
+      const originalCount = originals.length;
+      let loopWidth = 0;
+      let rafId = null;
+      let lastTime = 0;
+      let paused = false;
       let resumeTimer = null;
 
-      const cardSize = () => {
-        const card = track.querySelector('.case-card');
-        if (!card) return 0;
+      originals.forEach(item => {
+        const clone = item.cloneNode(true);
+        clone.setAttribute('aria-hidden','true');
+        clone.setAttribute('tabindex','-1');
+        clone.querySelectorAll('a,button,[tabindex]').forEach(el => el.setAttribute('tabindex','-1'));
+        track.appendChild(clone);
+      });
+
+      const measure = () => {
+        const first = track.children[0];
+        if (!first) return;
         const styles = getComputedStyle(track);
         const gap = parseFloat(styles.columnGap || styles.gap || 0);
-        return card.getBoundingClientRect().width + gap;
+        loopWidth = (first.getBoundingClientRect().width + gap) * originalCount;
+      };
+
+      const normalize = () => {
+        if (!loopWidth) return;
+        while (track.scrollLeft >= loopWidth) track.scrollLeft -= loopWidth;
+        while (track.scrollLeft < 0) track.scrollLeft += loopWidth;
+      };
+
+      const tick = time => {
+        if (!lastTime) lastTime = time;
+        const delta = Math.min(time - lastTime, 32);
+        lastTime = time;
+
+        if (!paused && !reduce && loopWidth) {
+          track.scrollLeft += delta * .035;
+          normalize();
+        }
+
+        rafId = requestAnimationFrame(tick);
+      };
+
+      const cardStep = () => {
+        const first = track.children[0];
+        if (!first) return 0;
+        const styles = getComputedStyle(track);
+        const gap = parseFloat(styles.columnGap || styles.gap || 0);
+        return first.getBoundingClientRect().width + gap;
       };
 
       const move = direction => {
-        const step = cardSize();
+        const step = cardStep();
         if (!step) return;
+        paused = true;
+        track.scrollBy({ left:step * direction, behavior:reduce ? 'auto' : 'smooth' });
+        window.clearTimeout(resumeTimer);
+        resumeTimer = window.setTimeout(() => {
+          normalize();
+          paused = false;
+        }, 1400);
+      };
 
-        const max = track.scrollWidth - track.clientWidth;
-        const nextLeft = track.scrollLeft + step * direction;
+      const pause = () => {
+        paused = true;
+        window.clearTimeout(resumeTimer);
+      };
 
-        if (direction > 0 && nextLeft >= max - 8) {
-          track.scrollTo({ left:0, behavior:reduce ? 'auto' : 'smooth' });
-        } else if (direction < 0 && nextLeft <= 0) {
-          track.scrollTo({ left:max, behavior:reduce ? 'auto' : 'smooth' });
-        } else {
-          track.scrollBy({ left:step * direction, behavior:reduce ? 'auto' : 'smooth' });
+      const resume = delay => {
+        window.clearTimeout(resumeTimer);
+        resumeTimer = window.setTimeout(() => {
+          normalize();
+          paused = false;
+        }, delay || 700);
+      };
+
+      prev.addEventListener('click', () => move(-1));
+      next.addEventListener('click', () => move(1));
+
+      track.addEventListener('pointerenter', pause);
+      track.addEventListener('pointerleave', () => resume(350));
+      track.addEventListener('focusin', pause);
+      track.addEventListener('focusout', () => resume(600));
+      track.addEventListener('touchstart', pause, { passive:true });
+      track.addEventListener('touchend', () => resume(900), { passive:true });
+      track.addEventListener('scroll', () => {
+        if (paused) normalize();
+      }, { passive:true });
+
+      window.addEventListener('resize', () => {
+        measure();
+        normalize();
+      });
+
+      document.addEventListener('visibilitychange', () => {
+        paused = document.hidden;
+        if (!document.hidden) {
+          lastTime = performance.now();
+          resume(300);
         }
-      };
+      });
 
-      const stopAuto = () => {
-        if (timer) clearInterval(timer);
-        timer = null;
-      };
-
-      const startAuto = () => {
-        if (reduce) return;
-        stopAuto();
-        timer = setInterval(() => move(1), 3400);
-      };
-
-      const resumeAuto = () => {
-        if (reduce) return;
-        if (resumeTimer) clearTimeout(resumeTimer);
-        resumeTimer = setTimeout(startAuto, 2200);
-      };
-
-      prev.addEventListener('click', () => { move(-1); stopAuto(); resumeAuto(); });
-      next.addEventListener('click', () => { move(1); stopAuto(); resumeAuto(); });
-
-      track.addEventListener('pointerenter', stopAuto);
-      track.addEventListener('pointerleave', startAuto);
-      track.addEventListener('focusin', stopAuto);
-      track.addEventListener('focusout', resumeAuto);
-      track.addEventListener('touchstart', stopAuto, { passive:true });
-      track.addEventListener('touchend', resumeAuto, { passive:true });
-
-      startAuto();
+      measure();
+      if (!reduce) rafId = requestAnimationFrame(tick);
     }
   })();
 </script>
