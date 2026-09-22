@@ -386,48 +386,20 @@
       grid-template-columns:minmax(0,.9fr) minmax(340px,.5fr);
       gap:56px;
       align-items:end;
-      margin-bottom:32px;
+      margin-bottom:24px;
     }
-    .home-v6 .cases-head .home-copy{margin:0}
-    .home-v6 .case-toolbar{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:18px;
-      margin-bottom:16px;
-    }
-    .home-v6 .case-drag-hint{
-      display:inline-flex;
-      align-items:center;
-      gap:9px;
-      color:#8d8185;
-      font-size:11px;
-      font-weight:850;
-      letter-spacing:.08em;
-      white-space:nowrap;
-      user-select:none;
-    }
-    .home-v6 .case-drag-hint::before{
-      content:"↔";
+    .home-v6 .cases-side{
       display:grid;
-      place-items:center;
-      width:31px;
-      height:31px;
-      border:1px solid #d7ced1;
-      border-radius:50%;
-      background:#fff;
-      color:var(--hwine);
-      font-size:15px;
-      letter-spacing:0;
+      gap:18px;
+      justify-items:end;
     }
-    .home-v6 .case-drag-hint span{
-      color:#aaa0a3;
-      font-size:10px;
-      font-weight:750;
-      letter-spacing:.02em;
+    .home-v6 .cases-side .home-copy{
+      margin:0;
+      max-width:470px;
     }
     .home-v6 .case-navs{
       display:flex;
+      justify-content:flex-end;
       gap:8px;
     }
     .home-v6 .case-nav{
@@ -472,6 +444,11 @@
       padding:18px;
       background:#e9e0e3;
       color:var(--hink);
+      user-select:none;
+      -webkit-user-drag:none;
+    }
+    .home-v6 .case-card *{
+      -webkit-user-drag:none;
     }
     .home-v6 .certificate{
       position:relative;
@@ -1098,14 +1075,13 @@
           <span class="home-kicker">WORK CASES</span>
           <h2 class="home-h2">분야별 업무사례</h2>
         </div>
-        <p class="home-copy">민간자격 등록, 화장품 관련 등록·신고, 법인·단체 설립과 행정심판 등 분야별 업무사례를 이어서 확인하실 수 있습니다.</p>
-      </div>
 
-      <div class="case-toolbar reveal" aria-label="업무사례 이동">
-        <span class="case-drag-hint" aria-hidden="true">DRAG / SWIPE <span>좌우로 이동</span></span>
-        <div class="case-navs">
-          <button class="case-nav case-prev" type="button" aria-label="이전 업무사례" aria-controls="caseTrack">←</button>
-          <button class="case-nav case-next" type="button" aria-label="다음 업무사례" aria-controls="caseTrack">→</button>
+        <div class="cases-side">
+          <p class="home-copy">민간자격 등록, 화장품 관련 등록·신고, 법인·단체 설립과 행정심판 등 분야별 업무사례를 이어서 확인하실 수 있습니다.</p>
+          <div class="case-navs" aria-label="업무사례 이동">
+            <button class="case-nav case-prev" type="button" aria-label="이전 업무사례" aria-controls="caseTrack">←</button>
+            <button class="case-nav case-next" type="button" aria-label="다음 업무사례" aria-controls="caseTrack">→</button>
+          </div>
         </div>
       </div>
     </div>
@@ -1120,8 +1096,6 @@
             <div class="certificate-lines">
               <div class="certificate-line"><b>주무부처</b><span>해양경찰청</span></div>
               <div class="certificate-line"><b>등록번호</b><span>2026-006672</span></div>
-              <div class="certificate-line"><b>자격명칭</b><span>수상스키지도사</span></div>
-              <div class="certificate-line"><b>등급</b><span>단일등급</span></div>
             </div>
             <span class="certificate-go">사례 상세 보기 →</span>
           </div>
@@ -1351,6 +1325,7 @@
       let dragPointerId = null;
 
       originals.forEach(item => {
+        item.setAttribute('draggable','false');
         const clone = item.cloneNode(true);
         clone.setAttribute('aria-hidden','true');
         clone.setAttribute('tabindex','-1');
@@ -1421,27 +1396,31 @@
       prev.addEventListener('click', () => move(-1));
       next.addEventListener('click', () => move(1));
 
+      track.addEventListener('dragstart', e => e.preventDefault());
+
       track.addEventListener('pointerdown', e => {
         if (e.pointerType !== 'mouse' || e.button !== 0) return;
+
         pause();
         dragging = true;
         dragMoved = false;
         dragPointerId = e.pointerId;
-
-        if (loopWidth && track.scrollLeft < 2) {
-          track.scrollLeft = Math.max(0, loopWidth - 1);
-        }
-
         dragStartX = e.clientX;
         dragStartScroll = track.scrollLeft;
+
         track.classList.add('is-dragging');
         track.setPointerCapture?.(e.pointerId);
       });
 
       track.addEventListener('pointermove', e => {
         if (!dragging || e.pointerId !== dragPointerId) return;
+
         const distance = e.clientX - dragStartX;
-        if (Math.abs(distance) > 4) dragMoved = true;
+        if (Math.abs(distance) > 4) {
+          dragMoved = true;
+          if (e.cancelable) e.preventDefault();
+        }
+
         track.scrollLeft = dragStartScroll - distance;
       });
 
