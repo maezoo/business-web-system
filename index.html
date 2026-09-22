@@ -391,9 +391,44 @@
     .home-v6 .cases-head .home-copy{margin:0}
     .home-v6 .case-toolbar{
       display:flex;
-      justify-content:flex-end;
-      gap:8px;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
       margin-bottom:16px;
+    }
+    .home-v6 .case-drag-hint{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      color:#8d8185;
+      font-size:11px;
+      font-weight:850;
+      letter-spacing:.08em;
+      white-space:nowrap;
+      user-select:none;
+    }
+    .home-v6 .case-drag-hint::before{
+      content:"↔";
+      display:grid;
+      place-items:center;
+      width:31px;
+      height:31px;
+      border:1px solid #d7ced1;
+      border-radius:50%;
+      background:#fff;
+      color:var(--hwine);
+      font-size:15px;
+      letter-spacing:0;
+    }
+    .home-v6 .case-drag-hint span{
+      color:#aaa0a3;
+      font-size:10px;
+      font-weight:750;
+      letter-spacing:.02em;
+    }
+    .home-v6 .case-navs{
+      display:flex;
+      gap:8px;
     }
     .home-v6 .case-nav{
       width:46px;
@@ -748,6 +783,54 @@
       font-size:11px;
     }
 
+    /* GO TOP */
+    .home-v6 .go-top{
+      position:fixed;
+      right:28px;
+      bottom:28px;
+      z-index:89;
+      width:50px;
+      height:50px;
+      display:grid;
+      place-items:center;
+      padding:0;
+      border:1px solid rgba(23,23,23,.16);
+      border-radius:50%;
+      background:rgba(255,255,255,.94);
+      color:var(--hink);
+      box-shadow:0 12px 34px rgba(20,12,15,.12);
+      font:inherit;
+      font-size:18px;
+      cursor:pointer;
+      opacity:0;
+      visibility:hidden;
+      transform:translateY(10px);
+      transition:opacity .22s ease,visibility .22s ease,transform .22s ease,background .2s ease,color .2s ease,border-color .2s ease;
+      backdrop-filter:blur(10px);
+    }
+    .home-v6 .go-top.is-visible{
+      opacity:1;
+      visibility:visible;
+      transform:none;
+    }
+    .home-v6 .go-top:hover{
+      border-color:var(--hwine);
+      background:var(--hwine);
+      color:#fff;
+    }
+    .home-v6 .go-top::after{
+      content:"TOP";
+      position:absolute;
+      top:56px;
+      left:50%;
+      transform:translateX(-50%);
+      color:#777;
+      font-size:9px;
+      font-weight:900;
+      letter-spacing:.1em;
+      pointer-events:none;
+    }
+
     /* MOTION */
     .home-v6 .reveal{
       opacity:0;
@@ -814,7 +897,14 @@
       .home-v6 .visual-fact strong{font-size:19px}
       .home-v6 .visual-fact p{font-size:13px}
       .home-v6 .cases{padding:78px 0 84px}
-      .home-v6 .case-toolbar{justify-content:flex-start}
+      .home-v6 .case-toolbar{align-items:center}
+      .home-v6 .case-drag-hint{
+        gap:7px;
+        font-size:10px;
+        letter-spacing:.06em;
+      }
+      .home-v6 .case-drag-hint::before{width:30px;height:30px}
+      .home-v6 .case-drag-hint span{display:none}
       .home-v6 .case-track{
         grid-auto-columns:minmax(282px,78vw);
         gap:12px;
@@ -823,6 +913,7 @@
         margin-left:-20px;
         margin-right:-20px;
       }
+      .home-v6 .case-nav{width:42px;height:42px}
       .home-v6 .case-card{padding:14px}
       .home-v6 .certificate{aspect-ratio:210 / 297;padding:24px 21px 22px}
       .home-v6 .certificate h3{font-size:24px}
@@ -834,6 +925,13 @@
       .home-v6 .consult-actions{grid-template-columns:1fr}
       .home-v6 .footer-main{padding:52px 0 38px}
       .home-v6 .footer-bottom-inner{display:grid;gap:6px}
+      .home-v6 .go-top{
+        right:15px;
+        bottom:82px;
+        width:46px;
+        height:46px;
+      }
+      .home-v6 .go-top::after{display:none}
     }
 
     @media(prefers-reduced-motion:reduce){
@@ -847,6 +945,7 @@
       .home-v6 .hero-media img{animation:none!important;opacity:0}
       .home-v6 .hero-media img:first-child{opacity:1}
       .home-v6 .visual-break > img{transform:scale(1.03)!important}
+      .home-v6 .go-top{transition:none!important}
     }
   </style>
 </head>
@@ -999,8 +1098,11 @@
       </div>
 
       <div class="case-toolbar reveal" aria-label="업무사례 이동">
-        <button class="case-nav case-prev" type="button" aria-label="이전 업무사례" aria-controls="caseTrack">←</button>
-        <button class="case-nav case-next" type="button" aria-label="다음 업무사례" aria-controls="caseTrack">→</button>
+        <span class="case-drag-hint" aria-hidden="true">DRAG / SWIPE <span>좌우로 이동</span></span>
+        <div class="case-navs">
+          <button class="case-nav case-prev" type="button" aria-label="이전 업무사례" aria-controls="caseTrack">←</button>
+          <button class="case-nav case-next" type="button" aria-label="다음 업무사례" aria-controls="caseTrack">→</button>
+        </div>
       </div>
     </div>
 
@@ -1155,6 +1257,8 @@
   </div>
 </footer>
 
+<button class="go-top" id="goTop" type="button" aria-label="페이지 맨 위로 이동">↑</button>
+
 <div class="mobile-quick">
   <a href="tel:03180490828">전화 상담</a>
   <a href="pages/consult.html">맞춤 상담</a>
@@ -1204,6 +1308,23 @@
       window.addEventListener('scroll', requestVisualParallax, { passive:true });
       window.addEventListener('resize', requestVisualParallax);
       updateVisualParallax();
+    }
+
+    const goTop = document.getElementById('goTop');
+    if (goTop) {
+      const updateGoTop = () => {
+        goTop.classList.toggle('is-visible', window.scrollY > 520);
+      };
+
+      goTop.addEventListener('click', () => {
+        window.scrollTo({
+          top:0,
+          behavior:reduce ? 'auto' : 'smooth'
+        });
+      });
+
+      window.addEventListener('scroll', updateGoTop, { passive:true });
+      updateGoTop();
     }
 
     const track = document.getElementById('caseTrack');
