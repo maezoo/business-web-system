@@ -462,7 +462,11 @@
       -webkit-overflow-scrolling:touch;
       cursor:grab;
     }
-    .home-v6 .case-track:active{cursor:grabbing}
+    .home-v6 .case-track:active,
+    .home-v6 .case-track.is-dragging{
+      cursor:grabbing;
+      user-select:none;
+    }
     .home-v6 .case-track::-webkit-scrollbar{display:none}
     .home-v6 .case-card{
       padding:18px;
@@ -786,8 +790,8 @@
     /* GO TOP */
     .home-v6 .go-top{
       position:fixed;
-      right:28px;
-      bottom:28px;
+      right:36px;
+      bottom:36px;
       z-index:89;
       width:50px;
       height:50px;
@@ -926,8 +930,8 @@
       .home-v6 .footer-main{padding:52px 0 38px}
       .home-v6 .footer-bottom-inner{display:grid;gap:6px}
       .home-v6 .go-top{
-        right:15px;
-        bottom:82px;
+        right:20px;
+        bottom:88px;
         width:46px;
         height:46px;
       }
@@ -978,7 +982,7 @@
         <p class="lead">민간자격 등록, 법인·단체 설립, 화장품·의약품·의약외품 관련 등록·신고와 행정심판 등 주요 행정업무를 분야별로 안내합니다.</p>
         <div class="hero-actions">
           <a class="btn primary" href="#services">주요 업무 보기</a>
-          <a class="btn secondary" href="pages/consult.html">상담 안내</a>
+          <a class="btn secondary" href="pages/consult.html">맞춤 상담</a>
         </div>
       </div>
     </div>
@@ -1113,10 +1117,10 @@
           <div class="certificate-body">
             <span class="certificate-type">민간자격 · 등록 완료</span>
             <h3>수상스키지도사 민간자격 등록</h3>
-            <p>실제 등록정보가 확인된 민간자격 등록 업무사례입니다.</p>
             <div class="certificate-lines">
               <div class="certificate-line"><b>주무부처</b><span>해양경찰청</span></div>
               <div class="certificate-line"><b>등록번호</b><span>2026-006672</span></div>
+              <div class="certificate-line"><b>자격명칭</b><span>수상스키지도사</span></div>
               <div class="certificate-line"><b>등급</b><span>단일등급</span></div>
             </div>
             <span class="certificate-go">사례 상세 보기 →</span>
@@ -1339,6 +1343,12 @@
       let lastTime = 0;
       let paused = false;
       let resumeTimer = null;
+      let dragging = false;
+      let dragMoved = false;
+      let suppressClick = false;
+      let dragStartX = 0;
+      let dragStartScroll = 0;
+      let dragPointerId = null;
 
       originals.forEach(item => {
         const clone = item.cloneNode(true);
@@ -1411,14 +1421,62 @@
       prev.addEventListener('click', () => move(-1));
       next.addEventListener('click', () => move(1));
 
+      track.addEventListener('pointerdown', e => {
+        if (e.pointerType !== 'mouse' || e.button !== 0) return;
+        pause();
+        dragging = true;
+        dragMoved = false;
+        dragPointerId = e.pointerId;
+
+        if (loopWidth && track.scrollLeft < 2) {
+          track.scrollLeft = Math.max(0, loopWidth - 1);
+        }
+
+        dragStartX = e.clientX;
+        dragStartScroll = track.scrollLeft;
+        track.classList.add('is-dragging');
+        track.setPointerCapture?.(e.pointerId);
+      });
+
+      track.addEventListener('pointermove', e => {
+        if (!dragging || e.pointerId !== dragPointerId) return;
+        const distance = e.clientX - dragStartX;
+        if (Math.abs(distance) > 4) dragMoved = true;
+        track.scrollLeft = dragStartScroll - distance;
+      });
+
+      const endDrag = e => {
+        if (!dragging || (e.pointerId != null && e.pointerId !== dragPointerId)) return;
+        dragging = false;
+        suppressClick = dragMoved;
+        dragPointerId = null;
+        track.classList.remove('is-dragging');
+        normalize();
+        resume(550);
+        if (suppressClick) {
+          window.setTimeout(() => { suppressClick = false; }, 140);
+        }
+      };
+
+      track.addEventListener('pointerup', endDrag);
+      track.addEventListener('pointercancel', endDrag);
+      track.addEventListener('lostpointercapture', endDrag);
+      track.addEventListener('click', e => {
+        if (!suppressClick) return;
+        e.preventDefault();
+        e.stopPropagation();
+      }, true);
+
       track.addEventListener('pointerenter', pause);
-      track.addEventListener('pointerleave', () => resume(350));
+      track.addEventListener('pointerleave', () => {
+        if (!dragging) resume(350);
+      });
       track.addEventListener('focusin', pause);
       track.addEventListener('focusout', () => resume(600));
       track.addEventListener('touchstart', pause, { passive:true });
       track.addEventListener('touchend', () => resume(900), { passive:true });
       track.addEventListener('scroll', () => {
-        if (paused) normalize();
+        if (paused && !dragging) normalize();
       }, { passive:true });
 
       window.addEventListener('resize', () => {
