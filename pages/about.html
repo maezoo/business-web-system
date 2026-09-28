@@ -1,8 +1,8 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>동감 소개 | 동감행정사사무소</title><link rel="stylesheet" href="../assets/styles.css"><style>
-.about-map{margin:30px 0 18px;overflow:hidden;border:1px solid var(--line);border-radius:20px;background:var(--soft)}
+.subhero .lead{max-width:none}
+.about-map{height:360px;margin:30px 0 18px;overflow:hidden;border:1px solid var(--line);border-radius:20px;background:var(--soft)}
 .about-map .root_daum_roughmap{width:100%!important}
 .about-map .root_daum_roughmap .wrap_map{width:100%!important}
-.about-map .root_daum_roughmap .wrap_controllers{display:none!important}
 @media(max-width:620px){.about-map{margin-top:24px;border-radius:16px}}
 </style></head><body><a class="skip" href="#main">본문 바로가기</a><header class="site-header"><div class="container head"><a class="brand" href="../index.html"><span class="mark">同</span><span><b>동감행정사사무소</b><small>DONGGAM ADMINISTRATIVE OFFICE</small></span></a><button class="menu" aria-label="메뉴"><span></span><span></span><span></span></button><nav class="nav"><a href="services.html">서비스</a><a href="cases.html">업무사례</a><a href="consult.html">상담</a><a href="about.html">동감 소개</a></nav><a class="call-top" href="tel:01040045802">전화 상담</a></div></header><main id="main">
 <section class="subhero">
@@ -104,12 +104,56 @@
 
     <div class="context-cta">
       <h3>상담이 필요한 업무가 있으신가요?</h3>
-      <p>현재 상황과 문의 내용을 확인한 뒤 필요한 상담 내용을 안내해드립니다.</p>
+      <p>현재 상황과 준비 중인 내용을 확인한 뒤 필요한 자료와 진행 방향을 안내해드립니다.</p>
       <div class="actions">
-        <a class="btn light" href="tel:03180490828">전화 상담</a>
+        <a class="btn light consult-call-action" href="tel:03180490828">전화 상담</a>
         <a class="btn ghost-light" href="consult.html">맞춤 상담</a>
       </div>
     </div>
   </div>
 </section>
-</main><footer class="footer"><div class="container footer-row"><div><b>동감행정사사무소</b><div>복잡한 행정 절차를 이해하기 쉽게 안내합니다.</div></div><a href="consult.html">맞춤 상담 →</a></div></footer><div class="mobile-quick"><a href="tel:01040045802">전화 상담</a><a href="consult.html">맞춤 상담</a></div><script src="../assets/app.js"></script></body></html>
+</main><footer class="footer"><div class="container footer-row"><div><b>동감행정사사무소</b><div>복잡한 행정 절차를 이해하기 쉽게 안내합니다.</div></div><a href="consult.html">맞춤 상담 →</a></div></footer><div class="mobile-quick"><a href="tel:01040045802">전화 상담</a><a href="consult.html">맞춤 상담</a></div><script src="../assets/app.js"></script>
+<script>
+(() => {
+  const consultCallAction = document.querySelector('.consult-call-action');
+  if (!consultCallAction) return;
+
+  const phoneNumber = '031-8049-0828';
+  const phoneHref = 'tel:03180490828';
+  let copyResetTimer = null;
+
+  const isMobileCall = () => window.matchMedia('(max-width: 760px)').matches;
+
+  const copyPhoneNumber = async () => {
+    try {
+      await navigator.clipboard.writeText(phoneNumber);
+    } catch (error) {
+      const input = document.createElement('input');
+      input.value = phoneNumber;
+      input.setAttribute('readonly', '');
+      input.style.position = 'fixed';
+      input.style.opacity = '0';
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand('copy');
+      input.remove();
+    }
+
+    window.clearTimeout(copyResetTimer);
+    consultCallAction.textContent = '복사되었습니다 ✓';
+    copyResetTimer = window.setTimeout(() => {
+      consultCallAction.textContent = '전화 상담';
+    }, 1500);
+  };
+
+  consultCallAction.addEventListener('click', event => {
+    if (isMobileCall()) {
+      consultCallAction.setAttribute('href', phoneHref);
+      return;
+    }
+
+    event.preventDefault();
+    copyPhoneNumber();
+  });
+})();
+</script></body></html>
