@@ -132,7 +132,7 @@ textarea{width:100%;padding:14px;border:1px solid var(--line);border-radius:13px
   .mega-link{padding:12px}.mega-link:nth-last-child(-n+2){border-bottom:1px solid var(--line)}.mega-link:last-child{border-bottom:0}
   .hero{padding:60px 0}h1{font-size:44px}.lead{font-size:17px}.hero-grid{gap:28px}.hero-card{min-height:240px}
   .grid3,.grid2,.doc-groups,.expert-panel{grid-template-columns:1fr}.service-hub-grid{grid-template-columns:1fr}.service-row{grid-template-columns:42px 1fr 26px}.service-row p{display:none}.about-cards{grid-template-columns:1fr}
-  .final-inner,.footer-row{flex-direction:column;align-items:flex-start}
+  .final-inner{flex-direction:column;align-items:flex-start}
   .mobile-quick{display:grid;grid-template-columns:1fr 1fr;position:fixed;z-index:90;left:0;right:0;bottom:0;height:66px;background:#fff;border-top:1px solid var(--line)}.mobile-quick a{display:grid;place-items:center;font-weight:900}.mobile-quick a:last-child{background:var(--wine);color:#fff}
 }
 @media(max-width:620px){.grid4,.process,.journey{grid-template-columns:1fr}.situation{min-height:280px}.form-shell{padding:24px 18px}.choices{grid-template-columns:1fr}.summary dl{grid-template-columns:1fr}.form-actions{display:grid;grid-template-columns:1fr 1fr}.form-actions .btn{width:100%}.hub-card{min-height:300px}}
@@ -160,20 +160,6 @@ textarea{width:100%;padding:14px;border:1px solid var(--line);border-radius:13px
 .office-card h3{font-size:20px}
 .office-card p{margin:8px 0 0;color:var(--sub)}
 .office-card a{color:var(--wine);font-weight:800}
-
-/* FOOTER */
-.footer{padding:0;background:var(--wine-deep);color:#cdbac0}
-.footer-main{display:grid;grid-template-columns:1.35fr .75fr .7fr;gap:44px;align-items:end;padding:42px 0 30px}
-.footer-brand strong{display:block;color:#fff;font-size:21px;letter-spacing:-.03em}
-.footer-brand p{max-width:560px;margin:12px 0 0;color:#c6b3b9;font-size:13px}
-.footer-heading{margin-bottom:14px;color:#fff;font-size:12px;font-weight:900;letter-spacing:.1em}
-.footer-contact{display:grid;gap:5px;font-size:13px}
-.footer-contact a:hover{color:#fff}
-.footer-nav{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px 16px}
-.footer-nav a{font-size:13px;color:#d7c6cb}.footer-nav a:hover{color:#fff}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.10)}
-.footer-bottom-inner{display:flex;justify-content:space-between;gap:24px;padding:18px 0;color:#9f888f;font-size:11px}
-.footer-bottom a{color:#cdbac0}
 
 @media(max-width:860px){
   .profile-section{grid-template-columns:1fr;gap:34px}.profile-visual{position:relative;top:auto;min-height:280px}
