@@ -736,16 +736,17 @@
     .home-v6 .home-footer{background:#090909;color:#777}
     .home-v6 .footer-main{
       display:grid;
-      grid-template-columns:minmax(0,1fr) minmax(360px,.72fr);
-      gap:72px;
+      grid-template-columns:1fr;
       align-items:flex-start;
       padding:58px 0 34px;
+    }
+    .home-v6 .footer-brand{
+      padding-bottom:30px;
     }
     .home-v6 .footer-logo{
       display:inline-flex;
       align-items:center;
       gap:11px;
-      margin-bottom:16px;
       color:#fff;
     }
     .home-v6 .footer-logo b{
@@ -761,13 +762,9 @@
       font-size:9px;
       letter-spacing:.08em;
     }
-    .home-v6 .footer-brand p{
-      max-width:460px;
-      margin:0;
-      color:#8b8b8b;
-      font-size:14px;
-      line-height:1.75;
-      word-break:keep-all;
+    .home-v6 .footer-contact-block{
+      padding-top:26px;
+      border-top:1px solid rgba(255,255,255,.08);
     }
     .home-v6 .footer-title{
       margin-bottom:14px;
@@ -778,7 +775,9 @@
     }
     .home-v6 .footer-contact{
       display:grid;
-      gap:7px;
+      grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+      gap:10px 48px;
+      max-width:940px;
       font-size:13px;
       line-height:1.65;
     }
@@ -789,6 +788,7 @@
       min-height:62px;
       display:flex;
       align-items:center;
+      justify-content:flex-start;
       flex-wrap:wrap;
       gap:12px 28px;
       font-size:13px;
@@ -943,8 +943,11 @@
       .home-v6 .consult{padding:70px 0 76px}
       .home-v6 .consult h2{font-size:35px}
       .home-v6 .consult-actions{grid-template-columns:1fr}
-      .home-v6 .footer-main{gap:34px;padding:48px 0 30px}
-      .home-v6 .footer-nav{min-height:0;padding:20px 0;display:grid;gap:10px}
+      .home-v6 .footer-main{padding:48px 0 30px}
+      .home-v6 .footer-brand{padding-bottom:24px}
+      .home-v6 .footer-contact-block{padding-top:22px}
+      .home-v6 .footer-contact{grid-template-columns:1fr;gap:8px}
+      .home-v6 .footer-nav{min-height:0;padding:20px 0;display:grid;justify-content:stretch;gap:10px}
       .home-v6 .footer-bottom-inner{display:block}
       .home-v6 .go-top{
         right:20px;
@@ -1245,10 +1248,9 @@
         <span class="mark">同</span>
         <span><b>동감행정사사무소</b><small>DONGGAM ADMINISTRATIVE OFFICE</small></span>
       </a>
-      <p>행정업무의 상황과 준비사항을 확인하고 필요한 절차를 안내합니다.</p>
     </div>
 
-    <div>
+    <div class="footer-contact-block">
       <div class="footer-title">CONTACT</div>
       <div class="footer-contact">
         <a href="tel:03180490828">Tel. 031-8049-0828</a>
