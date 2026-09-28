@@ -1,6 +1,7 @@
 (()=> {
   const inPages = location.pathname.includes('/pages/');
   const p = inPages ? '' : 'pages/';
+  const home = inPages ? '../index.html' : 'index.html';
   const nav = document.querySelector('.nav');
   const header = document.querySelector('.site-header');
   const menuBtn = document.querySelector('.menu');
@@ -72,37 +73,36 @@
   document.querySelectorAll('.call-top').forEach(a=>{a.textContent='전화 상담';a.setAttribute('href','tel:'+CONTACT.tel)});
   document.querySelectorAll('.mobile-quick a:first-child').forEach(a=>a.setAttribute('href','tel:'+CONTACT.tel));
 
-  const footer=document.querySelector('.footer');
+  const footer=document.querySelector('.site-footer');
   if(footer){
     footer.innerHTML = `
       <div class="container footer-main">
         <div class="footer-brand">
-          <strong>동감행정사사무소</strong>
-          <p>민간자격 등록, 법인·단체 설립, 화장품·의약외품 관련 신고, 행정심판 등 다양한 행정업무를 상담합니다.</p>
+          <a class="footer-logo" href="${home}" aria-label="동감행정사사무소 홈">
+            <span class="mark">同</span>
+            <span><b>동감행정사사무소</b><small>DONGGAM ADMINISTRATIVE OFFICE</small></span>
+          </a>
         </div>
-        <div>
-          <div class="footer-heading">CONTACT</div>
+        <div class="footer-contact-block">
+          <div class="footer-title">CONTACT</div>
           <div class="footer-contact">
-            <span>${CONTACT.address}</span>
             <a href="tel:${CONTACT.tel}">Tel. ${CONTACT.telText}</a>
-            <span>Fax. ${CONTACT.fax}</span>
             <a href="mailto:${CONTACT.email}">${CONTACT.email}</a>
+            <span>${CONTACT.address}</span>
+            <span>Fax. ${CONTACT.fax}</span>
           </div>
         </div>
-        <div>
-          <div class="footer-heading">QUICK LINK</div>
-          <div class="footer-nav">
+      </div>
+      <div class="footer-lower">
+        <div class="container footer-lower-inner">
+          <nav class="footer-nav" aria-label="푸터 메뉴">
             <a href="${p}services.html">서비스</a>
             <a href="${p}cases.html">업무사례</a>
             <a href="${p}consult.html">상담</a>
             <a href="${p}about.html">동감 소개</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="container footer-bottom-inner">
-          <span>© DONGGAM ADMINISTRATIVE OFFICE. All rights reserved.</span>
-          <span>Tel. ${CONTACT.telText} · ${CONTACT.email}</span>
+            <a href="${p}about.html#location">오시는 길</a>
+          </nav>
+          <span class="footer-copy">© DONGGAM ADMINISTRATIVE OFFICE. All rights reserved.</span>
         </div>
       </div>`;
   }
