@@ -82,10 +82,16 @@
             <span class="mark">同</span>
             <span><b>동감행정사사무소</b><small>DONGGAM ADMINISTRATIVE OFFICE</small></span>
           </a>
-          <div class="footer-scope" aria-label="주요 업무">
-            <span class="footer-scope-title">주요 업무</span>
-            <p>민간자격 등록 · 법인·단체 설립<br>화장품·의약품·의약외품 · 행정심판</p>
-          </div>
+          <nav class="footer-quick" aria-label="푸터 메뉴">
+            <span class="footer-title">QUICK LINK</span>
+            <div class="footer-quick-links">
+              <a href="${p}services.html">서비스</a>
+              <a href="${p}cases.html">업무사례</a>
+              <a href="${p}consult.html">상담</a>
+              <a href="${p}about.html">동감 소개</a>
+              <a href="${p}about.html#location">오시는 길</a>
+            </div>
+          </nav>
         </div>
         <div class="footer-contact-block">
           <div class="footer-title">CONTACT</div>
@@ -99,13 +105,6 @@
       </div>
       <div class="footer-lower">
         <div class="container footer-lower-inner">
-          <nav class="footer-nav" aria-label="푸터 메뉴">
-            <a href="${p}services.html">서비스</a>
-            <a href="${p}cases.html">업무사례</a>
-            <a href="${p}consult.html">상담</a>
-            <a href="${p}about.html">동감 소개</a>
-            <a href="${p}about.html#location">오시는 길</a>
-          </nav>
           <span class="footer-copy">© DONGGAM ADMINISTRATIVE OFFICE. All rights reserved.</span>
         </div>
       </div>`;
