@@ -736,12 +736,10 @@
     .home-v6 .home-footer{background:#090909;color:#777}
     .home-v6 .footer-main{
       display:grid;
-      grid-template-columns:1fr;
+      grid-template-columns:minmax(0,1fr) minmax(360px,.72fr);
+      gap:72px;
       align-items:flex-start;
-      padding:58px 0 34px;
-    }
-    .home-v6 .footer-brand{
-      padding-bottom:30px;
+      padding:58px 0 38px;
     }
     .home-v6 .footer-logo{
       display:inline-flex;
@@ -762,10 +760,6 @@
       font-size:9px;
       letter-spacing:.08em;
     }
-    .home-v6 .footer-contact-block{
-      padding-top:26px;
-      border-top:1px solid rgba(255,255,255,.08);
-    }
     .home-v6 .footer-title{
       margin-bottom:14px;
       color:#aaa;
@@ -775,17 +769,23 @@
     }
     .home-v6 .footer-contact{
       display:grid;
-      grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-      gap:10px 48px;
-      max-width:940px;
+      gap:7px;
       font-size:13px;
       line-height:1.65;
     }
     .home-v6 .footer-contact a{color:#aaa}
     .home-v6 .footer-contact a:hover{color:#fff}
-    .home-v6 .footer-nav-wrap{border-top:1px solid rgba(255,255,255,.08)}
+    .home-v6 .footer-lower{
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    .home-v6 .footer-lower-inner{
+      min-height:64px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:32px;
+    }
     .home-v6 .footer-nav{
-      min-height:62px;
       display:flex;
       align-items:center;
       justify-content:flex-start;
@@ -796,11 +796,11 @@
     }
     .home-v6 .footer-nav a{color:#8d8d8d}
     .home-v6 .footer-nav a:hover{color:#fff}
-    .home-v6 .footer-bottom{border-top:1px solid rgba(255,255,255,.08)}
-    .home-v6 .footer-bottom-inner{
-      padding:17px 0;
+    .home-v6 .footer-copy{
+      flex:0 0 auto;
       color:#555;
       font-size:11px;
+      white-space:nowrap;
     }
 
     /* GO TOP */
@@ -943,12 +943,28 @@
       .home-v6 .consult{padding:70px 0 76px}
       .home-v6 .consult h2{font-size:35px}
       .home-v6 .consult-actions{grid-template-columns:1fr}
-      .home-v6 .footer-main{padding:48px 0 30px}
-      .home-v6 .footer-brand{padding-bottom:24px}
-      .home-v6 .footer-contact-block{padding-top:22px}
-      .home-v6 .footer-contact{grid-template-columns:1fr;gap:8px}
-      .home-v6 .footer-nav{min-height:0;padding:20px 0;display:grid;justify-content:stretch;gap:10px}
-      .home-v6 .footer-bottom-inner{display:block}
+      .home-v6 .footer-main{
+        grid-template-columns:1fr;
+        gap:30px;
+        padding:48px 0 30px;
+      }
+      .home-v6 .footer-contact{gap:8px}
+      .home-v6 .footer-lower-inner{
+        min-height:0;
+        display:grid;
+        justify-content:stretch;
+        gap:18px;
+        padding:20px 0;
+      }
+      .home-v6 .footer-nav{
+        display:grid;
+        justify-content:stretch;
+        gap:10px;
+      }
+      .home-v6 .footer-copy{
+        white-space:normal;
+        line-height:1.5;
+      }
       .home-v6 .go-top{
         right:20px;
         bottom:88px;
@@ -1261,19 +1277,16 @@
     </div>
   </div>
 
-  <div class="footer-nav-wrap">
-    <nav class="container footer-nav" aria-label="푸터 메뉴">
-      <a href="pages/services.html">서비스</a>
-      <a href="pages/cases.html">업무사례</a>
-      <a href="pages/consult.html">상담</a>
-      <a href="pages/about.html">동감 소개</a>
-      <a href="pages/about.html#location">오시는 길</a>
-    </nav>
-  </div>
-
-  <div class="footer-bottom">
-    <div class="container footer-bottom-inner">
-      <span>© DONGGAM ADMINISTRATIVE OFFICE. All rights reserved.</span>
+  <div class="footer-lower">
+    <div class="container footer-lower-inner">
+      <nav class="footer-nav" aria-label="푸터 메뉴">
+        <a href="pages/services.html">서비스</a>
+        <a href="pages/cases.html">업무사례</a>
+        <a href="pages/consult.html">상담</a>
+        <a href="pages/about.html">동감 소개</a>
+        <a href="pages/about.html#location">오시는 길</a>
+      </nav>
+      <span class="footer-copy">© DONGGAM ADMINISTRATIVE OFFICE. All rights reserved.</span>
     </div>
   </div>
 </footer>
