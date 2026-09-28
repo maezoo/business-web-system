@@ -732,77 +732,6 @@
       color:var(--hwine);
     }
 
-    /* FOOTER */
-    .home-v6 .home-footer{background:#090909;color:#777}
-    .home-v6 .footer-main{
-      display:grid;
-      grid-template-columns:minmax(0,1fr) minmax(360px,.72fr);
-      gap:72px;
-      align-items:flex-start;
-      padding:58px 0 38px;
-    }
-    .home-v6 .footer-logo{
-      display:inline-flex;
-      align-items:center;
-      gap:11px;
-      color:#fff;
-    }
-    .home-v6 .footer-logo b{
-      display:block;
-      color:#fff;
-      font-size:16px;
-      letter-spacing:-.02em;
-    }
-    .home-v6 .footer-logo small{
-      display:block;
-      margin-top:1px;
-      color:#777;
-      font-size:9px;
-      letter-spacing:.08em;
-    }
-    .home-v6 .footer-title{
-      margin-bottom:14px;
-      color:#aaa;
-      font-size:10px;
-      font-weight:900;
-      letter-spacing:.14em;
-    }
-    .home-v6 .footer-contact{
-      display:grid;
-      gap:7px;
-      font-size:13px;
-      line-height:1.65;
-    }
-    .home-v6 .footer-contact a{color:#aaa}
-    .home-v6 .footer-contact a:hover{color:#fff}
-    .home-v6 .footer-lower{
-      border-top:1px solid rgba(255,255,255,.08);
-    }
-    .home-v6 .footer-lower-inner{
-      min-height:64px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:32px;
-    }
-    .home-v6 .footer-nav{
-      display:flex;
-      align-items:center;
-      justify-content:flex-start;
-      flex-wrap:wrap;
-      gap:12px 28px;
-      font-size:13px;
-      font-weight:750;
-    }
-    .home-v6 .footer-nav a{color:#8d8d8d}
-    .home-v6 .footer-nav a:hover{color:#fff}
-    .home-v6 .footer-copy{
-      flex:0 0 auto;
-      color:#555;
-      font-size:11px;
-      white-space:nowrap;
-    }
-
     /* GO TOP */
     .home-v6 .go-top{
       position:fixed;
@@ -873,9 +802,7 @@
         clip-path:none;
       }
       .home-v6 .hero-media::after{background:linear-gradient(180deg,rgba(251,248,249,.08),rgba(24,10,15,.25))}
-      .home-v6 .services-head,.home-v6 .cases-head,.home-v6 .consult-inner,.home-v6 .footer-main{
-        grid-template-columns:1fr;
-      }
+      .home-v6 .services-head,.home-v6 .cases-head,.home-v6 .consult-inner,
       .home-v6 .services-head,.home-v6 .cases-head{gap:18px}
       .home-v6 .visual-layout{
         grid-template-columns:1fr;
@@ -943,28 +870,6 @@
       .home-v6 .consult{padding:70px 0 76px}
       .home-v6 .consult h2{font-size:35px}
       .home-v6 .consult-actions{grid-template-columns:1fr}
-      .home-v6 .footer-main{
-        grid-template-columns:1fr;
-        gap:30px;
-        padding:48px 0 30px;
-      }
-      .home-v6 .footer-contact{gap:8px}
-      .home-v6 .footer-lower-inner{
-        min-height:0;
-        display:grid;
-        justify-content:stretch;
-        gap:18px;
-        padding:20px 0;
-      }
-      .home-v6 .footer-nav{
-        display:grid;
-        justify-content:stretch;
-        gap:10px;
-      }
-      .home-v6 .footer-copy{
-        white-space:normal;
-        line-height:1.5;
-      }
       .home-v6 .go-top{
         right:20px;
         bottom:88px;
@@ -1257,39 +1162,7 @@
   </section>
 </main>
 
-<footer class="home-footer">
-  <div class="container footer-main">
-    <div class="footer-brand">
-      <a class="footer-logo" href="index.html" aria-label="동감행정사사무소 홈">
-        <span class="mark">同</span>
-        <span><b>동감행정사사무소</b><small>DONGGAM ADMINISTRATIVE OFFICE</small></span>
-      </a>
-    </div>
-
-    <div class="footer-contact-block">
-      <div class="footer-title">CONTACT</div>
-      <div class="footer-contact">
-        <a href="tel:03180490828">Tel. 031-8049-0828</a>
-        <a href="mailto:creafit@naver.com">creafit@naver.com</a>
-        <span>경기도 김포시 태장로795번길 23, R동 4층 408호 (장기동, 김포마스터비즈파크)</span>
-        <span>Fax. 070-7500-2992</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-lower">
-    <div class="container footer-lower-inner">
-      <nav class="footer-nav" aria-label="푸터 메뉴">
-        <a href="pages/services.html">서비스</a>
-        <a href="pages/cases.html">업무사례</a>
-        <a href="pages/consult.html">상담</a>
-        <a href="pages/about.html">동감 소개</a>
-        <a href="pages/about.html#location">오시는 길</a>
-      </nav>
-      <span class="footer-copy">© DONGGAM ADMINISTRATIVE OFFICE. All rights reserved.</span>
-    </div>
-  </div>
-</footer>
+<footer class="site-footer"></footer>
 
 <button class="go-top" id="goTop" type="button" aria-label="페이지 맨 위로 이동">↑</button>
 
