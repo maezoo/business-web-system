@@ -78,9 +78,9 @@
     footer.innerHTML = `
       <div class="container footer-main">
         <div class="footer-brand">
-          <a class="footer-logo" href="${home}" aria-label="동감행정사무소 홈">
+          <a class="footer-logo" href="${home}" aria-label="동감행정사사무소 홈">
             <span class="mark">同</span>
-            <span><b>동감행정사무소</b><small>DONGGAM ADMINISTRATIVE OFFICE</small></span>
+            <span><b>동감행정사사무소</b><small>DONGGAM ADMINISTRATIVE OFFICE</small></span>
           </a>
           <div class="footer-scope" aria-label="주요 업무">
             <span class="footer-scope-title">주요 업무</span>
