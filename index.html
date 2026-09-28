@@ -736,9 +736,9 @@
     .home-v6 .home-footer{background:#090909;color:#777}
     .home-v6 .footer-main{
       display:grid;
-      grid-template-columns:minmax(0,1.1fr) minmax(260px,.7fr) minmax(180px,.35fr);
-      gap:62px;
-      padding:66px 0 50px;
+      grid-template-columns:minmax(0,1fr) minmax(360px,.72fr);
+      gap:72px;
+      padding:58px 0 34px;
     }
     .home-v6 .footer-brand strong{
       display:block;
@@ -747,10 +747,12 @@
       font-size:24px;
     }
     .home-v6 .footer-brand p{
-      max-width:520px;
+      max-width:460px;
       margin:0;
+      color:#8b8b8b;
       font-size:14px;
-      line-height:1.7;
+      line-height:1.75;
+      word-break:keep-all;
     }
     .home-v6 .footer-title{
       margin-bottom:14px;
@@ -759,20 +761,29 @@
       font-weight:900;
       letter-spacing:.14em;
     }
-    .home-v6 .footer-contact,.home-v6 .footer-nav{
+    .home-v6 .footer-contact{
       display:grid;
-      gap:8px;
+      gap:7px;
       font-size:13px;
-      line-height:1.6;
+      line-height:1.65;
     }
-    .home-v6 .footer-contact a,.home-v6 .footer-nav a{color:#999}
-    .home-v6 .footer-contact a:hover,.home-v6 .footer-nav a:hover{color:#fff}
+    .home-v6 .footer-contact a{color:#aaa}
+    .home-v6 .footer-contact a:hover{color:#fff}
+    .home-v6 .footer-nav-wrap{border-top:1px solid rgba(255,255,255,.08)}
+    .home-v6 .footer-nav{
+      min-height:62px;
+      display:flex;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:12px 28px;
+      font-size:13px;
+      font-weight:750;
+    }
+    .home-v6 .footer-nav a{color:#8d8d8d}
+    .home-v6 .footer-nav a:hover{color:#fff}
     .home-v6 .footer-bottom{border-top:1px solid rgba(255,255,255,.08)}
     .home-v6 .footer-bottom-inner{
-      display:flex;
-      justify-content:space-between;
-      gap:18px;
-      padding:19px 0;
+      padding:17px 0;
       color:#555;
       font-size:11px;
     }
@@ -917,8 +928,9 @@
       .home-v6 .consult{padding:70px 0 76px}
       .home-v6 .consult h2{font-size:35px}
       .home-v6 .consult-actions{grid-template-columns:1fr}
-      .home-v6 .footer-main{padding:52px 0 38px}
-      .home-v6 .footer-bottom-inner{display:grid;gap:6px}
+      .home-v6 .footer-main{gap:34px;padding:48px 0 30px}
+      .home-v6 .footer-nav{min-height:0;padding:20px 0;display:grid;gap:10px}
+      .home-v6 .footer-bottom-inner{display:block}
       .home-v6 .go-top{
         right:20px;
         bottom:88px;
@@ -1198,8 +1210,8 @@
     <div class="container consult-inner">
       <div class="reveal">
         <span class="home-kicker">CONSULTATION</span>
-        <h2>행정업무 상담이 필요하신가요?</h2>
-        <p>현재 준비 중인 업무와 상황을 확인한 뒤 상담에 필요한 내용을 안내합니다.</p>
+        <h2>필요한 절차와 준비사항, 상담을 통해 확인하세요.</h2>
+        <p>현재 상황과 준비 중인 내용을 확인한 뒤<br>필요한 자료와 진행 방향을 안내해드립니다.</p>
         <a class="consult-phone" href="tel:03180490828">031-8049-0828</a>
       </div>
 
@@ -1215,34 +1227,33 @@
   <div class="container footer-main">
     <div class="footer-brand">
       <strong>동감행정사사무소</strong>
-      <p>민간자격 등록, 법인·단체 설립, 화장품·의약품·의약외품 관련 등록·신고, 행정심판 등 주요 행정업무를 상담합니다.</p>
+      <p>행정업무의 상황과 준비사항을 확인하고 필요한 절차를 안내합니다.</p>
     </div>
 
     <div>
       <div class="footer-title">CONTACT</div>
       <div class="footer-contact">
-        <span>경기도 김포시 태장로795번길 23, R동 4층 408호 (장기동, 김포마스터비즈파크)</span>
         <a href="tel:03180490828">Tel. 031-8049-0828</a>
-        <span>Fax. 070-7500-2992</span>
         <a href="mailto:creafit@naver.com">creafit@naver.com</a>
+        <span>경기도 김포시 태장로795번길 23, R동 4층 408호 (장기동, 김포마스터비즈파크)</span>
+        <span>Fax. 070-7500-2992</span>
       </div>
     </div>
+  </div>
 
-    <div>
-      <div class="footer-title">MENU</div>
-      <div class="footer-nav">
-        <a href="pages/services.html">서비스</a>
-        <a href="pages/cases.html">업무사례</a>
-        <a href="pages/consult.html">상담</a>
-        <a href="pages/about.html">동감 소개</a>
-      </div>
-    </div>
+  <div class="footer-nav-wrap">
+    <nav class="container footer-nav" aria-label="푸터 메뉴">
+      <a href="pages/services.html">서비스</a>
+      <a href="pages/cases.html">업무사례</a>
+      <a href="pages/consult.html">상담</a>
+      <a href="pages/about.html">동감 소개</a>
+      <a href="pages/about.html#location">오시는 길</a>
+    </nav>
   </div>
 
   <div class="footer-bottom">
     <div class="container footer-bottom-inner">
       <span>© DONGGAM ADMINISTRATIVE OFFICE. All rights reserved.</span>
-      <span>Tel. 031-8049-0828 · creafit@naver.com</span>
     </div>
   </div>
 </footer>
