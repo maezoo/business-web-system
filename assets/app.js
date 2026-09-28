@@ -78,10 +78,14 @@
     footer.innerHTML = `
       <div class="container footer-main">
         <div class="footer-brand">
-          <a class="footer-logo" href="${home}" aria-label="동감행정사사무소 홈">
+          <a class="footer-logo" href="${home}" aria-label="동감행정사무소 홈">
             <span class="mark">同</span>
-            <span><b>동감행정사사무소</b><small>DONGGAM ADMINISTRATIVE OFFICE</small></span>
+            <span><b>동감행정사무소</b><small>DONGGAM ADMINISTRATIVE OFFICE</small></span>
           </a>
+          <div class="footer-scope" aria-label="주요 업무">
+            <span class="footer-scope-title">주요 업무</span>
+            <p>민간자격 등록 · 법인·단체 설립<br>화장품·의약품·의약외품 · 행정심판</p>
+          </div>
         </div>
         <div class="footer-contact-block">
           <div class="footer-title">CONTACT</div>
