@@ -44,7 +44,7 @@ a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}button{c
 .mega-link:hover{color:var(--wine)}.mega-link:hover::after{transform:translateX(4px);color:var(--wine)}
 
 /* COMMON */
-.eyebrow{margin:0 0 16px;color:var(--wine);font-size:16px;font-weight:900;letter-spacing:.13em}
+.eyebrow{margin:0 0 16px;color:var(--wine);font-size:12px;font-weight:900;letter-spacing:.13em}
 h1,h2,h3{line-height:1.18;letter-spacing:-.045em}h1{font-size:clamp(48px,6.7vw,88px);margin:0}h2{font-size:clamp(34px,4.1vw,56px);margin:0 0 18px}h3{font-size:23px;margin:0 0 10px}
 .lead{max-width:760px;margin:26px 0 0;font-size:19px;color:var(--sub)}.muted{color:var(--sub)}
 .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px}
@@ -96,7 +96,8 @@ h1,h2,h3{line-height:1.18;letter-spacing:-.045em}h1{font-size:clamp(48px,6.7vw,8
 .micro-list{counter-reset:item;display:grid;gap:10px;padding:0;list-style:none}.micro-list li{position:relative;padding:17px 17px 17px 54px;border:1px solid var(--line);border-radius:14px;background:#fff}.micro-list li::before{counter-increment:item;content:counter(item,decimal-leading-zero);position:absolute;left:16px;top:18px;color:var(--wine);font-weight:900;font-size:11px}
 
 /* CONSULT */
-.form-shell{margin:auto;padding:34px;background:#fff;border-radius:24px;border:1px solid var(--line);box-shadow:0 20px 60px rgba(49,7,17,.08)}
+.form-shell{max-width:1040px;margin:auto;padding:34px;background:#fff;border-radius:24px;border:1px solid var(--line);box-shadow:0 20px 60px rgba(49,7,17,.08)}
+.form-shell .eyebrow{font-size:16px}
 .progress{display:flex;gap:8px;margin-bottom:30px}.progress span{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--soft2);color:var(--sub2);font-size:12px;font-weight:900}.progress span.on{background:var(--wine);color:#fff}
 .form-step{display:none}.form-step.on{display:block}.form-step h2{font-size:32px}.choices label{position:relative}.choices input{position:absolute;opacity:0}.choices input:checked+span{border-color:var(--wine);background:var(--wine-soft);color:var(--wine)}
 textarea{width:100%;padding:14px;border:1px solid var(--line);border-radius:13px;resize:vertical}.form-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:22px}.summary{padding:18px;background:var(--wine-soft);border-radius:15px}.summary dl{display:grid;grid-template-columns:100px 1fr;gap:8px}.summary dd{margin:0;font-weight:800}
