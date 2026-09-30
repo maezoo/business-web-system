@@ -143,14 +143,84 @@
   const form=document.getElementById('consultForm');
   if(form){
     let step=1;
-    const steps=[...form.querySelectorAll('.form-step')],dots=[...document.querySelectorAll('.progress span')];
-    const show=s=>{step=s;steps.forEach(x=>x.classList.toggle('on',x.dataset.step==s));dots.forEach((d,i)=>d.classList.toggle('on',s==='result'||(typeof s==='number'&&i<s)))};
+    const steps=[...form.querySelectorAll('.form-step')],dots=[...form.querySelectorAll('.progress span')];
+    const show=s=>{step=s;steps.forEach(x=>x.classList.toggle('on',x.dataset.step==s));dots.forEach((d,i)=>d.classList.toggle('on',s==='result'||(typeof s==='number'&&i<s)));window.scrollTo({top:form.closest('.form-shell').offsetTop-120,behavior:'smooth'})};
     const val=n=>form.querySelector('input[name="'+n+'"]:checked')?.value||'';
     const req={1:'service',2:'stage',3:'applicant'};
-    form.querySelectorAll('.next').forEach(b=>b.addEventListener('click',()=>{const n=req[step];if(n&&!val(n)){alert('항목을 선택해 주세요.');return}show(step+1)}));
+
+    form.querySelectorAll('.next').forEach(b=>b.addEventListener('click',()=>{
+      const n=req[step];
+      if(n&&!val(n)){alert('항목을 선택해 주세요.');return}
+      show(step+1);
+    }));
     form.querySelectorAll('.prev').forEach(b=>b.addEventListener('click',()=>show(Math.max(1,step-1))));
-    form.addEventListener('submit',e=>{e.preventDefault();const data={service:val('service'),stage:val('stage'),applicant:val('applicant'),message:form.elements.message.value.trim()||'별도 입력 없음'};document.getElementById('summary').innerHTML='<dl><dt>문의 분야</dt><dd>'+esc(data.service)+'</dd><dt>현재 단계</dt><dd>'+esc(data.stage)+'</dd><dt>신청 유형</dt><dd>'+esc(data.applicant)+'</dd><dt>문의 내용</dt><dd>'+esc(data.message)+'</dd></dl>';show('result')});
-    document.getElementById('restart')?.addEventListener('click',()=>{form.reset();show(1)});
+
+    const contactError=document.getElementById('contactError');
+    form.querySelector('.review')?.addEventListener('click',()=>{
+      const name=form.elements.customerName.value.trim();
+      const phone=form.elements.customerPhone.value.trim();
+      const email=form.elements.customerEmail.value.trim();
+      const privacy=form.elements.privacy.checked;
+
+      if(!name){contactError.textContent='이름을 입력해 주세요.';form.elements.customerName.focus();return}
+      if(!phone){contactError.textContent='연락처를 입력해 주세요.';form.elements.customerPhone.focus();return}
+      if(!privacy){contactError.textContent='개인정보 수집·이용 동의가 필요합니다.';form.elements.privacy.focus();return}
+      contactError.textContent='';
+
+      const data={
+        service:val('service'),
+        stage:val('stage'),
+        applicant:val('applicant'),
+        message:form.elements.message.value.trim()||'별도 입력 없음',
+        name,
+        phone,
+        email:email||'입력하지 않음'
+      };
+
+      document.getElementById('summary').innerHTML=
+        '<dl>'+
+        '<dt>문의 분야</dt><dd>'+esc(data.service)+'</dd>'+
+        '<dt>현재 단계</dt><dd>'+esc(data.stage)+'</dd>'+
+        '<dt>신청 유형</dt><dd>'+esc(data.applicant)+'</dd>'+
+        '<dt>문의 내용</dt><dd>'+esc(data.message)+'</dd>'+
+        '<dt>이름</dt><dd>'+esc(data.name)+'</dd>'+
+        '<dt>연락처</dt><dd>'+esc(data.phone)+'</dd>'+
+        '<dt>이메일</dt><dd>'+esc(data.email)+'</dd>'+
+        '</dl>';
+      show('result');
+    });
+
+    document.getElementById('editConsult')?.addEventListener('click',()=>show(5));
+    document.getElementById('restart')?.addEventListener('click',()=>{form.reset();if(contactError)contactError.textContent='';show(1)});
+
+    const resultCall=form.querySelector('.consult-result-call');
+    if(resultCall){
+      resultCall.addEventListener('click',async e=>{
+        if(window.matchMedia('(max-width: 860px)').matches) return;
+        e.preventDefault();
+        try{
+          if(navigator.clipboard&&window.isSecureContext){
+            await navigator.clipboard.writeText(CONTACT.telText);
+          }else{
+            const temp=document.createElement('textarea');
+            temp.value=CONTACT.telText;
+            temp.setAttribute('readonly','');
+            temp.style.position='fixed';
+            temp.style.opacity='0';
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            temp.remove();
+          }
+          resultCall.textContent='복사되었습니다 ✓';
+          window.setTimeout(()=>{resultCall.textContent='전화 상담'},1600);
+        }catch(err){
+          resultCall.textContent=CONTACT.telText;
+          window.setTimeout(()=>{resultCall.textContent='전화 상담'},2200);
+        }
+      });
+    }
+
     function esc(v){return v.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
   }
 })();
