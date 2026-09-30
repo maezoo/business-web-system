@@ -2,9 +2,23 @@
   const inPages = location.pathname.includes('/pages/');
   const p = inPages ? '' : 'pages/';
   const home = inPages ? '../index.html' : 'index.html';
-  const nav = document.querySelector('.nav');
   const header = document.querySelector('.site-header');
-  const menuBtn = document.querySelector('.menu');
+
+  if(header){
+    header.innerHTML = `
+      <div class="container head">
+        <a class="brand" href="${home}">
+          <span class="mark">同</span>
+          <span><b>동감행정사사무소</b><small>DONGGAM ADMINISTRATIVE OFFICE</small></span>
+        </a>
+        <button class="menu" type="button" aria-label="메뉴"><span></span><span></span><span></span></button>
+        <nav class="nav"></nav>
+        <a class="call-top" href="tel:03180490828">전화 상담</a>
+      </div>`;
+  }
+
+  const nav = header?.querySelector('.nav');
+  const menuBtn = header?.querySelector('.menu');
 
   const groups = [
     {
