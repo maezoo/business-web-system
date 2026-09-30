@@ -143,8 +143,9 @@
   const form=document.getElementById('consultForm');
   if(form){
     let step=1;
-    const steps=[...form.querySelectorAll('.form-step')],dots=[...form.querySelectorAll('.progress span')];
-    const show=s=>{step=s;steps.forEach(x=>x.classList.toggle('on',x.dataset.step==s));dots.forEach((d,i)=>d.classList.toggle('on',s==='result'||(typeof s==='number'&&i<s)));window.scrollTo({top:form.closest('.form-shell').offsetTop-120,behavior:'smooth'})};
+    const shell=form.closest('.form-shell');
+    const steps=[...form.querySelectorAll('.form-step')],dots=[...shell.querySelectorAll('.progress span')];
+    const show=s=>{step=s;steps.forEach(x=>x.classList.toggle('on',x.dataset.step==s));dots.forEach((d,i)=>d.classList.toggle('on',s==='result'||(typeof s==='number'&&i<s)));window.scrollTo({top:shell.offsetTop-120,behavior:'smooth'})};
     const val=n=>form.querySelector('input[name="'+n+'"]:checked')?.value||'';
     const req={1:'service',2:'stage',3:'applicant'};
 
