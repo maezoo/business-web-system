@@ -137,6 +137,54 @@
     });
   });
 
+  const serviceContextMap={
+    'service-cosmetics-manufacturing.html':{
+      group:'화장품 · 의약품 · 의약외품',title:'화장품 제조업',parent:'service-cosmetics.html',
+      siblings:[['화장품 책임판매업','service-cosmetics-responsible.html'],['의약품 · 의약외품','service-pharma.html']]
+    },
+    'service-cosmetics-responsible.html':{
+      group:'화장품 · 의약품 · 의약외품',title:'화장품 책임판매업',parent:'service-cosmetics.html',
+      siblings:[['화장품 제조업','service-cosmetics-manufacturing.html'],['의약품 · 의약외품','service-pharma.html']]
+    },
+    'service-pharma.html':{
+      group:'화장품 · 의약품 · 의약외품',title:'의약품 · 의약외품',parent:'service-cosmetics.html',
+      siblings:[['화장품 제조업','service-cosmetics-manufacturing.html'],['화장품 책임판매업','service-cosmetics-responsible.html']]
+    },
+    'service-organization-association.html':{
+      group:'법인 · 단체 설립',title:'비영리사단법인',parent:'service-organization.html',
+      siblings:[['비영리재단법인','service-organization-foundation.html'],['비영리민간단체','service-organization-nonprofit.html'],['사회적기업','service-organization-social-enterprise.html']]
+    },
+    'service-organization-foundation.html':{
+      group:'법인 · 단체 설립',title:'비영리재단법인',parent:'service-organization.html',
+      siblings:[['비영리사단법인','service-organization-association.html'],['비영리민간단체','service-organization-nonprofit.html'],['사회적기업','service-organization-social-enterprise.html']]
+    },
+    'service-organization-nonprofit.html':{
+      group:'법인 · 단체 설립',title:'비영리민간단체',parent:'service-organization.html',
+      siblings:[['비영리사단법인','service-organization-association.html'],['비영리재단법인','service-organization-foundation.html'],['사회적기업','service-organization-social-enterprise.html']]
+    },
+    'service-organization-social-enterprise.html':{
+      group:'법인 · 단체 설립',title:'사회적기업',parent:'service-organization.html',
+      siblings:[['비영리사단법인','service-organization-association.html'],['비영리재단법인','service-organization-foundation.html'],['비영리민간단체','service-organization-nonprofit.html']]
+    },
+    'service-license.html':{
+      group:'민간자격 등록',title:'민간자격 등록',parent:'services.html',siblings:[]
+    },
+    'service-appeal-dui.html':{
+      group:'행정심판',title:'음주운전 면허구제',parent:'service-appeal.html',
+      siblings:[['영업정지 대응','service-appeal-business.html'],['학교폭력 행정심판','service-appeal-school.html']]
+    },
+    'service-appeal-business.html':{
+      group:'행정심판',title:'영업정지 대응',parent:'service-appeal.html',
+      siblings:[['음주운전 면허구제','service-appeal-dui.html'],['학교폭력 행정심판','service-appeal-school.html']]
+    },
+    'service-appeal-school.html':{
+      group:'행정심판',title:'학교폭력 행정심판',parent:'service-appeal.html',
+      siblings:[['음주운전 면허구제','service-appeal-dui.html'],['영업정지 대응','service-appeal-business.html']]
+    }
+  };
+  const currentFile=location.pathname.split('/').pop()||'';
+  const serviceContext=serviceContextMap[currentFile]||null;
+
   const side=document.querySelector('.side');
   const quickNav=document.querySelector('.subhero .quick-nav');
   let mobileLocalNav=null;
@@ -149,6 +197,12 @@
   }
 
   if(side){
+    if(serviceContext){
+      const context=document.createElement('div');
+      context.className='side-context';
+      context.innerHTML='<small>'+serviceContext.group+'</small><strong>'+serviceContext.title+'</strong>';
+      side.prepend(context);
+    }
     const sideIndicator=document.createElement('span');
     sideIndicator.className='side-indicator';
     side.appendChild(sideIndicator);
@@ -198,6 +252,24 @@
         }
       },{passive:true});
     }
+  }
+
+  if(serviceContext){
+    const main=document.querySelector('main');
+    const nav=document.createElement('section');
+    nav.className='service-context-nav';
+    const siblingLinks=serviceContext.siblings.map(item=>'<a href="'+item[1]+'">'+item[0]+'</a>').join('');
+    nav.innerHTML=
+      '<div class="container service-context-nav-inner">'+
+        '<div class="service-context-current">'+
+          '<small>현재 보고 있는 업무</small>'+
+          '<strong>'+serviceContext.title+'</strong>'+
+        '</div>'+
+        (serviceContext.siblings.length?
+          '<div class="service-context-related"><small>다른 업무</small><div>'+siblingLinks+'</div></div>':'')+
+        '<a class="service-context-back" href="'+serviceContext.parent+'">← '+serviceContext.group+' 전체</a>'+
+      '</div>';
+    main?.insertAdjacentElement('beforeend',nav);
   }
 
   if(document.body.classList.contains('dg-sub')){
