@@ -84,17 +84,14 @@
   padding:29px 30px;border:1px solid var(--ui-line);border-radius:var(--ui-ra);
   background:#fff;color:var(--ui-ink);
 }
-.dg-services main .situation.featured{
-  border-color:#e9d3dc;background:#faf3f6;color:var(--ui-ink);
-}
-.dg-services main .situation .num,.dg-services main .situation.featured .num{
+.dg-services main .situation .num{
   color:var(--wine);font-size:12px;font-weight:850;letter-spacing:.09em;
 }
 .dg-services main .situation h3{margin:37px 0 12px;font-size:clamp(24px,2.3vw,30px)}
-.dg-services main .situation p,.dg-services main .situation.featured p{
+.dg-services main .situation p{
   margin:0 0 23px;color:var(--ui-copy);font-size:15px;line-height:1.65;
 }
-.dg-services main .situation .more,.dg-services main .situation.featured .more{
+.dg-services main .situation .more{
   margin-top:auto;color:var(--wine);font-size:13px;font-weight:850;
 }
 
@@ -118,17 +115,14 @@
   display:flex;flex-direction:column;min-height:325px;padding:28px 26px 26px;
   border:1px solid var(--ui-line);border-radius:var(--ui-ra);background:#fff;color:var(--ui-ink);
 }
-.dg-cosmetics main .hub-card.primary-card{
-  border-color:#d6b1bf;background:#f9f0f4;color:var(--ui-ink);
-}
-.dg-cosmetics main .hub-card .type,.dg-cosmetics main .hub-card.primary-card .type{
+.dg-cosmetics main .hub-card .type{
   color:var(--wine);font-size:11px;font-weight:850;letter-spacing:.05em;
 }
 .dg-cosmetics main .hub-card h3{margin:47px 0 11px;font-size:clamp(24px,2.15vw,29px)}
-.dg-cosmetics main .hub-card p,.dg-cosmetics main .hub-card.primary-card p{
+.dg-cosmetics main .hub-card p{
   margin:0;color:var(--ui-copy);font-size:14px;line-height:1.8;
 }
-.dg-cosmetics main .hub-card .more,.dg-cosmetics main .hub-card.primary-card .more{
+.dg-cosmetics main .hub-card .more{
   display:inline-flex;align-items:center;margin-top:auto;padding-top:27px;
   color:var(--wine);font-weight:850;font-size:13px;
 }
@@ -152,17 +146,14 @@
   min-height:280px;padding:28px 29px 24px;border:1px solid var(--ui-line);
   border-radius:var(--ui-ra);background:#fff;color:var(--ui-ink);
 }
-.dg-organization main .hub-card.primary-card{
-  border-color:#e3c6d1;background:#fbf5f7;color:var(--ui-ink);
-}
-.dg-organization main .hub-card .type,.dg-organization main .hub-card.primary-card .type{
+.dg-organization main .hub-card .type{
   color:var(--wine);font-size:11px;font-weight:850;letter-spacing:.04em;
 }
 .dg-organization main .hub-card h3{margin:30px 0 12px;font-size:clamp(25px,2.5vw,32px)}
-.dg-organization main .hub-card p,.dg-organization main .hub-card.primary-card p{
+.dg-organization main .hub-card p{
   margin:0;color:var(--ui-copy);font-size:15px;line-height:1.74;
 }
-.dg-organization main .hub-card .more,.dg-organization main .hub-card.primary-card .more{
+.dg-organization main .hub-card .more{
   margin-top:auto;padding-top:22px;color:var(--wine);font-size:13px;
 }
 
@@ -197,7 +188,6 @@
 .dg-sub main .info-card{
   padding:25px 24px;border:1px solid var(--ui-line);border-radius:9px;background:#fff;
 }
-.dg-sub main .info-card.accent{background:#fbf5f7;border-color:#ead2db}
 .dg-sub main .info-card h3{font-size:19px;margin:0 0 8px}
 .dg-sub main .info-card p{color:var(--ui-copy);font-size:14px;line-height:1.75}
 .dg-sub main .doc-groups{gap:14px}
@@ -250,7 +240,6 @@
 }
 .dg-sub main .micro-list li{border-radius:8px}
 .dg-sub main .route-box,.dg-sub main .factor{border-radius:9px}
-.dg-sub main .route-box.accent{background:#fbf4f7}
 .dg-sub main .case-light{
   padding:22px;border:1px solid var(--ui-line);border-radius:9px;background:#fff;
 }
@@ -468,28 +457,6 @@
 .dg-urgent main .subhero .lead{
   padding-left:18px;border-left:2px solid rgba(117,22,49,.32);
 }
-
-/* Keep choice hierarchy neutral unless the content itself establishes priority. */
-.dg-services main .situation.featured,
-.dg-cosmetics main .hub-card.primary-card,
-.dg-organization main .hub-card.primary-card{
-  border-color:var(--ui-line);background:#fff;color:var(--ui-ink);
-}
-.dg-services main .situation.featured p,
-.dg-services main .situation.featured .num,
-.dg-services main .situation.featured .more,
-.dg-cosmetics main .hub-card.primary-card p,
-.dg-cosmetics main .hub-card.primary-card .type,
-.dg-cosmetics main .hub-card.primary-card .more,
-.dg-organization main .hub-card.primary-card p,
-.dg-organization main .hub-card.primary-card .type,
-.dg-organization main .hub-card.primary-card .more{color:inherit}
-.dg-services main .situation.featured .num,
-.dg-services main .situation.featured .more,
-.dg-cosmetics main .hub-card.primary-card .type,
-.dg-cosmetics main .hub-card.primary-card .more,
-.dg-organization main .hub-card.primary-card .type,
-.dg-organization main .hub-card.primary-card .more{color:var(--wine)}
 
 /* Reduce card repetition for document groups; comparison cards remain cards. */
 .dg-sub main .doc-groups{border-top:1px solid var(--ui-line);gap:0 34px}
