@@ -132,6 +132,21 @@
       </div>`;
   }
 
+  if(!document.querySelector('.go-top')){
+    const goTop=document.createElement('button');
+    goTop.className='go-top';
+    goTop.type='button';
+    goTop.setAttribute('aria-label','페이지 맨 위로 이동');
+    goTop.textContent='↑';
+    document.body.appendChild(goTop);
+
+    const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const updateGoTop=()=>goTop.classList.toggle('is-visible',window.scrollY>520);
+    goTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:reduceMotion?'auto':'smooth'}));
+    window.addEventListener('scroll',updateGoTop,{passive:true});
+    updateGoTop();
+  }
+
   menuBtn?.addEventListener('click',()=>header?.classList.toggle('open'));
   document.querySelectorAll('.submenu-toggle').forEach(btn=>{
     btn.addEventListener('click',()=>{
