@@ -188,6 +188,23 @@
   };
   const currentFile=location.pathname.split('/').pop()||'';
   const serviceContext=serviceContextMap[currentFile]||null;
+  const consultPresetByFile={
+    'service-cosmetics.html':'화장품·의약외품',
+    'service-organization.html':'법인·단체 설립',
+    'service-license.html':'민간자격 등록',
+    'service-appeal.html':'행정심판'
+  };
+  const consultPreset=
+    consultPresetByFile[currentFile]||
+    (serviceContext?.group==='화장품 · 의약품 · 의약외품'?'화장품·의약외품':
+    serviceContext?.group==='법인 · 단체 설립'?'법인·단체 설립':
+    serviceContext?.group==='행정심판'?'행정심판':
+    serviceContext?.title==='민간자격 등록'?'민간자격 등록':'');
+  if(consultPreset){
+    document.querySelectorAll('main a[href="consult.html"]').forEach(link=>{
+      link.setAttribute('href','consult.html?service='+encodeURIComponent(consultPreset));
+    });
+  }
 
   const side=document.querySelector('.side');
   const quickNav=document.querySelector('.subhero .quick-nav');
@@ -259,16 +276,6 @@
   }
 
   if(serviceContext){
-    const consultValue=
-      serviceContext.group==='화장품 · 의약품 · 의약외품'?'화장품·의약외품':
-      serviceContext.group==='법인 · 단체 설립'?'법인·단체 설립':
-      serviceContext.group==='행정심판'?'행정심판':
-      serviceContext.title==='민간자격 등록'?'민간자격 등록':'';
-    if(consultValue){
-      document.querySelectorAll('main a[href="consult.html"]').forEach(link=>{
-        link.setAttribute('href','consult.html?service='+encodeURIComponent(consultValue));
-      });
-    }
     const main=document.querySelector('main');
     const nav=document.createElement('section');
     nav.className='service-context-nav';
