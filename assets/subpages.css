@@ -439,7 +439,6 @@
   mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.32) 18%,#000 42%);
 }
 .dg-sub[class*="dg-visual-"] main .subhero:after{opacity:.3}
-.dg-sub[class*="dg-visual-"] main .subhero h1{max-width:760px}
 .dg-sub[class*="dg-visual-"] main .subhero .lead{max-width:680px}
 
 /* 11. Refined hierarchy, responsive local navigation and restrained motion */
