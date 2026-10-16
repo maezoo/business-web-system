@@ -167,7 +167,7 @@
       siblings:[['비영리사단법인','service-organization-association.html'],['비영리재단법인','service-organization-foundation.html'],['비영리민간단체','service-organization-nonprofit.html']]
     },
     'service-license.html':{
-      group:'민간자격 등록',title:'민간자격 등록',parent:'services.html',siblings:[]
+      group:'서비스',title:'민간자격 등록',parent:'services.html',siblings:[]
     },
     'service-appeal-dui.html':{
       group:'행정심판',title:'음주운전 면허구제',parent:'service-appeal.html',
