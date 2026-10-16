@@ -40,13 +40,14 @@
       ]
     },
     {
-      label:'업무사례', href:p+'cases.html',
+      label:'업무사례', href:p+'cases.html', caseMenu:true,
       intro:'업무사례', desc:'동감이 진행한 분야별 업무사례를 확인해 보세요.',
       links:[
         ['전체 업무사례','전체 분야 보기',p+'cases.html'],
-        ['민간자격 등록사례','민간자격 등록 사례',p+'cases.html#license'],
-        ['법인 · 단체 사례','설립 · 허가 사례',p+'cases.html#organization'],
-        ['화장품 · 의약외품 사례','등록 · 신고 사례',p+'cases.html#cosmetics']
+        ['민간자격 등록사례','민간자격 등록 사례',p+'cases.html?filter=license'],
+        ['법인 · 단체 사례','설립 · 허가 사례',p+'cases.html?filter=organization'],
+        ['화장품 · 의약외품 사례','등록 · 신고 사례',p+'cases.html?filter=cosmetics'],
+        ['행정심판 사례','음주운전 · 영업정지 · 학교폭력',p+'cases.html?filter=appeal']
       ]
     },
     {
@@ -74,7 +75,7 @@
         <div class="mega-menu">
           <div class="mega-inner container">
             <div class="mega-intro"><small>${g.intro}</small><strong>${g.label}</strong><p>${g.desc}</p></div>
-            <div class="mega-grid">
+            <div class="mega-grid${g.caseMenu?' case-menu-grid':''}">
               ${g.links.map(l=>`<a class="mega-link" href="${l[2]}"><span><b>${l[0]}</b><small>${l[1]}</small></span></a>`).join('')}
             </div>
           </div>
@@ -374,10 +375,23 @@
 
   const filters=[...document.querySelectorAll('[data-filter]')];
   const cards=[...document.querySelectorAll('[data-category]')];
-  filters.forEach(b=>b.addEventListener('click',()=>{
-    filters.forEach(x=>x.classList.remove('active')); b.classList.add('active');
-    cards.forEach(c=>c.classList.toggle('hidden',b.dataset.filter!=='all'&&c.dataset.category!==b.dataset.filter));
-  }));
+  const applyCaseFilter=key=>{
+    const selected=filters.find(b=>b.dataset.filter===key)||filters.find(b=>b.dataset.filter==='all');
+    if(!selected) return;
+    filters.forEach(x=>x.classList.toggle('active',x===selected));
+    cards.forEach(card=>card.classList.toggle('hidden',selected.dataset.filter!=='all'&&card.dataset.category!==selected.dataset.filter));
+  };
+  filters.forEach(b=>b.addEventListener('click',()=>applyCaseFilter(b.dataset.filter)));
+  if(filters.length&&cards.length){
+    const params=new URLSearchParams(location.search);
+    const hashKey=location.hash.replace('#','');
+    const requested=params.get('filter')||(filters.some(b=>b.dataset.filter===hashKey)?hashKey:'all');
+    applyCaseFilter(requested);
+    window.addEventListener('hashchange',()=>{
+      const key=location.hash.replace('#','');
+      if(filters.some(b=>b.dataset.filter===key)) applyCaseFilter(key);
+    });
+  }
 
   const form=document.getElementById('consultForm');
   if(form){
