@@ -145,6 +145,7 @@
     mobileLocalNav.classList.add('local-nav-mobile');
     mobileLocalNav.setAttribute('aria-label','현재 페이지 메뉴');
     document.querySelector('.subhero')?.insertAdjacentElement('afterend',mobileLocalNav);
+    document.body.classList.add('has-local-nav');
   }
 
   if(side){
