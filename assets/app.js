@@ -7,6 +7,10 @@
   if(/service-appeal-(dui|business|school)\.html$/.test(currentPath)){
     document.body.classList.add('dg-urgent');
   }
+  if(/service-(cosmetics|pharma)/.test(currentPath)) document.body.classList.add('dg-visual-cosmetics');
+  if(/service-organization/.test(currentPath)) document.body.classList.add('dg-visual-organization');
+  if(/service-license/.test(currentPath)) document.body.classList.add('dg-visual-license');
+  if(/service-appeal/.test(currentPath)) document.body.classList.add('dg-visual-appeal');
 
   if(header){
     header.innerHTML = `
@@ -255,6 +259,16 @@
   }
 
   if(serviceContext){
+    const consultValue=
+      serviceContext.group==='화장품 · 의약품 · 의약외품'?'화장품·의약외품':
+      serviceContext.group==='법인 · 단체 설립'?'법인·단체 설립':
+      serviceContext.group==='행정심판'?'행정심판':
+      serviceContext.title==='민간자격 등록'?'민간자격 등록':'';
+    if(consultValue){
+      document.querySelectorAll('main a[href="consult.html"]').forEach(link=>{
+        link.setAttribute('href','consult.html?service='+encodeURIComponent(consultValue));
+      });
+    }
     const main=document.querySelector('main');
     const nav=document.createElement('section');
     nav.className='service-context-nav';
@@ -262,11 +276,11 @@
     nav.innerHTML=
       '<div class="container service-context-nav-inner">'+
         '<div class="service-context-current">'+
-          '<small>현재 보고 있는 업무</small>'+
+          '<small>현재 서비스</small>'+
           '<strong>'+serviceContext.title+'</strong>'+
         '</div>'+
         (serviceContext.siblings.length?
-          '<div class="service-context-related"><small>다른 업무</small><div>'+siblingLinks+'</div></div>':'')+
+          '<div class="service-context-related"><small>다른 서비스도 확인해 보세요</small><div>'+siblingLinks+'</div></div>':'')+
         '<a class="service-context-back" href="'+serviceContext.parent+'">← '+serviceContext.group+' 전체</a>'+
       '</div>';
     main?.insertAdjacentElement('beforeend',nav);
@@ -345,6 +359,11 @@
 
   const form=document.getElementById('consultForm');
   if(form){
+    const presetService=new URLSearchParams(location.search).get('service');
+    if(presetService){
+      const preset=[...form.querySelectorAll('input[name="service"]')].find(input=>input.value===presetService);
+      if(preset) preset.checked=true;
+    }
     let step=1;
     const shell=form.closest('.form-shell');
     const steps=[...form.querySelectorAll('.form-step')],dots=[...shell.querySelectorAll('.progress span')];
