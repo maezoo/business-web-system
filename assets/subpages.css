@@ -325,6 +325,28 @@
   .dg-cosmetics main .split-intro{gap:28px}
   .dg-cosmetics main .hub-card h3{margin-top:36px}
 }
+.dg-sub main .service-context-nav{
+  margin-top:8px;border-top:1px solid var(--ui-line);background:#faf9fa;
+}
+.dg-sub main .service-context-nav-inner{
+  display:grid;grid-template-columns:minmax(180px,.7fr) minmax(0,1.4fr) auto;
+  gap:40px;align-items:end;padding-top:34px;padding-bottom:36px;
+}
+.dg-sub main .service-context-nav small{
+  display:block;margin-bottom:7px;color:var(--ui-quiet);font-size:10px;font-weight:850;letter-spacing:.08em;
+}
+.dg-sub main .service-context-current strong{
+  display:block;color:var(--ui-ink);font-size:22px;line-height:1.35;
+}
+.dg-sub main .service-context-related>div{display:flex;flex-wrap:wrap;gap:8px 18px}
+.dg-sub main .service-context-related a{
+  position:relative;color:var(--ui-copy);font-size:14px;font-weight:760;
+}
+.dg-sub main .service-context-related a:hover{color:var(--wine)}
+.dg-sub main .service-context-back{
+  align-self:end;color:var(--wine);font-size:13px;font-weight:850;white-space:nowrap;
+}
+
 @media(max-width:900px){
   .dg-sub main .container{width:min(calc(100% - 36px),1180px)}
   .dg-sub main .section{padding:68px 0 84px}
@@ -429,10 +451,6 @@
 .dg-organization main .hub-card.primary-card .type,
 .dg-organization main .hub-card.primary-card .more{color:var(--wine)}
 
-/* Readable prose width while keeping tables, comparisons and checklists full width. */
-.dg-sub main .content-block>h2{max-width:900px}
-.dg-sub main .content-block>p:not(.eyebrow){max-width:820px}
-
 /* Reduce card repetition for document groups; comparison cards remain cards. */
 .dg-sub main .doc-groups{border-top:1px solid var(--ui-line);gap:0 34px}
 .dg-sub main .doc-group{
@@ -444,6 +462,9 @@
 .dg-sub main .subhero .quick-nav{display:none}
 .dg-sub main .local-nav-mobile{display:none}
 .dg-sub main .side{position:sticky}
+.dg-sub main .side-context{margin:0 0 18px;padding:0 0 16px;border-bottom:1px solid var(--ui-line)}
+.dg-sub main .side-context small{display:block;margin-bottom:5px;color:var(--wine);font-size:10px;font-weight:850;letter-spacing:.08em}
+.dg-sub main .side-context strong{display:block;color:var(--ui-ink);font-size:16px;line-height:1.4}
 .dg-sub main .side a.active{
   border-left:0;padding-left:0;background:transparent;color:var(--wine);
 }
@@ -471,16 +492,20 @@
 
 /* Process progress line follows reading progress without animating the content itself. */
 .dg-sub main .flow-list{
-  position:relative;border-left:0;
+  position:relative;isolation:isolate;border-left:0;
 }
 .dg-sub main .flow-list:before,
 .dg-sub main .flow-list:after{
-  content:"";position:absolute;left:0;top:0;width:2px;border-radius:2px;pointer-events:none;
+  content:"";position:absolute;z-index:0;left:0;top:0;width:2px;border-radius:2px;pointer-events:none;
 }
 .dg-sub main .flow-list:before{height:100%;background:#eadde2}
 .dg-sub main .flow-list:after{
   height:var(--flow-progress,0%);background:var(--wine);
   transition:height .12s linear;
+}
+.dg-sub main .flow-list>div{position:relative;z-index:1}
+.dg-sub main .flow-list>div::before{
+  z-index:2;background:#fff;box-shadow:0 0 0 5px #fff;
 }
 
 @media(max-width:900px){
@@ -504,6 +529,8 @@
     content:"";position:absolute;left:13px;right:13px;bottom:-1px;height:2px;background:var(--wine);
   }
   .dg-sub main .doc-groups{gap:0 24px}
+  .dg-sub main .service-context-nav-inner{grid-template-columns:1fr;gap:24px;padding-top:28px;padding-bottom:30px}
+  .dg-sub main .service-context-back{justify-self:start}
 }
 @media(max-width:620px){
   .dg-detail main .subhero,.dg-license main .subhero,.dg-urgent main .subhero{padding:48px 0 50px}
