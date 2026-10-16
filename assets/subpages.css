@@ -441,6 +441,29 @@
 .dg-sub[class*="dg-visual-"] main .subhero:after{opacity:.3}
 .dg-sub[class*="dg-visual-"] main .subhero .lead{max-width:680px}
 
+/* Private qualification cases — compact list rather than card grid */
+.dg-license main .license-case-list{margin-top:26px;border-top:1px solid var(--ui-line)}
+.dg-license main .license-case-row{
+  display:grid;grid-template-columns:120px minmax(0,1fr) auto;gap:24px;align-items:center;
+  min-height:68px;padding:15px 2px;border-bottom:1px solid var(--ui-line);color:var(--ui-ink);
+}
+.dg-license main .license-case-row small{color:var(--wine);font-size:10px;font-weight:850;letter-spacing:.08em}
+.dg-license main .license-case-row strong{font-size:18px;line-height:1.4}
+.dg-license main .license-case-row span{color:var(--ui-copy);font-size:13px;white-space:nowrap}
+.dg-license main .license-case-row.is-link{transition:padding .2s ease,background .2s ease,color .2s ease}
+.dg-license main .license-case-row.is-link::after{content:"→";margin-left:2px;color:var(--wine);font-size:16px}
+.dg-license main .license-case-row.is-link{grid-template-columns:120px minmax(0,1fr) auto auto}
+.dg-license main .license-case-row.is-link:hover{padding-left:8px;padding-right:8px;background:#faf8f9;color:var(--wine)}
+.dg-license main .license-case-more{display:inline-flex;margin-top:20px}
+@media(max-width:620px){
+  .dg-license main .license-case-row,
+  .dg-license main .license-case-row.is-link{grid-template-columns:1fr auto;gap:4px 14px;padding:16px 2px}
+  .dg-license main .license-case-row small{grid-column:1/-1}
+  .dg-license main .license-case-row strong{font-size:17px}
+  .dg-license main .license-case-row span{grid-column:1;white-space:normal}
+  .dg-license main .license-case-row.is-link::after{grid-column:2;grid-row:2/4;align-self:center}
+}
+
 /* 11. Refined hierarchy, responsive local navigation and restrained motion */
 .dg-sub main .subhero:after{
   transform:translate3d(0,var(--hero-depth,0),0);
