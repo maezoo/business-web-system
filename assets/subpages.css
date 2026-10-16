@@ -48,7 +48,7 @@
 .dg-sub main .heading .eyebrow{grid-column:1/-1;margin-bottom:14px}
 .dg-sub main .heading h2{grid-column:1;margin:0}
 .dg-sub main .heading p:last-child{
-  grid-column:2;margin:0 0 2px;color:var(--ui-copy);font-size:15px;line-height:1.7;
+  grid-column:2;margin:0 0 2px;color:var(--ui-copy);font-size:15px;line-height:1.7;text-align:right;
 }
 .dg-sub main .btn{border-radius:7px;min-height:50px;transition:background .2s,color .2s,border-color .2s}
 .dg-sub main .btn:hover{transform:none}
@@ -329,14 +329,14 @@
   margin-top:8px;border-top:1px solid var(--ui-line);background:#faf9fa;
 }
 .dg-sub main .service-context-nav-inner{
-  display:grid;grid-template-columns:minmax(190px,.7fr) minmax(0,1.4fr);
-  gap:46px;align-items:start;padding-top:34px;padding-bottom:38px;
+  display:grid;grid-template-columns:minmax(170px,.58fr) minmax(0,1.42fr);
+  gap:34px;align-items:start;padding-top:22px;padding-bottom:24px;
 }
 .dg-sub main .service-context-nav small{
   display:block;margin-bottom:8px;color:var(--ui-quiet);font-size:10px;font-weight:850;letter-spacing:.08em;
 }
 .dg-sub main .service-context-current strong{
-  display:block;color:var(--ui-ink);font-size:22px;line-height:1.35;
+  display:block;color:var(--ui-ink);font-size:18px;line-height:1.35;
 }
 .dg-sub main .service-context-related>div{
   border-top:1px solid var(--ui-line);
@@ -437,10 +437,10 @@
   .dg-consult main .form-shell{padding:24px 18px}
 }
 /* Category hero visual system */
-.dg-visual-cosmetics main .subhero{--hero-visual:url("visuals/hero-cosmetics.svg")}
-.dg-visual-organization main .subhero{--hero-visual:url("visuals/hero-organization.svg")}
-.dg-visual-license main .subhero{--hero-visual:url("visuals/hero-license.svg")}
-.dg-visual-appeal main .subhero{--hero-visual:url("visuals/hero-appeal.svg")}
+.dg-visual-cosmetics main .subhero{--hero-visual:url("https://images.unsplash.com/photo-1760960067586-3999b9aae844?auto=format&fit=crop&q=82&w=1800")}
+.dg-visual-organization main .subhero{--hero-visual:url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=82&w=1800")}
+.dg-visual-license main .subhero{--hero-visual:url("https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=82&w=1800")}
+.dg-visual-appeal main .subhero{--hero-visual:url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=78&w=1800")}
 .dg-sub[class*="dg-visual-"] main .subhero::before{
   content:"";position:absolute;z-index:-1;right:0;top:0;width:min(52vw,720px);height:100%;
   background-image:linear-gradient(90deg,rgba(250,248,249,0) 0%,rgba(250,248,249,.08) 28%,rgba(250,248,249,0) 100%),var(--hero-visual);
@@ -569,7 +569,7 @@
     content:"";position:absolute;left:13px;right:13px;bottom:-1px;height:2px;background:var(--wine);
   }
   .dg-sub main .doc-groups{gap:0 24px}
-  .dg-sub main .service-context-nav-inner{grid-template-columns:1fr;gap:24px;padding-top:28px;padding-bottom:30px}
+  .dg-sub main .service-context-nav-inner{grid-template-columns:1fr;gap:18px;padding-top:20px;padding-bottom:22px}
   .dg-sub main .service-context-back{grid-column:1;justify-self:start}
   .dg-sub[class*="dg-visual-"] main .subhero::before{width:58vw;opacity:.62}
   .dg-sub[class*="dg-visual-"] main .subhero h1{max-width:70%}
@@ -590,3 +590,5 @@
   .dg-sub main .subhero:after{transform:none!important}
   .dg-sub main .flow-list:after{height:100%!important}
 }
+
+.dg-detail main #target .info-card.accent{background:#fff;border-color:var(--ui-line)}
