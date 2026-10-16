@@ -590,5 +590,3 @@
   .dg-sub main .subhero:after{transform:none!important}
   .dg-sub main .flow-list:after{height:100%!important}
 }
-
-.dg-detail main #target .info-card.accent{background:#fff;border-color:var(--ui-line)}
