@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="법인과 단체 설립을 상징하는 구조와 문서 비주얼">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f6f2f3"/><stop offset="1" stop-color="#dedbdd"/></linearGradient>
+  <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#eee8ea"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="24" stdDeviation="26" flood-color="#2c1b21" flood-opacity=".11"/></filter>
+</defs>
+<rect width="1200" height="800" fill="url(#bg)"/>
+<circle cx="1030" cy="150" r="290" fill="#fff" opacity=".34"/>
+<g stroke="#751631" stroke-opacity=".18" stroke-width="3" fill="none">
+  <path d="M650 182L827 306L1014 196"/>
+  <path d="M827 306L827 550"/>
+  <path d="M827 550L676 642M827 550L1000 642"/>
+</g>
+<g fill="#751631">
+  <circle cx="650" cy="182" r="13" opacity=".55"/><circle cx="827" cy="306" r="17" opacity=".8"/><circle cx="1014" cy="196" r="13" opacity=".55"/>
+  <circle cx="676" cy="642" r="13" opacity=".55"/><circle cx="1000" cy="642" r="13" opacity=".55"/>
+</g>
+<g filter="url(#shadow)">
+  <rect x="612" y="226" width="290" height="360" rx="18" fill="#d8ccd0" opacity=".72" transform="rotate(-7 612 226)"/>
+  <rect x="654" y="206" width="310" height="390" rx="18" fill="url(#paper)" stroke="#fff" stroke-width="3" transform="rotate(4 654 206)"/>
+  <rect x="695" y="254" width="165" height="18" rx="9" fill="#751631" opacity=".72" transform="rotate(4 695 254)"/>
+  <rect x="704" y="309" width="202" height="9" rx="4.5" fill="#8d8589" opacity=".38" transform="rotate(4 704 309)"/>
+  <rect x="700" y="344" width="224" height="9" rx="4.5" fill="#8d8589" opacity=".30" transform="rotate(4 700 344)"/>
+  <rect x="697" y="379" width="178" height="9" rx="4.5" fill="#8d8589" opacity=".30" transform="rotate(4 697 379)"/>
+  <circle cx="858" cy="490" r="54" fill="#751631" opacity=".12"/>
+  <circle cx="858" cy="490" r="34" fill="none" stroke="#751631" stroke-opacity=".52" stroke-width="4"/>
+</g>
+</svg>
