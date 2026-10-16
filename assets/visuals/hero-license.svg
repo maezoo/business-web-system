@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="민간자격 등록을 상징하는 기준 문서와 인증 비주얼">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7f0f3"/><stop offset="1" stop-color="#dfdade"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="22" stdDeviation="25" flood-color="#4d0b1e" flood-opacity=".12"/></filter>
+</defs>
+<rect width="1200" height="800" fill="url(#bg)"/>
+<circle cx="975" cy="170" r="265" fill="#fff" opacity=".42"/>
+<g filter="url(#shadow)">
+  <rect x="620" y="154" width="390" height="500" rx="22" fill="#fff" opacity=".92"/>
+  <rect x="668" y="218" width="198" height="20" rx="10" fill="#751631" opacity=".78"/>
+  <rect x="668" y="273" width="272" height="10" rx="5" fill="#8c8589" opacity=".30"/>
+  <rect x="668" y="309" width="235" height="10" rx="5" fill="#8c8589" opacity=".24"/>
+  <g transform="translate(668 365)">
+    <rect width="30" height="30" rx="6" fill="#f8f2f4" stroke="#751631" stroke-opacity=".34" stroke-width="2"/>
+    <path d="M8 15l5 5 10-12" fill="none" stroke="#751631" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="50" y="9" width="205" height="10" rx="5" fill="#8c8589" opacity=".28"/>
+  </g>
+  <g transform="translate(668 423)">
+    <rect width="30" height="30" rx="6" fill="#f8f2f4" stroke="#751631" stroke-opacity=".34" stroke-width="2"/>
+    <path d="M8 15l5 5 10-12" fill="none" stroke="#751631" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="50" y="9" width="180" height="10" rx="5" fill="#8c8589" opacity=".28"/>
+  </g>
+  <g transform="translate(668 481)">
+    <rect width="30" height="30" rx="6" fill="#f8f2f4" stroke="#751631" stroke-opacity=".34" stroke-width="2"/>
+    <path d="M8 15l5 5 10-12" fill="none" stroke="#751631" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="50" y="9" width="220" height="10" rx="5" fill="#8c8589" opacity=".28"/>
+  </g>
+  <circle cx="924" cy="574" r="70" fill="#751631"/>
+  <circle cx="924" cy="574" r="51" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="3"/>
+  <path d="M900 574l16 16 33-37" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>
