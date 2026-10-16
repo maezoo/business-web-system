@@ -457,17 +457,17 @@
 }
 
 /* Hero entrance and section reveal: small movement only. */
-.motion-ready .dg-sub main .hero-motion{
+.motion-ready.dg-sub main .hero-motion{
   opacity:0;transform:translateY(16px);
   transition:opacity .62s ease,transform .62s cubic-bezier(.2,.7,.2,1);
   transition-delay:calc(var(--motion-order,0) * 70ms);
 }
-.motion-ready .dg-sub main .hero-motion.is-visible{opacity:1;transform:none}
-.motion-ready .dg-sub main .section-reveal{
+.motion-ready.dg-sub main .hero-motion.is-visible{opacity:1;transform:none}
+.motion-ready.dg-sub main .section-reveal{
   opacity:0;transform:translateY(22px);
   transition:opacity .72s ease,transform .72s cubic-bezier(.2,.7,.2,1);
 }
-.motion-ready .dg-sub main .section-reveal.is-visible{opacity:1;transform:none}
+.motion-ready.dg-sub main .section-reveal.is-visible{opacity:1;transform:none}
 
 /* Process progress line follows reading progress without animating the content itself. */
 .dg-sub main .flow-list{
@@ -515,8 +515,8 @@
 
 @media(prefers-reduced-motion:reduce){
   .dg-sub main *{transition:none!important;animation:none!important}
-  .motion-ready .dg-sub main .hero-motion,
-  .motion-ready .dg-sub main .section-reveal{opacity:1!important;transform:none!important}
+  .motion-ready.dg-sub main .hero-motion,
+  .motion-ready.dg-sub main .section-reveal{opacity:1!important;transform:none!important}
   .dg-sub main .subhero:after{transform:none!important}
   .dg-sub main .flow-list:after{height:100%!important}
 }
